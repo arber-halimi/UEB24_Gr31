@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Audiowide&family=Kaushan+Script&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --p-color: #cec9c9;
+    --p-font:"Noto Sans", sans-serif;
+    --l-font: "Kaushan Script", cursive;
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 50px;
+    gap: 400px;
+    padding-top: 15px;
+    position: fixed;
+    z-index: 1000;
+    top: 0px;
+    left: 0px; 
+    /* box-shadow: 0px 109px 37px -34px rgba(0,0,0,0.75) inset; */
+    box-shadow: 0px 131px 37px -34px rgba(0,0,0,0.75) inset;
+}
+
+
+
+header .logo h1{
+    font-family: var(--l-font);
+    font-size: 35px;
+    margin-right: 150px;
+    margin-top: 10px;
+    color: #cec9c9;
+}
+
+/* header .logo img{
+    width: 300px;
+} */
+
+header nav{
+    padding-top: 25px;
+}
+
+header nav ul{
+    display: flex;
+    list-style: none;
+    padding-top: 5px;
+}
+
+header nav ul li a{
+    text-decoration: none;
+    font-size: 17px;
+    margin-left: 15px;
+    color: var(--p-color);
+    font-family: var(--p-font);
+}
+
+.video video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-position: center;
+    object-fit: cover;
+    top: -100px;
+    left: 0px;
+}
+

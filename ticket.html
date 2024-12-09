@@ -81,5 +81,39 @@
       </div>
     </form>
   </main>
+  <script>
+    const paymentMethods = document.getElementsByName('payment-method');
+    const cardDetails = document.getElementById('card-details');
+    const paypalDetails = document.getElementById('paypal-details');
+    const cashDetails = document.getElementById('cash-details');
+  
+    // Show/hide payment details based on the selected payment method
+    paymentMethods.forEach(method => {
+      method.addEventListener('change', () => {
+        cardDetails.style.display = method.value === 'Card' ? 'block' : 'none';
+        paypalDetails.style.display = method.value === 'PayPal' ? 'block' : 'none';
+        cashDetails.style.display = method.value === 'Cash' ? 'block' : 'none';
+      });
+    });
+  
+    // Ticket price update logic
+    const ticketDateInput = document.getElementById('ticket-date');
+    const ticketPriceDisplay = document.getElementById('ticket-price');
+  
+    ticketDateInput.addEventListener('change', () => {
+      const selectedDate = new Date(ticketDateInput.value);
+      const day = selectedDate.getDay();
+  
+      let price = 0;
+      if (day === 0 || day === 6) { // Weekend
+        price = 20;
+      } else { // Weekday
+        price = 15;
+      }
+  
+      ticketPriceDisplay.textContent = `Ticket Price: $${price}`;
+    });
+  </script>
+  
 </body>
 </html>

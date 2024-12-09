@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Audiowide&family=Kaushan+Script&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --p-color: #cec9c9;
+    --p-font: "Noto Sans", sans-serif;
+    --l-font: "Kaushan Script", cursive;
+    --highlight-color: #76c7c0;
+    --background-gradient: linear-gradient(to bottom, #232526, #414345);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--p-font);
+    color: #f0f0f0;
+    background: var(--background-gradient);
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+header .logo h1 {
+    font-family: var(--l-font);
+    font-size: 32px;
+    color: var(--p-color);
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: var(--p-color);
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: var(--highlight-color);
+}
+
+main {
+    padding: 120px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    background: #2e2e2e;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    width: 100%;
+    max-width: 500px;
+}
+
+form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--highlight-color);
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #555555;
+    background: #444444;
+    color: #f0f0f0;
+}
+
+form input:focus, form select:focus {
+    border-color: var(--highlight-color);
+    outline: none;
+    box-shadow: 0 0 5px var(--highlight-color);
+}
+
+form input[type="submit"], form input[type="reset"] {
+    width: 48%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: var(--highlight-color);
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form input[type="submit"]:hover, form input[type="reset"]:hover {
+    background: #5da9a5;
+    transform: scale(1.05);
+}
+
+form .price {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--highlight-color);
+}
+
+fieldset {
+    border: none;
+    margin-bottom: 20px;
+}
+
+.payment-details {
+    display: none;
+}
+
+.payment-details p {
+    font-size: 14px;
+    color: #cccccc;
+}

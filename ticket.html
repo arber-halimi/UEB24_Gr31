@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Museum Ticket Purchase</title>
+  <link rel="stylesheet" href="ticket.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1>Museum</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Tickets</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Registration</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <form action="">
+      <h2>Ticket Purchase</h2>
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required placeholder="Enter your name">
+
+      <label for="surname">Surname:</label>
+      <input type="text" id="surname" name="surname" required placeholder="Enter your surname">
+
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required placeholder="Enter your email">
+
+      <label for="ticket-date">Date of Ticket:</label>
+      <input type="date" id="ticket-date" name="ticket-date" required>
+
+      <div class="price" id="ticket-price">Ticket Price: $0</div>
+
+      <fieldset>
+        <legend>Payment Method:</legend>
+        <input type="radio" id="card" name="payment-method" value="Card" required>
+        <label for="card">Card</label><br>
+
+        <input type="radio" id="cash" name="payment-method" value="Cash">
+        <label for="cash">Cash on Take</label><br>
+
+        <input type="radio" id="paypal" name="payment-method" value="PayPal">
+        <label for="paypal">PayPal</label>
+      </fieldset>
+
+      <div class="payment-details" id="card-details">
+        <label for="card-number">Card Number:</label>
+        <input type="text" id="card-number" name="card-number" placeholder="Enter card number">
+
+        <label for="expiry-date">Expiry Date:</label>
+        <input type="month" id="expiry-date" name="expiry-date">
+
+        <label for="cvv">CVV:</label>
+        <input type="password" id="cvv" name="cvv" placeholder="Enter CVV">
+      </div>
+
+      <div class="payment-details" id="paypal-details">
+        <label for="paypal-email">PayPal Email:</label>
+        <input type="email" id="paypal-email" name="paypal-email" placeholder="Enter PayPal email">
+      </div>
+
+      <div class="payment-details" id="cash-details">
+        <p>No additional information is required for Cash on Take. Payment will be made at the museum.</p>
+      </div>
+
+      <div class="button-group">
+        <input type="submit" value="Buy Ticket">
+        <input type="reset" value="Reset">
+      </div>
+    </form>
+  </main>
+</body>
+</html>

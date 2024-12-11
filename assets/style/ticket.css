@@ -92,8 +92,16 @@ form .price {
 }
 
 fieldset {
-    border: none;
     margin-bottom: 20px;
+    padding: 10px;
+    border: none;
+    border: 2px solid var(--highlight-color);
+}
+legend{
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--highlight-color);
+    padding: 0 10px;
 }
 
 .payment-details {
@@ -103,4 +111,30 @@ fieldset {
 .payment-details p {
     font-size: 14px;
     color: #cccccc;
+}
+.payment-option{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.payment-option input[type="radio"]{
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--highlight-color);
+    border-radius: 50%;
+    margin-right: 10px;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.payment-option input[type="radio"]:checked{
+    background-color: var(--highlight-color);
+    box-shadow: 0 0 5px var(--highlight-color);
+}
+
+.payment-option label{
+    font-size: 16px;
+    color: #f0f0f0;
+    cursor: pointer;
 }

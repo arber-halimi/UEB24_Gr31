@@ -145,3 +145,48 @@ header .header ul li a{
 .intro-to-museum .book-tickets button i{
     font-weight: normal;
 }
+
+footer{
+    
+    background-color: #000000;
+}
+
+footer .pre-footer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    width: 85%;
+    margin: 0 auto;
+}
+        
+.give-yout-info { 
+    grid-area: 1 / 1 / 2 / 2;
+    padding-right: 40px;
+}
+
+.give-yout-info .sing-up h4{
+    color:#FFFFFF;
+}
+
+.give-yout-info .buttons{
+    display: flex; 
+    flex-direction: column;
+}
+.about { 
+    grid-area: 1 / 2 / 2 / 3;
+    display: flex; 
+    flex-direction: column;
+}
+
+.about a{
+    color: #FFFFFF;
+}
+.contact { grid-area: 1 / 3 / 2 / 4; }
+.contact a{color: white; }
+
+.opening-hours { grid-area: 1 / 4 / 2 / 5; }
+.opening-hours table{
+    color: white;
+}

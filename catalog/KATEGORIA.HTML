@@ -98,7 +98,7 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 10px;
             justify-items: center; /* Center the items horizontally */
-
+            row-gap:50px;
             margin-top: 20px;
             padding: 80px 80px; 
         }
@@ -110,6 +110,7 @@
     border-radius: 30px;
     padding: 10px;
     background-color:#373737;
+    box-shadow: 10px 10px 8px rgba(165, 164, 164, 0.5); /* Hije me zhvendosje dhe turbullim */
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -129,8 +130,8 @@
     max-width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 5px;
-    transition: transform 0.3s ease;
+    border-radius: 20px;
+    transition: transform 0.4s ease;
 }
 
 .object-item:hover img {

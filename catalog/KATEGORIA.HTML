@@ -196,8 +196,31 @@
         .modal-body {
     max-height: 90vh; /* You can adjust this as needed */
     overflow-y: auto; /* Allows the body to scroll */
-}
+    position: relative; /* Sigurohuni që .modal-body të ketë pozicion në mënyrë që butonat të pozicionohen relativisht ndaj saj */
 
+}
+.modal-nav {
+    position: absolute;
+    top: 50%; /* Pozicionohet në qendër vertikale */
+    transform: translateY(-50%); /* Shkallëzim për qendrim perfekt */
+    border-radius: 20px;
+    width: 60px; /* Gjerësia e butonit */
+    height: 60%; /* Lartësia e butonit si përqindje e modal-it */
+    background-color: rgba(145, 145, 145, 0.5); /* Ngjyrë e errët transparente */
+    border: none; /* Pa kufij */
+    z-index: 10; /* Përpara imazhit */
+    cursor: pointer; /* Parqat si pubton i shtypshem
+    opacity: 0.7; /* Gjysmë transparente */
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+#prevBtn {
+    left: 13px; /* Pozita nga e majta e modalit */
+
+}
+#nextBtn {
+    right: 13px; /* Pozita nga e djathta e modalit */
+   
+}
         .modal-header {
             position: relative;
             text-align: center;
@@ -237,7 +260,7 @@
 </head>
 <body>
     
-    <h1 style ="color:rgb(216, 216, 63); font-weight:bold">Museum Catalog</h1>
+    <h1 style ="color:#008573; font-weight:bold">Museum Catalog</h1>
 
     <!-- Categories -->
     <div class="categories">
@@ -268,7 +291,7 @@
 
     <h2 style="background: linear-gradient(to bottom, #484848, rgb(0, 0, 0)); 
     font-family: 'Arial', sans-serif; 
-    color: rgb(216, 216, 63); 
+    color: #008573; 
     text-align: center; 
     padding: 20px; 
     margin: 10px 0 20px 0; 
@@ -282,7 +305,7 @@
 </h2>
     <!-- Objects Container -->
     <div class="objects" id="objectsContainer">
-        <div class="object-item" data-category="paintings" 
+        <div class="object-item" data-category="paintings"  
         data-description="The Mona Lisa is one of the most famous paintings in the world, 
         housed in the Louvre Museum in Paris. Created by the renowned Italian artist Leonardo da Vinci,
          the painting is known for its enigmatic smile and detailed use of light and shadow, 
@@ -294,7 +317,7 @@
           onclick="openModal(this)">
             <img src="foto,paintings\Mona Lisa.webp" alt="Mona Lisa by Leonardo da Vinci">
             <div class="info">
-                <p style="color :rgb(236, 236, 72);font-size:20px"><b>Mona Lisa</b> </p>
+                <p style="color :#008573;font-size:20px"><b>Mona Lisa</b> </p>
                 <p style="font-size:15px"><b>by Leonardo da Vinci</b></p>
                 <p>1503 - 1506</p>
             </div>
@@ -310,7 +333,7 @@
          onclick="openModal(this)">
             <img src="foto,sculptures\il_fullxfull.1303520017_f2dq.avif" alt=" Veiled Virgin Mary by Giovanni Strazza">
             <div class="info">
-                <p style="color :rgb(236, 236, 72);font-size:20px"> <b>Veiled Virgin Mary </b></p>
+                <p style="color :#008573;font-size:20px"> <b>Veiled Virgin Mary </b></p>
                 <p style="font-size:15px"><b>by Giovanni Strazza</b></p>
                 <p>1856</p>
             </div>
@@ -326,7 +349,7 @@
         onclick="openModal(this)">
             <img src="foto.old machine\Benz Patent-Motorwagen.webp" alt="Benz Patent-Motorwagen by Karl Benz">
             <div class="info">
-                <p style="color :rgb(236, 236, 72);font-size:20px"> <b>Benz Patent-Motorwagen </b></p>
+                <p style="color :#008573;font-size:20px"> <b>Benz Patent-Motorwagen </b></p>
                 <p style="font-size:15px"><b>by Karl Benz</b></p>
                 <p>1885</p>
             </div>
@@ -343,7 +366,7 @@
         onclick="openModal(this)">
             <img src="foto.creatures\Mammuthus.jpg" alt="Mammoth">
             <div class="info">
-                <p style="color :rgb(236, 236, 72);font-size:20px"> <b>The great Mammoth </b></p>
+                <p style="color :#008573;font-size:20px"> <b>The great Mammoth </b></p>
                 <p>200,000 to 10,000 years ago</p>
             </div>
         </div>
@@ -359,7 +382,7 @@
         onclick="openModal(this)">
             <img src="foto,artifact\Skanderbeg_helmet.jpg" alt="Skanderbeg's helmet">
             <div class="info">
-                <p style="color :rgb(236, 236, 72);font-size:20px"> <b>Skanderbeg's helmet </b></p>
+                <p style="color :#008573;font-size:20px"> <b>Skanderbeg's helmet </b></p>
                 <p>15th Century</p>
             </div>
         </div>
@@ -378,7 +401,7 @@
          onclick="openModal(this)">
             <img src="foto,paintings\Vincent van Gogh. The Starry Night.jpg" alt="The Starry Night">
             <div class="info">
-                <p style="color :rgb(236, 236, 72);font-size:20px"> <b>The Starry Night </b></p>
+                <p style="color :#008573;font-size:20px"> <b>The Starry Night </b></p>
                 <p style="font-size:15px"><b>by Vincent Van Gogh</b></p>
                 <p>1889</p>
             </div>
@@ -397,7 +420,7 @@
         onclick="openModal(this)">
             <img src="foto,sculptures\Winged Victory of Samothrace.jpg" alt="Winged Victory of Samothrace">
             <div class="info">
-                <p style="color :rgb(236, 236, 72);font-size:20px"> <b>Winged Victory of Samothrace </b></p>
+                <p style="color :#008573;font-size:20px"> <b>Winged Victory of Samothrace </b></p>
                 <p style="font-size:15px"><b>by Pythokritos of Rhodes</b></p>
                 <p>190 BCE</p>
             </div>
@@ -417,7 +440,7 @@
         onclick="openModal(this)">
             <img src="foto.old machine\Mark I.jpg" alt="Mark I">
             <div class="info">
-                <p style="color :rgb(236, 236, 72);font-size:20px"> <b>Mark I </b></p>
+                <p style="color :#008573;font-size:20px"> <b>Mark I </b></p>
                 <p style="font-size:15px"><b>by the British Army </b></p>
                 <p>1916</p>
             </div>
@@ -436,7 +459,7 @@
         onclick="openModal(this)">
             <img src="foto.creatures\tyrannosaur .webp" alt="Tyrannosaurus rex">
             <div class="info">
-                <p style="color :rgb(236, 236, 72);font-size:20px"> <b>Tyrannosaurus rex </b></p>
+                <p style="color :#008573;font-size:20px"> <b>Tyrannosaurus rex </b></p>
                 <p>68 to 66 million years ago</p>
             </div>
         </div>
@@ -455,7 +478,7 @@
         onclick="openModal(this)">
             <img src="foto,artifact\635577077006911989-AFP-537028551.webp" alt="Tutankhamun's Mask">
             <div class="info">
-                <p style="color :rgb(236, 236, 72);font-size:20px"> <b>Tutankhamun's Mask</b></p>
+                <p style="color :#008573;font-size:20px"> <b>Tutankhamun's Mask</b></p>
                 <p>1332 to 1323 BCE</p>
             </div>
         </div>
@@ -473,7 +496,7 @@
          onclick="openModal(this)">
             <img src="foto,paintings\girl-pearl-earring.webp" alt="Girl with a Pearl Earring ">
             <div class="info">
-                <p style="color :rgb(236, 236, 72);font-size:20px"> <b>Girl with a Pearl Earring</b></p>
+                <p style="color :#008573;font-size:20px"> <b>Girl with a Pearl Earring</b></p>
                 <p style="font-size:15px"><b>by Johannes Vermeer</b></p>
                 <p>1665</p>
             </div>
@@ -492,7 +515,7 @@
         onclick="openModal(this)">
             <img src="foto,sculptures\vatican.jpg" alt="Pietà">
             <div class="info">
-                <p style="color :rgb(236, 236, 72);font-size:20px"> <b> Pietà  </b></p>
+                <p style="color :#008573;font-size:20px"> <b> Pietà  </b></p>
                 <p style="font-size:15px"><b>by Michelangelo Buonarroti</b></p>
                 <p>1498 - 1499</p>
             </div>
@@ -515,7 +538,7 @@
         onclick="openModal(this)">
             <img src="foto.old machine\Wright Flyer.jpg" alt="Wright Flyer">
             <div class="info">
-                <p style="color :rgb(236, 236, 72);font-size:20px"> <b>Wright Flyer </b></p>
+                <p style="color :#008573;font-size:20px"> <b>Wright Flyer </b></p>
                 <p style="font-size:15px"><b>by Orville and Wilbur Wright</b></p>
                 <p>1903</p>
             </div>
@@ -538,7 +561,7 @@
         onclick="openModal(this)">
             <img src="foto.creatures\Pterosaur__.jpg" alt="Pterosaur">
             <div class="info">
-                <p style="color :rgb(236, 236, 72);font-size:20px"> <b>Pterosaur</b></p>
+                <p style="color :#008573;font-size:20px"> <b>Pterosaur</b></p>
                 <p>228 to 66 million years ago</p>
             </div>
         </div>
@@ -558,7 +581,7 @@
         onclick="openModal(this)">
             <img src="foto.old machine\The-Antikythera-mechanism-4-scaled.jpg" alt="Antikythera Mechanism">
             <div class="info">
-                <p style="color :rgb(236, 236, 72);font-size:20px"> <b>Antikythera Mechanism</b></p>
+                <p style="color :#008573;font-size:20px"> <b>Antikythera Mechanism</b></p>
                 <p>100 BC</p>
             </div>
         </div>
@@ -578,7 +601,7 @@
         onclick="openModal(this)">
             <img src="foto,sculptures\Rosetta Stone.jpg" alt="Rosetta Stone">
             <div class="info">
-                <p style="color :rgb(236, 236, 72);font-size:20px"> <b>Rosetta Stone</b></p>
+                <p style="color :#008573;font-size:20px"> <b>Rosetta Stone</b></p>
                 <p>196 BCE</p>
             </div>
         </div>
@@ -592,7 +615,9 @@
                 <h2>Object Information</h2>
             </div>
             <div class="modal-body">
+                <button id="prevBtn" class="modal-nav">&#10094;</button> <!-- Shigjeta majtas -->
                 <img src="" alt="Object Image" class="modal-img" id="modalImage">
+                <button id="nextBtn" class="modal-nav ">&#10095;</button>
                 <div id="modalName"></div>
                 <div id="modalTimePeriod"></div>
                 <div id="modalDescription"></div>
@@ -606,13 +631,14 @@
         
     </footer>
     <script>
-        
+
         // Function to open the modal and display object details
         function openModal(object) {
     const name = $(object).find("p:first").text(); // Get the name/title
     const timePeriod = $(object).find("p:last").text(); // Get the time period
     const imgSrc = $(object).find("img").attr("src"); // Get the image source
     const description = $(object).data("description"); // Get the additional description
+
 
     // Update modal header
     $(".modal-header h2").text(name); // Set the name as the modal header text
@@ -625,7 +651,6 @@
 
     // Show the modal
     document.getElementById("modal").style.display = "flex";
-
     document.body.classList.add("modal-open");
 
 }
@@ -670,6 +695,7 @@
                 }
             }
         }
+ 
     </script>
 </body>
 </html>

@@ -159,34 +159,130 @@ footer .pre-footer {
     grid-row-gap: 0px;
     width: 85%;
     margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
         
-.give-yout-info { 
+.give-your-info { 
     grid-area: 1 / 1 / 2 / 2;
     padding-right: 40px;
 }
 
-.give-yout-info .sing-up h4{
-    color:#FFFFFF;
+.give-your-info .sing-up h4{
+    color: lightgray;
+    margin-bottom: 10px;
 }
 
-.give-yout-info .buttons{
+.give-your-info .sing-up .sign-up-form input{
+    background-color: transparent;
+    border-style:none none solid none;
+}
+
+.give-your-info .sing-up .sign-up-form button{
+    background-color: transparent;
+    border-style:none none solid none;
+    color: lightgray;
+}
+
+.give-your-info .buttons{
     display: flex; 
     flex-direction: column;
+    color: lightgray;
+    margin-top: 15px;
 }
+
+.give-your-info .buttons button{
+    padding: 10px;
+    margin-top: 10px;
+    background-color: transparent;
+    color: lightgray;
+    border: solid 1px;
+    border-color: gray;
+    text-transform: uppercase;
+}
+
+
 .about { 
     grid-area: 1 / 2 / 2 / 3;
     display: flex; 
     flex-direction: column;
+    margin-left: 50px;
+}
+
+.about span{
+    color: lightgray;
+    font-size: 17px;
+    text-transform: capitalize;
+    margin-bottom: 15px;
 }
 
 .about a{
-    color: #FFFFFF;
+    color: gray;
+    font-family: 14px;
+    text-decoration: none;
+    text-transform: capitalize;
 }
-.contact { grid-area: 1 / 3 / 2 / 4; }
-.contact a{color: white; }
 
-.opening-hours { grid-area: 1 / 4 / 2 / 5; }
+
+.contact { 
+    grid-area: 1 / 3 / 2 / 4;
+
+}
+
+.contact #contact{
+    color: lightgray;
+    font-size: 17px;
+    text-transform: capitalize;
+}
+
+.contact address{
+    margin-top: 15px;
+}
+
+.contact a, .contact span{    
+    color: gray;
+    font-family: 14px;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.opening-hours {
+    grid-area: 1 / 4 / 2 / 5; 
+}
+
+.opening-hours #time{
+    color: lightgray;
+    font-size: 17px;
+    text-transform: capitalize;
+}
+
 .opening-hours table{
-    color: white;
+    color: gray;
+    margin-top: 15px;
+}
+.opening-hours table tr td {
+    padding-right: 30px;
+}
+
+.social-media{
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 85%;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.social-media .social a{
+    color: lightgray;
+}
+
+.social-media .social a i{
+    margin-right: 15px;
+}
+
+
+.social-media .copyright span{
+    color: lightgray;
+    text-transform: capitalize;
 }

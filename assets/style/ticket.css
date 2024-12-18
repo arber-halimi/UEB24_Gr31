@@ -26,8 +26,8 @@ body {
 main {
     padding: 120px 20px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 form {
@@ -37,13 +37,19 @@ form {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
     width: 100%;
     max-width: 500px;
+    margin-left: auto;
+    margin-right: 0;
 }
 
 form h2 {
-    text-align: center;
-    margin-bottom: 20px;
+    font-family: "Kaushan Script", cursive; 
     color: var(--highlight-color);
+    text-align: center;
+    font-size: 36px; 
+    letter-spacing: 1px;
+    margin-bottom: 20px;
 }
+
 
 form label {
     display: block;
@@ -137,4 +143,68 @@ legend{
     font-size: 16px;
     color: #f0f0f0;
     cursor: pointer;
+}
+
+#giveaway {
+    margin-top: 40px;
+    background: #2e2e2e;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#giveaway h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--highlight-color);
+    font-family: var(--l-font);
+}
+
+#giveaway p {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #cccccc;
+}
+
+#giveaway-form label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+#giveaway-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #555555;
+    background: #444444;
+    color: #f0f0f0;
+}
+
+#giveaway-form input:focus {
+    border-color: var(--highlight-color);
+    outline: none;
+    box-shadow: 0 0 5px var(--highlight-color);
+}
+
+#giveaway-form button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: var(--highlight-color);
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#giveaway-form button:hover {
+    background: #5da9a5;
+    transform: scale(1.05);
 }

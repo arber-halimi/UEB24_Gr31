@@ -42,7 +42,7 @@
 </header>
 
   <main>
-    <form action="">
+    <form id="ticketForm">
       <h2>Ticket Purchase</h2>
 
       <label for="name">Name:</label>
@@ -79,7 +79,7 @@
         </div>
       </fieldset>
 
-      <div class="payment-details" id="card-details">
+      <div class="payment-details" id="card-details" style="display: none;">
         <label for="card-number">Card Number:</label>
         <input type="text" id="card-number" name="card-number" placeholder="Enter card number">
 
@@ -95,7 +95,7 @@
         <input type="email" id="paypal-email" name="paypal-email" placeholder="Enter PayPal email">
       </div>
 
-      <div class="payment-details" id="cash-details">
+      <div class="payment-details" id="cash-details" style="display: none;">
         <p>No additional information is required for Cash on Take. Payment will be made at the museum.</p>
       </div>
 
@@ -104,6 +104,7 @@
         <input type="reset" value="Reset">
       </div>
     </form>
+
     <section id="giveaway">
       <h2>Win Free Tickets!</h2>
       <p>Enter our monthly giveaway for a chance to win free tickets to the museum! Simply fill in your details below:</p>
@@ -121,11 +122,34 @@
     </section>
   </main>
   <script>
+    const ticketDateInput = document.getElementById('ticket-date');
+    const ticketPriceDisplay = document.getElementById('ticket-price');
     const paymentMethods = document.getElementsByName('payment-method');
     const cardDetails = document.getElementById('card-details');
     const paypalDetails = document.getElementById('paypal-details');
     const cashDetails = document.getElementById('cash-details');
+    const ticketForm = document.getElementById('ticketForm');
   
+  
+    
+    ticketDateInput.addEventListener('change', () => {
+      const selectedDate = new Date(ticketDateInput.value);
+      const today = new Date();
+      const oneMonthLater = new Date();
+      oneMonthLater.setMonth(today.getMonth() + 1);
+      if(selectedDate < today||selectedDate>oneMonthLater){
+        alert('Please select a date within the next month and not in the past.');
+        ticketDateInput.value='';
+      }
+      else{
+        const day = selectedDate.getDay();
+        const price = (day === 0 || day === 6) ? 20 : 15;
+        ticketPriceDisplay.textContent = `Ticket Price: $${price}`;
+      }
+    
+      ticketPriceDisplay.textContent = `Ticket Price: $${price}`;
+    });
+
     // Show/hide payment details based on the selected payment method
     paymentMethods.forEach(method => {
       method.addEventListener('change', () => {
@@ -134,24 +158,39 @@
         cashDetails.style.display = method.value === 'Cash' ? 'block' : 'none';
       });
     });
-  
-    // Ticket price update logic
-    const ticketDateInput = document.getElementById('ticket-date');
-    const ticketPriceDisplay = document.getElementById('ticket-price');
-  
-    ticketDateInput.addEventListener('change', () => {
-      const selectedDate = new Date(ticketDateInput.value);
-      const day = selectedDate.getDay();
-  
-      let price = 0;
-      if (day === 0 || day === 6) { // Weekend
-        price = 20;
-      } else { // Weekday
-        price = 15;
+
+    ticketForm.addEventListener('submit',(event)=>{
+      const selectedMethod = [...paymentMethods].find(method=>method.checked);
+      if(!selectedMethod){
+        alert('Please select a payment method.');
+        event.preventDefault();
+        return;
       }
-  
-      ticketPriceDisplay.textContent = `Ticket Price: $${price}`;
-    });
+
+      if(selectedMethod.value === 'Card'){
+        const cardNumber = document.getElementById('card-number').value.trim();
+        const expiryDate = document.getElementById('expiry-date').value.trim();
+        const cvv = document.getElementById('cvv').value.trim();
+
+        if(!cardNumber || !expiryDate || !cvv){
+          alert('Please fill in all card details.');
+          event.preventDefault();
+          return;
+        }
+        
+      }
+
+      if(selectedMethod.value === 'PayPal'){
+        const paypalEmail = document.getElementById('paypal-email').value.trim();
+        if(!paypalEmail){
+          alert('Please fill in your PayPal email.');
+          event.preventDefault();
+          return;
+        }
+      }
+        
+    })
+
   </script>
   <footer>
     <div class="pre-footer">

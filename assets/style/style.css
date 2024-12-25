@@ -286,3 +286,27 @@ footer .pre-footer {
     color: lightgray;
     text-transform: capitalize;
 }
+
+.intro-to-categories .itc-photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    gap: 30px;
+    margin-bottom: 100px;
+}
+
+.intro-to-categories .itc-photos img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.intro-to-categories .itc-photos img:hover{
+    width: 102%;
+    height: 102%;
+}
+    
+

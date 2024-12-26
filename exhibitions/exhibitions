@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museum Exhibitions</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+    <h1 style="color:#008573; font-weight:bold">Museum Exhibitions</h1>
+
+     <!-- Categories -->
+     <div class="categories">
+        <div class="category" data-category="current-exhibitions" onclick="filterEvents('current-exhibitions', this)">
+            <img src="foto/current_exhibitions.jpg" alt="Current Exhibitions">
+            <div>Current Exhibitions</div>
+        </div>
+        <div class="category" data-category="upcoming-events" onclick="filterEvents('upcoming-events', this)">
+            <img src="foto/upcoming_events.jpg" alt="Upcoming Events">
+            <div>Upcoming Events</div>
+        </div>
+        <div class="category" data-category="guides" onclick="filterEvents('guides', this)">
+            <img src="foto/guides.jpg" alt="Guides">
+            <div>Guides</div>
+        </div>
+    </div>
+    
+    <footer></footer>
+</body>
+</html>

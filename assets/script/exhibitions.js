@@ -1,4 +1,3 @@
-// Open Modal
 function openModal(event) {
     const title = event.querySelector('.info p').textContent.split('\n')[0];
     const description = event.getAttribute('data-description');
@@ -8,23 +7,23 @@ function openModal(event) {
     document.getElementById('modalDescription').textContent = description;
     document.getElementById('modalImage').src = image;
 
+    const buyTicketLink = "tickets.html";
+    document.getElementById('buyTicketButton').href = buyTicketLink;
+
     document.getElementById('modal').style.display = 'flex';
     document.body.classList.add('modal-open');
 }
 
-// Close Modal
 function closeModal() {
     document.getElementById('modal').style.display = 'none';
     document.body.classList.remove('modal-open');
 }
 
-// Filter Events based on Category
 function filterEvents(category, element) {
     const allItems = document.querySelectorAll('.event-item');
     const allCategories = document.querySelectorAll('.category');
     const resetButton = document.querySelector('.reset');
 
-    // Reset selected category and events
     allCategories.forEach(cat => cat.classList.remove('selected'));
     resetButton.classList.remove('selected');
 
@@ -40,7 +39,6 @@ function filterEvents(category, element) {
         });
     }
 
-    // Mark the selected category
     element.classList.add('selected');
     resetButton.classList.add('selected');
 }

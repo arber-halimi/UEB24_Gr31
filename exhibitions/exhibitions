@@ -227,6 +227,7 @@
             <div class="modal-body">
                 <img id="modalImage" src="" alt="Event Image">
                 <p id="modalDescription"></p>
+                <a id="buyTicketButton" href="#" class="buy-ticket-btn" target="_blank">Get Ticket</a>
             </div>
         </div>
     </div>

@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Audiowide&family=Kaushan+Script&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Audiowide&family=Kaushan+Script&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+
+
+:root {
+    --p-color: #cec9c9;
+    --p-font:"Open Sans", sans-serif;
+    --all-font: "Montserrat", sans-serif;
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+header{
+    display: block;
+    background-color: #000000;
+}
+
+header .para-header{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 15px;
+}
+
+header .para-header .search-bar{
+    display: flex;
+}
+
+header .para-header .search-bar .search{
+    display: flex;
+    margin-right: 10px;
+}
+
+header .para-header .search-bar .search i, p{
+    color: #FFFFFF;
+    margin-right: 3px;
+}
+
+header .para-header .search-bar .languages select{
+    background-color: transparent;
+    border: none;
+    color: #FFFFFF;
+}
+
+header .para-header .search-bar .languages select option{
+    color: #FFFFFF;
+}
+
+
+
+header .para-header .logo h1{
+    font-family: var(--p-font);
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 29px;
+    position: relative;
+    bottom: 10px;
+}
+
+header .para-header .tickets button{
+    background-color: #008573;
+    border: none;
+    border-radius: 20px;
+    padding: 9px 20px;
+    color: #FFFFFF;
+    font-size: 14px;
+    position: relative;
+    bottom: 5px;
+}
+
+header hr{
+    width: 80%;
+    margin: 0 auto;
+    background-color: lightgray;
+}
+
+header .header{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+header .header ul{
+    display: flex;
+}
+
+header .header ul li a{
+    margin-left: 15px;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-family: var(--all-font);
+    font-weight: bold;
+}

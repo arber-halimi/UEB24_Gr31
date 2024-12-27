@@ -42,6 +42,25 @@
 </header>
 
   <main>
+    <div class="event-cards-container">
+    <div class="event-card" onclick="openModal('Fossil Exhibition', 25)">
+      <img src="./catalog/foto.creatures/Mammuthus.jpg" alt="Art Exhibition">
+      <h3>Fossil Exhibition</h3>
+      <p>Discover the world of contemporary art in this unique event.</p>
+    </div>
+    <div class="event-card" onclick="openModal('Pictures Tour', 20)">
+      <img src="./catalog/foto,paintings/girl-pearl-earring.webp" alt="History Tour">
+      <h3>Pictures Tour</h3>
+      <p>Join our guided tour to learn about the rich history of our museum.</p>
+    </div>
+    <div class="event-card" onclick="openModal('Science Revolution Fair', 15)">
+      <img src="./catalog/foto.old machine/Benz Patent-Motorwagen.webp" alt="Science Fair">
+      <h3>Science Revolution Fair</h3>
+      <p>Explore scientific marvels and engage with exciting experiments.</p>
+    </div>
+  </div>
+
+  <div class="forms-container">
     <form id="ticketForm">
       <h2>Ticket Purchase</h2>
 
@@ -52,7 +71,7 @@
       <input type="text" id="surname" name="surname" required placeholder="Enter your surname">
 
       <label for="phone">Phone:</label>
-      <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+      <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number" pattern="[0-9]{10}" inputmode="numeric">
 
       <label for="email">Email:</label>
       <input type="email" id="email" name="email" required placeholder="Enter your email">
@@ -118,36 +137,142 @@
         <button type="submit">Enter Giveaway</button>
       </form>
     </section>
+  </div>
 
-    </section>
+  <div id="ticketModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <form id="ticketForm">
+        <h2 id="eventTitle">Ticket Purchase</h2>
+        <p id="eventPrice">Price: $0</p>
+        
+        <!-- Adult/Children Selection -->
+        <fieldset>
+          <legend>Ticket Type:</legend>
+          <div class="payment-option">
+            <input type="radio" id="adult" name="ticket-type" value="Adult" checked>
+            <label for="adult">Adult</label>
+          </div>
+          
+          <div class="payment-option">
+            <input type="radio" id="children" name="ticket-type" value="Children">
+            <label for="children">Children</label>
+          </div>
+        </fieldset>
+  
+        <!-- Form Fields -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required placeholder="Enter your name">
+  
+        <label for="surname">Surname:</label>
+        <input type="text" id="surname" name="surname" required placeholder="Enter your surname">
+  
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number" pattern="[0-9]{10}" inputmode="numeric">
+  
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required placeholder="Enter your email">
+        
+  
+        <div class="button-group">
+          <input type="submit" value="Buy Ticket">
+          <input type="reset" value="Reset">
+        </div>
+        
+      </form>
+    </div>
+  </div>
+  
+  
+
+   
   </main>
   <script>
+  let originalPrice = 0; // Store the original price globally
+
+function openModal(eventName, price) {
+  const modal = document.getElementById('ticketModal');
+  document.getElementById('eventTitle').textContent = eventName;
+  
+  originalPrice = price; // Store the original price correctly when modal opens
+  
+  // Initialize the event price to the original price
+  document.getElementById('eventPrice').textContent = `Price: $${originalPrice}`;
+
+  // Ensure radio buttons are reset and select "Adult" by default
+  document.getElementById('adult').checked = true;
+  updatePriceBasedOnType(); // Update price based on initial selection (Adult)
+  
+  modal.style.display = 'block';
+}
+
+function closeModal() {
+  const modal = document.getElementById('ticketModal');
+  modal.style.display = 'none';
+}
+
+// Event listener to update price based on the selected ticket type (Adult or Children)
+document.querySelectorAll('input[name="ticket-type"]').forEach(input => {
+  input.addEventListener('change', function () {
+    updatePriceBasedOnType();
+  });
+});
+
+function updatePriceBasedOnType() {
+  const ticketType = document.querySelector('input[name="ticket-type"]:checked').value;
+  let finalPrice = originalPrice; // Start with the original price
+
+  if (ticketType === 'Children') {
+    finalPrice = originalPrice - 5; // $5 discount for children
+  }
+
+  document.getElementById('eventPrice').textContent = `Price: $${finalPrice}`;
+}
+
+
+// Close modal when clicking outside content
+window.onclick = function(event) {
+  const modal = document.getElementById('ticketModal');
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+}
+
+    function navigateToForm(eventName, price){
+      document.getElementById('event').value = eventName;
+      document.getElementById('ticket-price').textContent = `Ticket Price: $${price}`;
+      document.getElementById('ticketForm').scrollIntoView({ behavior: 'smooth' });
+    }
+    function togglePaymentDetails() {
+      const selectedMethod = document.querySelector('[name="payment-method"]:checked').value;
+      document.getElementById('card-details').style.display = selectedMethod === 'Card' ? 'block' : 'none';
+      document.getElementById('paypal-details').style.display = selectedMethod === 'PayPal' ? 'block' : 'none';
+      document.getElementById('cash-details').style.display = selectedMethod === 'Cash' ? 'block' : 'none';
+    }
+
+    const paymentMethods = document.querySelectorAll('[name="payment-method"]');
+    paymentMethods.forEach(method => method.addEventListener('change', togglePaymentDetails));
+
     const ticketDateInput = document.getElementById('ticket-date');
     const ticketPriceDisplay = document.getElementById('ticket-price');
-    const paymentMethods = document.getElementsByName('payment-method');
     const cardDetails = document.getElementById('card-details');
     const paypalDetails = document.getElementById('paypal-details');
     const cashDetails = document.getElementById('cash-details');
     const ticketForm = document.getElementById('ticketForm');
-  
-  
-    
+
     ticketDateInput.addEventListener('change', () => {
       const selectedDate = new Date(ticketDateInput.value);
       const today = new Date();
       const oneMonthLater = new Date();
       oneMonthLater.setMonth(today.getMonth() + 1);
-      if(selectedDate < today||selectedDate>oneMonthLater){
+      if (selectedDate < today || selectedDate > oneMonthLater) {
         alert('Please select a date within the next month and not in the past.');
-        ticketDateInput.value='';
-      }
-      else{
+        ticketDateInput.value = '';
+      } else {
         const day = selectedDate.getDay();
         const price = (day === 0 || day === 6) ? 20 : 15;
         ticketPriceDisplay.textContent = `Ticket Price: $${price}`;
       }
-    
-      ticketPriceDisplay.textContent = `Ticket Price: $${price}`;
     });
 
     // Show/hide payment details based on the selected payment method
@@ -159,121 +284,126 @@
       });
     });
 
-    ticketForm.addEventListener('submit',(event)=>{
-      const selectedMethod = [...paymentMethods].find(method=>method.checked);
-      if(!selectedMethod){
+    ticketForm.addEventListener('submit', (event) => {
+      const selectedMethod = [...paymentMethods].find(method => method.checked);
+      if (!selectedMethod) {
         alert('Please select a payment method.');
         event.preventDefault();
         return;
       }
 
-      if(selectedMethod.value === 'Card'){
+      if (selectedMethod.value === 'Card') {
         const cardNumber = document.getElementById('card-number').value.trim();
         const expiryDate = document.getElementById('expiry-date').value.trim();
         const cvv = document.getElementById('cvv').value.trim();
 
-        if(!cardNumber || !expiryDate || !cvv){
+        if (!cardNumber || !expiryDate || !cvv) {
           alert('Please fill in all card details.');
           event.preventDefault();
           return;
         }
-        
       }
 
-      if(selectedMethod.value === 'PayPal'){
+      if (selectedMethod.value === 'PayPal') {
         const paypalEmail = document.getElementById('paypal-email').value.trim();
-        if(!paypalEmail){
+        if (!paypalEmail) {
           alert('Please fill in your PayPal email.');
           event.preventDefault();
           return;
         }
       }
-        
-    })
-
+    });
+    
+   
   </script>
   <footer>
     <div class="pre-footer">
-        <div class="give-yout-info">
-            <div class="sing-up">
-                <h4>Sign up to our mailing list</h4>
-                <div class="sign-up-form">
-                    <form action="#">
-                        <input type="text" placeholder="Enter your email">
-                        <button>Submit</button>
-                    </form>
+      <div class="give-your-info">
+        <div class="sing-up">
+          <h4>Sign up to our mailing list</h4>
+          <div class="sign-up-form">
+            <form action="#">
+              <input type="text" placeholder="Enter your email" />
+              <button>Submit</button>
+            </form>
+          </div>
+        </div>
+        <div class="buttons">
+          <h5>Join the Museum community</h5>
+          <button>become a member</button>
+          <button>voulenteer</button>
+          <button>donate</button>
+        </div>
+      </div>
 
-                </div>
-            </div>
-            <div class="buttons">
-                <h5>Join the Museum community</h5>
-                <button>become a member</button>
-                <button>voulenteer</button>
-                <button>donate</button>
-            </div>
-        </div>
-        <div class="about">
-            <span>about</span>
-            <a href="#">about</a>
-            <a href="#">Staff and board</a>
-            <a href="#">Join the team</a>
-            <a href="#">voulenteer uppertunies</a>
-            <a href="#">Contact us</a>
-        </div>
-        <div class="contact">
-            <span>Contact</span>
-            <address>
-                <span>Rruga Deshmore e Kombit, Prishtine</span>
-                <a href="mailto:jim@example.com">jim@example.com</a><br />
-                <a href="tel:+14155550132">+1 (415) 555‑0132</a>
-              </address>
-        </div>
-        <div class="opening-hours">
-            <span>opening hours</span>
-            <table>
-                <tr>
-                  <th></th>
-                  <th></th>
-                </tr>
-                <tr>
-                  <td>Monday</td>
-                  <td>Maria Anders</td>
-                </tr>
-                <tr>
-                  <td>Tuesday</td>
-                  <td>Francisco Chang</td>
-                </tr>
-                <tr>
-                  <td>Wednesday</td>
-                  <td>Roland Mendel</td>
-                </tr>
-                <tr>
-                  <td>Thursday</td>
-                  <td>Helen Bennett</td>
-                </tr>
-                <tr>
-                  <td>Friday</td>
-                  <td>Yoshi Tannamuri</td>
-                </tr>
-                <tr>
-                  <td>Saturday</td>
-                  <td>Giovanni Rovelli</td>
-                </tr>
-                <tr>
-                    <td>Sunday</td>
-                    <td>Giovanni Rovelli</td>
-                </tr>
-              </table>
-        </div>
+      <div class="about">
+        <span>about</span>
+        <a href="#">about</a>
+        <a href="#">Staff and board</a>
+        <a href="#">Join the team</a>
+        <a href="#">voulenteer uppertunies</a>
+        <a href="#">Contact us</a>
+      </div>
+      <div class="contact">
+        <span id="contact">Contact</span>
+        <address>
+          <span>Rruga Deshmore e Kombit, Prishtine</span>
+          <a href="mailto:jim@example.com">jim@example.com</a><br />
+          <a href="tel:+14155550132">+1 (415) 555‑0132</a>
+        </address>
+      </div>
+      <div class="opening-hours">
+        <span id="time">opening hours</span>
+        <table>
+          <tr>
+            <th></th>
+            <th></th>
+          </tr>
+          <tr>
+            <td>Monday</td>
+            <td>Closed*</td>
+          </tr>
+          <tr>
+            <td>Tuesday</td>
+            <td>10am – 4pm</td>
+          </tr>
+          <tr>
+            <td>Wednesday</td>
+            <td>10am – 4pm</td>
+          </tr>
+          <tr>
+            <td>Thursday</td>
+            <td>10am – 4pm</td>
+          </tr>
+          <tr>
+            <td>Friday</td>
+            <td>10am – 4pm</td>
+          </tr>
+          <tr>
+            <td>Saturday</td>
+            <td>10am – 4pm</td>
+          </tr>
+          <tr>
+            <td>Sunday</td>
+            <td>10am – 5pm</td>
+          </tr>
+        </table>
+      </div>
     </div>
-    <hr>
+    <hr />
     <div class="social-media">
-        <div class="social"></div>
-        <div class="copyright">
-            <span>&copy; copyright 2025 museum of arts</span>
-        </div>
+      <div class="social">
+        <a href="#"
+          ><i class="fa fa-instagram" style="font-size: 30px"></i
+        ></a>
+        <a href="#"><i class="fa fa-facebook" style="font-size: 30px"></i></a>
+        <a href="#"><i class="fa fa-github" style="font-size: 30px"></i></a>
+      </div>
+      <div class="copyright">
+        <span>&copy; copyright 2025 museum of arts</span>
+      </div>
     </div>
-</footer>
+  </footer>
   
 </body>
 </html>

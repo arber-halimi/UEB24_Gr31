@@ -225,9 +225,11 @@
                 <h2 id="modalTitle"></h2>
             </div>
             <div class="modal-body">
+                <span id="prevEvent" class="arrow" onclick="navigateEvent('prev')">&#8592;</span>
                 <img id="modalImage" src="" alt="Event Image">
                 <p id="modalDescription"></p>
                 <a id="buyTicketButton" href="#" class="buy-ticket-btn" target="_blank">Get Ticket</a>
+                <span id="nextEvent" class="arrow" onclick="navigateEvent('next')">&#8594;</span>
             </div>
         </div>
     </div>

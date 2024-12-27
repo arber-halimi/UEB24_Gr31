@@ -4,16 +4,10 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About</title>
+    <title>The Louvre History</title>
     <link rel="stylesheet" href="./assets/style/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <script
-      src="https://kit.fontawesome.com/a076d05399.js"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
@@ -47,36 +41,26 @@
       </ul>
     </div>
   </header>
-  <img src="thelouvre.jpg" alt="">
+  <div class="main">
+    <img src="./assets/images/thelouvre.jpg" alt="The Louvre">
+</div>
   
 
-  <div class="main">
-      <h2>About Us</h2>
-      <p>
-        Welcome to our Museum! Our institution is dedicated to the preservation,
-        research, and exhibition of a diverse range of artifacts and artworks
-        from around the world. We strive to provide educational and enriching
-        experiences for all our visitors.
-      </p>
-      <p>
-        Our museum was established in 1793, and since then, we have been
-        committed to fostering a greater understanding and appreciation of our
-        shared cultural heritage. Our collections encompass a wide variety of
-        disciplines, including art, history, science, and more.
-      </p>
-      <p>
-        We offer a range of programs and activities for people of all ages,
-        including guided tours, workshops, and special events. Our goal is to
-        make our museum a welcoming and inclusive space for everyone to explore
-        and learn.
-      </p>
-      <p>
-        Thank you for visiting our museum. We hope you enjoy your time here and
-        come away with a deeper appreciation for the wonders of our world.
-      </p>
-    </div>
-
-
+  
+  <div class="container">
+    <!-- Vertical Navigation -->
+    <div class="nav">
+      <h2>Display:</h2>
+      <hr>
+      <ul>
+          <li class="nav-item active" id="history" onclick="showInfo('history')">History</li>
+          <li class="nav-item" id="location" onclick="showInfo('location')">Location</li>
+          <li class="nav-item" id="rules" onclick="showInfo('rules')">Rules</li>
+          <li class="nav-item" id="staff and board" onclick="showInfo('staff and board')">Staff and Board</li>
+      </ul>
+      <hr>
+  </div>
+ 
 </body>
 </html>
 

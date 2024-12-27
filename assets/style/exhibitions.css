@@ -337,62 +337,6 @@ h1 {
 
 /* Footer */
 
-footer{
-    
-    background-color: #000000;
-}
-
-footer .pre-footer {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    width: 85%;
-    margin: 0 auto;
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-        
-.give-your-info { 
-    grid-area: 1 / 1 / 2 / 2;
-    padding-right: 40px;
-}
-
-.give-your-info .sing-up h4{
-    color: lightgray;
-    margin-bottom: 10px;
-}
-
-.give-your-info .sing-up .sign-up-form input{
-    background-color: transparent;
-    border-style:none none solid none;
-}
-
-.give-your-info .sing-up .sign-up-form button{
-    background-color: transparent;
-    border-style:none none solid none;
-    color: lightgray;
-}
-
-.give-your-info .buttons{
-    display: flex; 
-    flex-direction: column;
-    color: lightgray;
-    margin-top: 15px;
-}
-
-.give-your-info .buttons button{
-    padding: 10px;
-    margin-top: 10px;
-    background-color: transparent;
-    color: lightgray;
-    border: solid 1px;
-    border-color: gray;
-    text-transform: uppercase;
-}
-
-
 .about { 
     grid-area: 1 / 2 / 2 / 3;
     display: flex; 
@@ -476,4 +420,82 @@ footer .pre-footer {
 .social-media .copyright span{
     color: lightgray;
     text-transform: capitalize;
+}
+
+.intro-to-categories .itc-photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    gap: 30px;
+    margin-bottom: 100px;
+}
+
+.intro-to-categories .itc-photos img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.intro-to-categories .itc-photos img:hover{
+    width: 102%;
+    height: 102%;
+}
+    
+
+footer{
+    
+    background-color: #000000;
+}
+
+footer .pre-footer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    width: 85%;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+        
+.give-your-info { 
+    grid-area: 1 / 1 / 2 / 2;
+    padding-right: 40px;
+}
+
+.give-your-info .sing-up h4{
+    color: lightgray;
+    margin-bottom: 10px;
+}
+
+.give-your-info .sing-up .sign-up-form input{
+    background-color: transparent;
+    border-style:none none solid none;
+}
+
+.give-your-info .sing-up .sign-up-form button{
+    background-color: transparent;
+    border-style:none none solid none;
+    color: lightgray;
+}
+
+.give-your-info .buttons{
+    display: flex; 
+    flex-direction: column;
+    color: lightgray;
+    margin-top: 15px;
+}
+
+.give-your-info .buttons button{
+    padding: 10px;
+    margin-top: 10px;
+    background-color: transparent;
+    color: lightgray;
+    border: solid 1px;
+    border-color: gray;
+    text-transform: uppercase;
 }

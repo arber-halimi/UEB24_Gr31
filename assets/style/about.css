@@ -110,23 +110,42 @@ header .header ul li a{
     font-weight: bold;
 }
 
-.main::after{
+.main {
+    position: relative;  
+}
+
+.main::after {
     content: " ";
     position: absolute;
     width: 100%;
     height: 500px;
-    top: 100;
+    top: 0;   
     left: 0;
-    background-color: rgba(0, 0, 0, 0.55);
+    background-color: rgba(0, 0, 0, 0.55); 
+    opacity: 0;  
+    transition: opacity 0.3s ease;  
+}
+
+.main:hover::after {
+    opacity: 1;  
 }
 
 .main img {
     object-fit: cover;
     width: 100%;
     height: 500px;
-    transition: opacity 0.3s ease;
+    transition: transform 0.3s ease;  
 }
 
-.main:hover img {
-    opacity: 0;
+
+
+.nav {
+    width: 650px;  
+    background-color: #fff;
+    padding: 30px 25px;     
+    border-right: 2px solid #ccc;
+    height: 100vh;           
+    position: sticky;
+    top: 0;
+    margin-top:0px;
 }

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./assets/style/about.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
   <header>
@@ -52,10 +53,10 @@
       <h2>Display:</h2>
       <hr>
       <ul>
-          <li class="nav-item active" id="history" onclick="showInfo('history')">History</li>
-          <li class="nav-item" id="location" onclick="showInfo('location')">Location</li>
-          <li class="nav-item" id="rules" onclick="showInfo('rules')">Rules</li>
-          <li class="nav-item" id="staff and board" onclick="showInfo('staff and board')">Staff and Board</li>
+          <li class="nav-item active" id="history" onclick="showInfo('history')">History<i data-feather="chevron-right"></i></li>
+          <li class="nav-item" id="location" onclick="showInfo('location')">Location<i data-feather="chevron-right"></i></li>
+          <li class="nav-item" id="rules" onclick="showInfo('rules')">Rules<i data-feather="chevron-right"></i></li>
+          <li class="nav-item" id="staff and board" onclick="showInfo('staff and board')">Staff and Board<i data-feather="chevron-right"></i></li>
       </ul>
       <hr>
   </div>
@@ -165,7 +166,9 @@
 
 </body>
 </html>
-
+  <script>
+    feather.replace(); 
+ </script>
 </body>
 </html>
 

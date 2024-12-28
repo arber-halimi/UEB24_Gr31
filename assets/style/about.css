@@ -143,11 +143,10 @@ header .header ul li a{
     width: 650px;  
     background-color: #fff;
     padding: 30px 25px;     
-    border-right: 2px solid #ccc;
     height: 100vh;           
     position: sticky;
     top: 0;
-    margin-top:0px;
+    margin-top: 2px;
 }
 
 .content {
@@ -176,9 +175,24 @@ header .header ul li a{
     display: flex;
     justify-content: space-between; 
     align-items: center; 
-    margin-bottom: 10px; 
-    margin-top:10px;
+    margin-bottom: 15px; 
+    margin-top:15px;
     position: relative; 
 }
 
+.nav-item::after {  
+    color: #999;      
+    font-size: 20px;   
+    margin-left: 10px; 
+    text-decoration: none; 
+}
 
+.nav-item i {
+    margin-left: 10px;
+    color: #999;
+    transition: transform 0.3s ease;
+}
+
+.nav-item:hover i {
+    transform: translateX(5px);
+}

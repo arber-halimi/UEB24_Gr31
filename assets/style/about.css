@@ -196,3 +196,27 @@ header .header ul li a{
 .nav-item:hover i {
     transform: translateX(5px);
 }
+
+.nav-item:hover {
+    background-color: #f0f0f0; 
+    color: #333; 
+}
+
+.nav-item.active {
+    background-color: #e0e0e0; 
+    color: #333; 
+    border-left: 5px solid #000; 
+    font-weight: bold; 
+    text-decoration: underline;
+    text-decoration-color: #333; 
+}
+
+.nav-item:hover {
+    text-decoration: underline;
+    text-decoration-color: #333; 
+}
+
+.nav-item {
+    transition: background-color 0.3s ease, color 0.3s ease, border-left 0.3s ease, text-decoration 0.3s ease;
+}
+

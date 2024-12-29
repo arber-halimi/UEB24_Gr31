@@ -272,3 +272,76 @@ footer .pre-footer {
     border-color: gray;
     text-transform: uppercase;
 }
+
+.three-exhibitions {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    max-width: 100%; 
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+.exhibition-card {
+    font-family: var(--p-font);
+    flex: 1;
+    min-width: 300px;
+    max-width: 33.33%; 
+    text-align: center;
+    background-color: white;
+    border: 1px solid #ddd;
+    position: relative;
+    transition: transform 0.3s ease; 
+}
+
+.exhibition-card img {
+    width: 100%;
+    height: auto;
+}
+
+.exhibition-card .info p,
+.exhibition-card .info button {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.exhibition-card:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.exhibition-card:hover .info p,
+.exhibition-card:hover .info button {
+    opacity: 1;
+    visibility: visible;
+}
+.exhibition-card:hover .info p{
+    color:#008573;
+}
+.exhibition-card .info p{
+    margin: 10px;
+}
+.exhibition-card .info button {
+    margin: 0 10 10 10 px;
+}
+.exhibition-card .info {
+    padding: 10px;
+    position: relative;
+}
+
+.exhibition-card button {
+    margin-top: 10px;
+    background-color: transparent;
+    color: #008573;
+    border: 1px solid #008573;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.exhibition-card button:hover {
+    background-color: #008573;
+    color: white;
+}

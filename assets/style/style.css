@@ -298,10 +298,8 @@ header .header ul li a{
 }
 
 
-
 .intro-to-categories .itc-photos img:hover{
-    width: 102%;
-    height: 102%;
+    animation: anim 3s ease 0s 0.5 normal backwards;
 }
     
 

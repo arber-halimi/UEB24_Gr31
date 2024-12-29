@@ -272,3 +272,18 @@ header .header ul li a{
     margin-left: auto;
     margin-right: auto;
 }
+
+.iframe-container {
+    max-width: 100%;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden; 
+}
+
+iframe {
+    width: 100%;
+    height: 500px; 
+    border: 0; 
+}

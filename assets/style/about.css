@@ -218,3 +218,57 @@ header .header ul li a{
     transition: background-color 0.3s ease, color 0.3s ease, border-left 0.3s ease, text-decoration 0.3s ease;
 }
 
+.content p {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;           
+    margin-top: 30px;         
+    text-align: justify;        
+    width: 100%;                 
+    max-width: 1000px;            
+    padding: 0;                  
+}
+
+.content h3 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;         
+    text-align: center;          
+}
+
+.content hr {
+    width: 80%;                  
+    border: 1px solid #ccc;     
+    margin: 30px auto;          
+}
+
+.content .info h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;         
+    text-align: center;          
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 2000px;           
+    margin-top: 20px;           
+    justify-content: flex-start; 
+}
+
+.container .content {
+    margin-left: 0;  
+}
+
+.content img {
+    max-width: 100%;              
+    margin-bottom: 30px;        
+    border-radius: 10px;         
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

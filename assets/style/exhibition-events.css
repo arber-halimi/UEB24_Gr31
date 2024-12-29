@@ -16,6 +16,7 @@
     box-sizing: border-box;
 }
 
+/* Header */
 
 header{
     display: block;
@@ -109,6 +110,8 @@ header .header ul li a{
     font-family: var(--logo-font);
     font-weight: bold;
 }
+
+/* Footer */
 
 .about { 
     grid-area: 1 / 2 / 2 / 3;
@@ -273,6 +276,8 @@ footer .pre-footer {
     text-transform: uppercase;
 }
 
+/* three exhibitions */
+
 .three-exhibitions {
     display: flex;
     justify-content: space-between;
@@ -342,6 +347,65 @@ footer .pre-footer {
 }
 
 .exhibition-card button:hover {
+    background-color: #008573;
+    color: white;
+}
+
+/* Featured exhibitions */
+
+.featured-exhibition {
+    width: 100%;
+    margin-bottom: 20px;
+    font-family: var(--p-font);
+    position: relative;
+    transition: transform 0.3s ease; 
+}
+
+.featured-exhibition .info p,
+.featured-exhibition .info button {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.featured-exhibition .info p{
+    margin: 10px;
+    font-size: 20px;
+}
+.featured-exhibition .info button {
+    margin: 0 10 10 10 px;
+}
+
+.featured-exhibition:hover {
+    transform: scale(1.1);
+}
+.featured-exhibition:hover .info p{
+    color: #008573;
+}
+
+.featured-exhibition:hover .info p,
+.featured-exhibition:hover .info button {
+    opacity: 1;
+    visibility: visible;
+}
+
+.featured-exhibition .info {
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+    border: 1px solid #ddd;
+}
+
+.featured-exhibition button {
+    margin-top: 20px;
+    background-color: transparent;
+    color: #008573;
+    border: 1px solid #008573;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.featured-exhibition button:hover {
     background-color: #008573;
     color: white;
 }

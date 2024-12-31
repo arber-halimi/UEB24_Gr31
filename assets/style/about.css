@@ -141,8 +141,9 @@ header .header ul li a{
     width: 650px;  
     background-color: #fff;
     padding: 30px 25px;  
-    padding-top: 50px;  /* Added space above the navigation items */
-    padding-bottom: 50px;    
+    padding-top: 50px;  
+    padding-bottom: 50px; 
+    padding-left: 100px;   
     height: 100vh;           
     position: sticky;
     top: 0;
@@ -225,6 +226,8 @@ header .header ul li a{
 
 .nav h2 {
     margin-bottom: 15px; 
+     font: 400 18px / 1.56 Roboto, Open Sans, Arial, Helvetica, sans-serif;
+     color:#000000
 }
 .nav ul li {
     margin-top: 10px; 

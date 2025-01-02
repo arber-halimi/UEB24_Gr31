@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Museum Catalog</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="./assets/style/style.css" />
+
 
     <!-- </div> -->
     <style>
@@ -64,7 +66,7 @@
 
       .category div {
         position: absolute;
-        bottom: 20px;
+        bottom: 0px;
         background-color: rgba(0, 0, 0, 0.7);
         color: white;
         width: 100%;
@@ -109,7 +111,7 @@
         border-radius: 30px;
         padding: 10px;
         background-color: #373737;
-        box-shadow: 7px 7px 8px rgba(165, 164, 164, 0.5); /* Hije me zhvendosje dhe turbullim */
+        box-shadow: 4px 4px 8px #008573; /* Hije me zhvendosje dhe turbullim */
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -117,12 +119,13 @@
         align-items: center;
         overflow: hidden;
         position: relative; /* Ensure stacking of child elements */
-        transition: transform 0.3s ease, background-color 0.3s ease;
+        transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Add box-shadow transition */
       }
 
       .object-item:hover {
         transform: scale(1.02); /* Slight scaling for a subtle hover effect */
         background-color: #373737;
+        box-shadow: 12px 12px 20px #008573; /* Bigger shadow on hover */
       }
 
       .object-item img {
@@ -186,37 +189,17 @@
         text-align: center;
         overflow-y: hidden;
         overflow-x: hidden;
+
+
       }
       .modal-body {
         max-height: 90vh; /* You can adjust this as needed */
         overflow-y: auto; /* Allows the body to scroll */
         position: relative; /* Sigurohuni që .modal-body të ketë pozicion në mënyrë që butonat të pozicionohen relativisht ndaj saj */
+        margin-top: 20px;
+        margin-bottom:10px;
       }
-      .modal-nav {
-        position: absolute;
-        top: 50%; /* Pozicionohet në qendër vertikale */
-        transform: translateY(-50%); /* Shkallëzim për qendrim perfekt */
-        border-radius: 20px;
-        width: 60px; /* Gjerësia e butonit */
-        height: 60%; /* Lartësia e butonit si përqindje e modal-it */
-        background-color: rgba(
-          145,
-          145,
-          145,
-          0.5
-        ); /* Ngjyrë e errët transparente */
-        border: none; /* Pa kufij */
-        z-index: 10; /* Përpara imazhit */
-        cursor: pointer; /* Parqat si pubton i shtypshem
-    opacity: 0.7; /* Gjysmë transparente */
-        transition: opacity 0.3s ease, background-color 0.3s ease;
-      }
-      #prevBtn {
-        left: 13px; /* Pozita nga e majta e modalit */
-      }
-      #nextBtn {
-        right: 13px; /* Pozita nga e djathta e modalit */
-      }
+
       .modal-header {
         position: relative;
         text-align: center;
@@ -240,12 +223,8 @@
         color: black;
       }
 
-      .modal-body {
-        margin-top: 20px;
-      }
-
       .modal-body img {
-        width: 700px;
+        width: 800px;
         height: 600px;
         object-fit: cover;
         margin-bottom: 10px;
@@ -254,7 +233,37 @@
     </style>
   </head>
   <body>
-    <h1 style="color: #008573; font-weight: bold">Museum Catalog</h1>
+    <header>
+      <div class="para-header">
+        <div class="search-bar">
+          <div class="search">
+            <i class="fa fa-search"></i>
+            <p>Search</p>
+          </div>
+          <div class="languages">
+            <select id="cars" name="cars">
+              <option value="volvo">English</option>
+              <option value="saab">Shqip</option>
+            </select>
+          </div>
+        </div>
+        <div class="logo">
+          <h1><span>M</span>useum</h1>
+        </div>
+        <div class="tickets">
+          <button><i class="fas fa-ticket-alt"></i> Tickets</button>
+        </div>
+      </div>
+      <hr />
+      <div class="header">
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Catalog</a></li>
+          <li><a href="#">Tickets</a></li>
+          <li><a href="#">Exhibitions</a></li>
+        </ul>
+      </div>
+    </header>
 
     <!-- Categories -->
     <div class="categories">
@@ -312,16 +321,14 @@
 
     <h2
       style="
-        background: linear-gradient(to bottom, #484848, rgb(0, 0, 0));
+        background: linear-gradient(to bottom, #008573, rgb(0, 0, 0));
         font-family: 'Arial', sans-serif;
-        color: #008573;
+        color: rgb(228, 228, 228);
         text-align: center;
-        padding: 20px;
-        margin: 10px 0 20px 0;
+        padding: 30px 20px;
+        margin: 0 0 20px 0; /* Removed top margin for higher placement */
         width: 100%;
         box-sizing: border-box;
-        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
-        border-radius: 10px;
       "
     >
       Welcome to our museum collection,<br />
@@ -687,7 +694,7 @@
       </div>
       <div
         class="object-item"
-        data-category="old-machines"
+        data-category="old-artifacts"
         data-description="The Antikythera Mechanism is an ancient 
         Greek analog computer, often regarded as one of the earliest known mechanical devices. Discovered in 1901 in a 
         shipwreck off the coast of Antikythera, a Greek island, it dates back to approximately 100 BC. The mechanism is 
@@ -739,32 +746,32 @@
         </div>
       </div>
       <div
-      class="object-item"
-      data-category="paintings"
-      data-description="Las Meninas is one of the most renowned masterpieces by Diego Velázquez, painted in 1656 during his 
-      tenure as the court painter for Philip IV of Spain. The painting depicts a complex and enigmatic scene within the royal 
-      court, with the young Infanta Margarita at its center, surrounded by her attendants, courtiers, and two court dwarfs. 
-      Velázquez also included himself in the composition, portraying himself in the act of painting. The work stands out for 
-      its innovative use of perspective, light, and reflections, creating a sense of depth and mystery. A mirror in the 
-      background reflects the figures of the king and queen, adding a symbolic layer to the narrative and blurring the boundaries 
-      between the observer, the subjects, and the painter. Las Meninas is celebrated as a brilliant example of Baroque artistry 
-      and resides in the Prado Museum in Madrid, where it continues to inspire art enthusiasts and scholars alike with its 
-      complexity and artistry."
-      onclick="openModal(this)"
-    >
-      <img
-        src="assets\CATALOG\foto,paintings\Las Meninas-Getty_0.jpg"
-        alt="Las Meninas"
-      />
-      <div class="info">
-        <p style="color: #008573; font-size: 20px">
-          <b>Las Meninas</b>
-        </p>
-        <p style="font-size: 15px"><b>by Diego Velázquez</b></p>
-        <p>1656</p>
+        class="object-item"
+        data-category="paintings"
+        data-description="Las Meninas is one of the most renowned masterpieces by Diego Velázquez, painted in 1656 during his 
+        tenure as the court painter for Philip IV of Spain. The painting depicts a complex and enigmatic scene within the royal 
+        court, with the young Infanta Margarita at its center, surrounded by her attendants, courtiers, and two court dwarfs. 
+        Velázquez also included himself in the composition, portraying himself in the act of painting. The work stands out for 
+        its innovative use of perspective, light, and reflections, creating a sense of depth and mystery. A mirror in the 
+        background reflects the figures of the king and queen, adding a symbolic layer to the narrative and blurring the boundaries 
+        between the observer, the subjects, and the painter. Las Meninas is celebrated as a brilliant example of Baroque artistry 
+        and resides in the Prado Museum in Madrid, where it continues to inspire art enthusiasts and scholars alike with its 
+        complexity and artistry."
+        onclick="openModal(this)"
+      >
+        <img
+          src="assets\CATALOG\foto,paintings\Las Meninas-Getty_0.jpg"
+          alt="Las Meninas"
+        />
+        <div class="info">
+          <p style="color: #008573; font-size: 20px">
+            <b>Las Meninas</b>
+          </p>
+          <p style="font-size: 15px"><b>by Diego Velázquez</b></p>
+          <p>1656</p>
+        </div>
       </div>
-    </div>
-    <div
+      <div
         class="object-item"
         data-category="old-artifacts"
         data-description="The Gutenberg Bible, also known as the 42-line Bible, is one of the most iconic artifacts in the 
@@ -817,35 +824,71 @@
           <p>2.5 million -10,000 years ago</p>
         </div>
       </div>
-    <div
-    class="object-item"
-    data-category="paintings"
-    data-description="The Last Supper is one of the most renowned masterpieces in art history, created by Leonardo da Vinci between 
-    1495 and 1498. This monumental work is located on the wall of the convent of Santa Maria delle Grazie in Milan, Italy, 
-    and depicts a pivotal moment from the Gospel: Jesus' final meal with his twelve disciples, where he announces that one of 
-    them will betray him. Leonardo employed an innovative artistic and technical approach, using tempera and oil on a dry plaster 
-    base instead of the traditional fresco technique. This allowed for extraordinary detail, emphasizing the individual emotions 
-    and reactions of the disciples to Jesus' shocking revelation. However, the experimental method led to early deterioration, 
-    prompting multiple restorations over the centuries.The composition showcases Leonardo’s mastery, with the use of linear 
-    perspective directing attention to the figure of Jesus at the center. Jesus is depicted calm and serene, contrasting with 
-    the dramatic emotional responses of the disciples, creating a sense of tension and divine harmony.Despite its deterioration, 
-    The Last Supper remains a powerful symbol of Renaissance art and continues to inspire millions worldwide with its profound 
-    spiritual and artistic significance."
-    onclick="openModal(this)"
-  >
-    <img
-      src="assets\CATALOG\foto,paintings\Santa-Maria-Delle-Grazie-Church-Last-Supper-Leonardo-Da-Vinci-milan-italy-summer_1.jpg"
-      alt="The Last Supper"
-    />
-    <div class="info">
-      <p style="color: #008573; font-size: 20px">
-        <b>The Last Supper</b>
-      </p>
-      <p style="font-size: 15px"><b>by Leonardo da Vinci</b></p>
-      <p>1495–1498</p>
+      <div
+        class="object-item"
+        data-category="old-machines"
+        data-description="The Daimler Reitwagen, invented by Gottlieb Daimler and Wilhelm Maybach in 1885, 
+        is widely regarded as the world’s first true motorcycle. The name “Reitwagen” translates to “riding car” in German, 
+        highlighting its unique combination of mechanical innovation and transportation utility. Unlike bicycles or earlier 
+        steam-powered cycles, the Reitwagen was powered by an internal combustion engine, making it a revolutionary step forward 
+        in personal transportation technology.At its core, the Reitwagen featured a wooden frame and two iron-rimmed wheels. 
+        It was equipped with a single-cylinder four-stroke gasoline engine, mounted on its frame, which produced 0.5 horsepower 
+        and allowed the vehicle to reach a top speed of approximately 12 km/h (7.5 mph). To stabilize the machine, Daimler and 
+        Maybach added two small stabilizing wheels, resembling training wheels on modern bicycles, making the design more practical 
+        for early riders.The significance of the Daimler Reitwagen extends beyond its design. It was the first motorized 
+        vehicle to use an internal combustion engine—a technology that would go on to dominate automotive engineering. 
+        This pioneering effort laid the groundwork for the development of modern motorcycles and later influenced automobile 
+        production. The Reitwagen's engine, which Daimler called the “grandfather clock” engine due to its vertical cylinder 
+        arrangement, was compact, efficient, and innovative for its time. The Daimler Reitwagen was not intended for mass 
+        production. Instead, it served as an experimental prototype to demonstrate the potential of internal combustion 
+        engines. Its creators, Daimler and Maybach, used the insights gained from this project to establish the foundations 
+        of the modern automotive industry. While the Reitwagen itself was not practical for everyday use, its legacy as the 
+        first motorcycle is a testament to human ingenuity and the relentless pursuit of progress in transportation technology."
+        onclick="openModal(this)"
+      >
+        <img
+          src="assets\CATALOG\foto.old machine\The first motorcycle.webp"
+          alt="The Daimler Reitwagen"
+        />
+        <div class="info">
+          <p style="color: #008573; font-size: 20px">
+            <b>The Daimler Reitwagen</b>
+          </p>
+          <p style="font-size: 15px"><b>by Gottlieb Daimler & Wilhelm Maybach</b></p>
+
+          <p>1885</p>
+        </div>
+      </div>
+      <div
+        class="object-item"
+        data-category="paintings"
+        data-description="The Last Supper is one of the most renowned masterpieces in art history, created by Leonardo da Vinci between 
+        1495 and 1498. This monumental work is located on the wall of the convent of Santa Maria delle Grazie in Milan, Italy, 
+        and depicts a pivotal moment from the Gospel: Jesus' final meal with his twelve disciples, where he announces that one of 
+        them will betray him. Leonardo employed an innovative artistic and technical approach, using tempera and oil on a dry plaster 
+        base instead of the traditional fresco technique. This allowed for extraordinary detail, emphasizing the individual emotions 
+        and reactions of the disciples to Jesus' shocking revelation. However, the experimental method led to early deterioration, 
+        prompting multiple restorations over the centuries.The composition showcases Leonardo’s mastery, with the use of linear 
+        perspective directing attention to the figure of Jesus at the center. Jesus is depicted calm and serene, contrasting with 
+        the dramatic emotional responses of the disciples, creating a sense of tension and divine harmony.Despite its deterioration, 
+        The Last Supper remains a powerful symbol of Renaissance art and continues to inspire millions worldwide with its profound 
+        spiritual and artistic significance."
+        onclick="openModal(this)"
+    >
+        <img
+          src="assets\CATALOG\foto,paintings\Santa-Maria-Delle-Grazie-Church-Last-Supper-Leonardo-Da-Vinci-milan-italy-summer_1.jpg"
+          alt="The Last Supper"
+        />
+        <div class="info">
+          <p style="color: #008573; font-size: 20px">
+            <b>The Last Supper</b>
+          </p>
+          <p style="font-size: 15px"><b>by Leonardo da Vinci</b></p>
+          <p>1495–1498</p>
+        </div>
+      </div>
     </div>
-  </div>
-    </div>
+    
 
     <!-- Modal for Object Information -->
     <div id="modal" class="modal">
@@ -855,13 +898,11 @@
           <h2>Object Information</h2>
         </div>
         <div class="modal-body">
-          <button id="prevBtn" class="modal-nav">&#10094;</button>
-          <!-- Shigjeta majtas -->
           <img src="" alt="Object Image" class="modal-img" id="modalImage" />
-          <button id="nextBtn" class="modal-nav">&#10095;</button>
           <div id="modalName"></div>
           <div id="modalTimePeriod"></div>
-          <div id="modalDescription"></div>
+          <div id="modalDescription"></div>        
+          <br><br><br>
         </div>
       </div>
     </div>

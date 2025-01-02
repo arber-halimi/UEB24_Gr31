@@ -396,5 +396,10 @@ html {
   }
   .modal-content #more-info-btn:hover {
     background: #5da9a5;
-    transform: scale(1.05);
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
   }
+  .modal-content #more-info-btn:focus {
+    outline: 2px solid var(--highlight-color); /* Ensure focus is visible */
+    transform: scale(1.1);
+}

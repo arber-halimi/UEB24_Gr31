@@ -331,6 +331,12 @@ window.onclick = function(event) {
         }
       }
     });
+    document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeModal(); // Implement closeModal function
+    }
+});
+
   </script>
   <footer>
     <div class="pre-footer">

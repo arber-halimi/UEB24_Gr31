@@ -49,17 +49,17 @@
   </header>
   <main>
     <div class="event-cards-container">
-    <div class="event-card" onclick="openModal('Fossil Exhibition', 25)">
+    <div class="event-card" onclick="openModal('Fossil Exhibition', 25,'./exhibition-events/exhibitions/exhibition2.html')">
       <img src="./assets/CATALOG/foto.creatures/Mammuthus.jpg" alt="Art Exhibition">
       <h3>Fossil Exhibition</h3>
       <p>Click To Buy Tickets!</p>
     </div>
-    <div class="event-card" onclick="openModal('Pictures Tour', 20)">
+    <div class="event-card" onclick="openModal('Pictures Tour', 20,'./exhibition-events/exhibitions/exhibition1.html')">
       <img src="./assets/CATALOG/foto,paintings/girl-pearl-earring.webp" alt="History Tour">
       <h3>Pictures Tour</h3>
       <p>Click To Buy Tickets!</p>
     </div>
-    <div class="event-card" onclick="openModal('Science Revolution Fair', 15)">
+    <div class="event-card" onclick="openModal('Science Revolution Fair', 15,'./exhibition-events/exhibitions/exhibition3.html')">
       <img src="./assets/CATALOG/foto.old machine/Benz Patent-Motorwagen.webp" alt="Science Fair">
       <h3>Science Revolution Fair</h3>
       <p>Click To Buy Tickets!</p>
@@ -186,6 +186,8 @@
         </div>
         
       </form>
+      <button id="more-info-btn">More Info</button>
+
     </div>
   </div>
   
@@ -194,23 +196,33 @@
    
   </main>
   <script>
-  let originalPrice = 0; // Store the original price globally
+    document.getElementById('more-info-btn').addEventListener('click', () => {
+  const modal = document.getElementById('ticketModal');
+  const redirectUrl = modal.getAttribute('data-redirect-url');
+  
+  if (redirectUrl) {
+    window.location.href = redirectUrl; // Redirect to the exhibition page
+  }
+});
 
-function openModal(eventName, price) {
+  let originalPrice = 0; 
+  function openModal(eventName, price, redirectUrl) {
   const modal = document.getElementById('ticketModal');
   document.getElementById('eventTitle').textContent = eventName;
   
-  originalPrice = price; // Store the original price correctly when modal opens
-  
-  // Initialize the event price to the original price
+  originalPrice = price; 
   document.getElementById('eventPrice').textContent = `Price: $${originalPrice}`;
 
-  // Ensure radio buttons are reset and select "Adult" by default
+  
   document.getElementById('adult').checked = true;
-  updatePriceBasedOnType(); // Update price based on initial selection (Adult)
+  updatePriceBasedOnType(); 
   
   modal.style.display = 'block';
+
+  
+  modal.setAttribute('data-redirect-url', redirectUrl);
 }
+
 
 function closeModal() {
   const modal = document.getElementById('ticketModal');
@@ -319,8 +331,6 @@ window.onclick = function(event) {
         }
       }
     });
-    
-   
   </script>
   <footer>
     <div class="pre-footer">

@@ -1029,6 +1029,26 @@
           }
         }
       }
+      $(document).ready(function () {
+  // Retrieve the selected category
+  const selectedCategory = sessionStorage.getItem('selectedCategory') || 'all';
+
+  // Filter objects based on the retrieved category
+  $(".object-item").each(function () {
+    if (selectedCategory === "all" || $(this).data("category") === selectedCategory) {
+      $(this).show();
+    } else {
+      $(this).hide();
+    }
+  });
+
+  // Highlight the corresponding category button if available
+  $(".category").removeClass("selected");
+  if (selectedCategory !== "all") {
+    $(`.category[data-category='${selectedCategory}']`).addClass("selected");
+  }
+});
+
     </script>
   </body>
 </html>

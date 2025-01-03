@@ -27,3 +27,9 @@
                 });
             });
 });
+
+function filterCatalog(category) {
+    // Save the filter category to sessionStorage
+    sessionStorage.setItem('selectedCategory', category);
+  }
+  

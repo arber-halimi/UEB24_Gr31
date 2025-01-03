@@ -474,6 +474,35 @@
           }
         }
       });
+      function validateEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (emailRegex.test(email)) {
+        return true;
+    } else {
+        alert("Please enter a valid email address.");
+        return false;
+    }
+}
+function validatePassword(password) {
+    const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    if (passwordRegex.test(password)) {
+        return true;
+    } else {
+        alert("Password must be at least 8 characters long, contain one uppercase letter, one number, and one special character.");
+        return false;
+    }
+}
+function validateRequiredFields(form) {
+    let isValid = true;
+    const requiredFields = form.querySelectorAll("[required]");
+    requiredFields.forEach(field => {
+        if (field.value.trim() === "") {
+            alert(`${field.name} is required.`);
+            isValid = false;
+        }
+    });
+    return isValid;
+}
     </script>
     <footer>
       <div class="pre-footer">

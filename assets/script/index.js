@@ -10,3 +10,7 @@ document.querySelector('.main').addEventListener('mouseleave', function() {
     video.pause();
     video.currentTime = 0; 
 });
+
+//adding header
+
+// $('#header').load('/header/header.html');

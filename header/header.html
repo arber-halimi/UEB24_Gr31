@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>header</title>
+
+    <style>
+      header {
+        display: block;
+        background-color: #000000;
+      }
+
+      header .para-header {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        margin: 0 auto;
+        padding-top: 40px;
+        padding-bottom: 15px;
+      }
+
+      header .para-header .search-bar {
+        display: flex;
+      }
+
+      header .para-header .search-bar .search {
+        display: flex;
+        margin-right: 10px;
+      }
+
+      header .para-header .search-bar .search i,
+      p {
+        color: #ffffff;
+        margin-right: 3px;
+      }
+
+      header .para-header .search-bar .languages select {
+        background-color: transparent;
+        border: none;
+        color: #ffffff;
+      }
+
+      header .para-header .search-bar .languages select option {
+        color: #ffffff;
+      }
+
+      header .para-header .logo h1 {
+        font-family: var(--logo-font);
+        color: #ffffff;
+        font-weight: 400;
+        font-size: 25px;
+        position: relative;
+        bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        span {
+          font-size: 34px;
+        }
+      }
+
+      header .para-header .tickets button {
+        background-color: #008573;
+        border: none;
+        border-radius: 20px;
+        padding: 9px 20px;
+        color: #ffffff;
+        font-size: 14px;
+        position: relative;
+        bottom: 5px;
+      }
+
+      header hr {
+        width: 80%;
+        margin: 0 auto;
+        background-color: lightgray;
+      }
+
+      header .header {
+        display: flex;
+        justify-content: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+      header .header ul {
+        display: flex;
+        list-style: none;
+      }
+
+      header .header ul li a {
+        margin-left: 15px;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 19px;
+        text-transform: uppercase;
+        font-family: var(--logo-font);
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="para-header">
+        <div class="search-bar">
+          <div class="search">
+            <i class="fa fa-search"></i>
+            <p>Search</p>
+          </div>
+          <div class="languages">
+            <select id="cars" name="cars">
+              <option value="volvo">English</option>
+              <option value="saab">Shqip</option>
+            </select>
+          </div>
+        </div>
+        <div class="logo">
+          <h1><span>M</span>useum</h1>
+        </div>
+        <div class="tickets">
+          <button><i class="fas fa-ticket-alt"></i> Tickets</button>
+        </div>
+      </div>
+      <hr />
+      <div class="header">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="#">Catalog</a></li>
+          <li>
+            <a href="./exhibition-events/exhibitions-events.html"
+              >Exhibitions</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+  </body>
+</html>

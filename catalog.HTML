@@ -971,75 +971,86 @@
     <script>
       // Function to open the modal and display object details
       function openModal(object) {
-        const name = $(object).find("p:first").text(); // Get the name/title
-        const timePeriod = $(object).find("p:last").text(); // Get the time period
-        const imgSrc = $(object).find("img").attr("src"); // Get the image source
-        const description = $(object).data("description"); // Get the additional description
+  const name = $(object).find("p:first").text();
+  const timePeriod = $(object).find("p:last").text();
+  const imgSrc = $(object).find("img").attr("src");
+  const description = $(object).data("description");
 
-        // Update modal header
-        $(".modal-header h2").text(name); // Set the name as the modal header text
+  // Update modal content
+  $(".modal-header h2").text(name);
+  $("#modalName").text(name);
+  $("#modalTimePeriod").text(timePeriod);
+  $("#modalImage").attr("src", imgSrc);
+  $("#modalDescription").text(description);
 
-        // Update modal content
-        $("#modalName").text(name);
-        $("#modalTimePeriod").text(timePeriod);
-        $("#modalImage").attr("src", imgSrc);
-        $("#modalDescription").text(description); // Set the description text
+  // Show the modal with animation
+  const modal = $("#modal");
+  modal.css({ display: "flex", opacity: 0, top: "-50px" }).animate(
+    { opacity: 1, top: "0px" },
+    1000 // Duration of the animation in milliseconds
+  );
 
-        // Show the modal
-        document.getElementById("modal").style.display = "flex";
-        document.body.classList.add("modal-open");
-      }
+  $("body").addClass("modal-open");
+}
 
-      // Function to close the modal
-      document.querySelector(".close").onclick = function () {
-        document.getElementById("modal").style.display = "none";
-        document.body.classList.remove("modal-open");
-      };
-
-      // Close the modal if clicked outside
-      window.onclick = function (event) {
-        if (event.target === document.getElementById("modal")) {
-          document.getElementById("modal").style.display = "none";
-          document.body.classList.remove("modal-open");
-        }
-      };
-
+// Function to close the modal with animation
+$(".close").on("click", function () {
+  const modal = $("#modal");
+  modal.animate(
+    { opacity: 0, top: "-50px" },
+    1000,
+    function () {
+      modal.css("display", "none");
+    }
+  );
+  $("body").removeClass("modal-open");
+});
       // Function to filter objects based on category selection
       function filterObjects(category, element) {
-        const objects = $(".object-item");
-        const categories = $(".category, .reset");
+  const objects = $(".object-item");
+  const categories = $(".category, .reset");
 
-        categories.removeClass("selected");
+  // Remove the 'selected' class from all categories
+  categories.removeClass("selected");
 
-        if (category === "all") {
-          objects.fadeOut(300, function () {
-            objects.fadeIn(300);
-          });
-          $(element).addClass("selected");
-        } else {
-          objects.each(function () {
-            if ($(this).data("category") === category) {
-              $(this).fadeIn(300);
-            } else {
-              $(this).fadeOut(300);
-            }
-          });
-          if (element) {
-            $(element).addClass("selected");
-          }
+  // If "all" category is selected
+  if (category === "all") {
+    // Fade out all objects, then fade them in simultaneously (show all objects)
+    objects.fadeOut(500, function () {
+      objects.fadeIn(500);  // Fade in all objects at the same time
+    });
+    $(element).addClass("selected");  // Mark the selected category
+  } else {
+    // Fade out all objects first
+    objects.fadeOut(500);
+
+    // After fading out, fade in only the matching objects
+    setTimeout(function () {
+      objects.each(function () {
+        if ($(this).data("category") === category) {
+          $(this).fadeIn(500);  // Fade in the matching objects
         }
-      }
-      $(document).ready(function () {
-  // Retrieve the selected category
+      });
+    }, 500);  // Wait for fadeOut to finish before fading in matching elements
+
+    $(element).addClass("selected");  // Mark the selected category
+  }
+
+  // Store the selected category in sessionStorage for page reload persistence
+  sessionStorage.setItem('selectedCategory', category);
+}
+
+$(document).ready(function () {
+  // Retrieve the selected category from sessionStorage (default to 'all' if not set)
   const selectedCategory = sessionStorage.getItem('selectedCategory') || 'all';
 
-  // Filter objects based on the retrieved category
-  $(".object-item").each(function () {
-    if (selectedCategory === "all" || $(this).data("category") === selectedCategory) {
-      $(this).show();
-    } else {
-      $(this).hide();
-    }
+  // Initially hide all objects and then fade in the selected category or "all"
+  $(".object-item").fadeOut(500, function () {
+    $(".object-item").each(function () {
+      if (selectedCategory === "all" || $(this).data("category") === selectedCategory) {
+        $(this).fadeIn(500);  // Fade in the selected category items
+      }
+    });
   });
 
   // Highlight the corresponding category button if available

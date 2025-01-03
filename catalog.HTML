@@ -987,7 +987,7 @@
   const modal = $("#modal");
   modal.css({ display: "flex", opacity: 0, top: "-50px" }).animate(
     { opacity: 1, top: "0px" },
-    1000 // Duration of the animation in milliseconds
+    500 // Duration of the animation in milliseconds
   );
 
   $("body").addClass("modal-open");
@@ -998,7 +998,7 @@ $(".close").on("click", function () {
   const modal = $("#modal");
   modal.animate(
     { opacity: 0, top: "-50px" },
-    1000,
+    500,
     function () {
       modal.css("display", "none");
     }

@@ -6,7 +6,10 @@
     <title>Museum Catalog</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="./assets/style/style.css" />
-
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    ></script>
 
     <!-- </div> -->
     <style>
@@ -119,7 +122,8 @@
         align-items: center;
         overflow: hidden;
         position: relative; /* Ensure stacking of child elements */
-        transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Add box-shadow transition */
+        transition: transform 0.3s ease, background-color 0.3s ease,
+          box-shadow 0.3s ease; /* Add box-shadow transition */
       }
 
       .object-item:hover {
@@ -189,13 +193,12 @@
         text-align: center;
         overflow-y: auto;
         overflow-x: hidden;
-
       }
       .modal-body {
         max-height: 90vh; /* You can adjust this as needed */
         position: relative; /* Sigurohuni që .modal-body të ketë pozicion në mënyrë që butonat të pozicionohen relativisht ndaj saj */
         margin-top: 20px;
-        margin-bottom:10px;
+        margin-bottom: 10px;
       }
 
       .modal-header {
@@ -231,37 +234,7 @@
     </style>
   </head>
   <body>
-    <header>
-      <div class="para-header">
-        <div class="search-bar">
-          <div class="search">
-            <i class="fa fa-search"></i>
-            <p>Search</p>
-          </div>
-          <div class="languages">
-            <select id="cars" name="cars">
-              <option value="volvo">English</option>
-              <option value="saab">Shqip</option>
-            </select>
-          </div>
-        </div>
-        <div class="logo">
-          <h1><span>M</span>useum</h1>
-        </div>
-        <div class="tickets">
-          <button><i class="fas fa-ticket-alt"></i> Tickets</button>
-        </div>
-      </div>
-      <hr />
-      <div class="header">
-        <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Catalog</a></li>
-          <li><a href="#">Tickets</a></li>
-          <li><a href="#">Exhibitions</a></li>
-        </ul>
-      </div>
-    </header>
+    <div id="header"></div>
 
     <!-- Categories -->
     <div class="categories">
@@ -279,7 +252,10 @@
         data-category="sculptures"
         onclick="filterObjects('sculptures', this)"
       >
-        <img src="assets\CATALOG\foto\SCULPTURE CATEGORY.jpg" alt="Sculptures" />
+        <img
+          src="assets\CATALOG\foto\SCULPTURE CATEGORY.jpg"
+          alt="Sculptures"
+        />
         <div>Sculptures</div>
       </div>
       <div
@@ -287,7 +263,10 @@
         data-category="old-machines"
         onclick="filterObjects('old-machines', this)"
       >
-        <img src="assets\CATALOG\foto\OLD MACHINE CATEGORY.jpg" alt="Old Machines" />
+        <img
+          src="assets\CATALOG\foto\OLD MACHINE CATEGORY.jpg"
+          alt="Old Machines"
+        />
         <div>Old Machines</div>
       </div>
       <div
@@ -303,7 +282,10 @@
         data-category="old-artifacts"
         onclick="filterObjects('old-artifacts', this)"
       >
-        <img src="assets/CATALOG/foto/ARTIFACT CATEGORY.avif" alt="Old Artifacts" />
+        <img
+          src="assets/CATALOG/foto/ARTIFACT CATEGORY.avif"
+          alt="Old Artifacts"
+        />
         <div>Old Artifacts</div>
       </div>
     </div>
@@ -550,7 +532,10 @@
         insights into dinosaur biology and behavior, making it a central figure in both paleontological studies and popular culture."
         onclick="openModal(this)"
       >
-        <img src="assets\CATALOG\foto.creatures\tyrannosaur .webp" alt="Tyrannosaurus rex" />
+        <img
+          src="assets\CATALOG\foto.creatures\tyrannosaur .webp"
+          alt="Tyrannosaurus rex"
+        />
         <div class="info">
           <p style="color: #008573; font-size: 20px">
             <b>Tyrannosaurus rex </b>
@@ -657,7 +642,10 @@
         brothers' success laid the foundation for the development of modern aviation, forever changing the world."
         onclick="openModal(this)"
       >
-        <img src="assets\CATALOG\foto.old machine\Wright Flyer.jpg" alt="Wright Flyer" />
+        <img
+          src="assets\CATALOG\foto.old machine\Wright Flyer.jpg"
+          alt="Wright Flyer"
+        />
         <div class="info">
           <p style="color: #008573; font-size: 20px"><b>Wright Flyer </b></p>
           <p style="font-size: 15px"><b>by Orville and Wilbur Wright</b></p>
@@ -684,7 +672,10 @@
         ancestor with these remarkable flying reptiles."
         onclick="openModal(this)"
       >
-        <img src="assets\CATALOG\foto.creatures\Pterosaur__.jpg" alt="Pterosaur" />
+        <img
+          src="assets\CATALOG\foto.creatures\Pterosaur__.jpg"
+          alt="Pterosaur"
+        />
         <div class="info">
           <p style="color: #008573; font-size: 20px"><b>Pterosaur</b></p>
           <p>228 to 66 million years ago</p>
@@ -737,7 +728,10 @@
         artifacts of the ancient world, symbolizing the deciphering of lost languages and the advancement of historical knowledge. "
         onclick="openModal(this)"
       >
-        <img src="assets\CATALOG\foto,sculptures\Rosetta Stone.jpg" alt="Rosetta Stone" />
+        <img
+          src="assets\CATALOG\foto,sculptures\Rosetta Stone.jpg"
+          alt="Rosetta Stone"
+        />
         <div class="info">
           <p style="color: #008573; font-size: 20px"><b>Rosetta Stone</b></p>
           <p>196 BCE</p>
@@ -846,9 +840,14 @@
         imagination of researchers and the public alike.."
         onclick="openModal(this)"
       >
-        <img src="assets\CATALOG\foto.creatures\sabre-toothed-cat-skeleton.jpg" alt="Pterosaur" />
+        <img
+          src="assets\CATALOG\foto.creatures\sabre-toothed-cat-skeleton.jpg"
+          alt="Pterosaur"
+        />
         <div class="info">
-          <p style="color: #008573; font-size: 20px"><b>The saber-toothed cat</b></p>
+          <p style="color: #008573; font-size: 20px">
+            <b>The saber-toothed cat</b>
+          </p>
           <p>2.5 million -10,000 years ago</p>
         </div>
       </div>
@@ -882,7 +881,9 @@
           <p style="color: #008573; font-size: 20px">
             <b>The Daimler Reitwagen</b>
           </p>
-          <p style="font-size: 15px"><b>by Gottlieb Daimler & Wilhelm Maybach</b></p>
+          <p style="font-size: 15px">
+            <b>by Gottlieb Daimler & Wilhelm Maybach</b>
+          </p>
 
           <p>1885</p>
         </div>
@@ -902,7 +903,7 @@
         The Last Supper remains a powerful symbol of Renaissance art and continues to inspire millions worldwide with its profound 
         spiritual and artistic significance."
         onclick="openModal(this)"
-    >
+      >
         <img
           src="assets\CATALOG\foto,paintings\Santa-Maria-Delle-Grazie-Church-Last-Supper-Leonardo-Da-Vinci-milan-italy-summer_1.jpg"
           alt="The Last Supper"
@@ -949,7 +950,6 @@
         </div>
       </div>
     </div>
-    
 
     <!-- Modal for Object Information -->
     <div id="modal" class="modal">
@@ -962,106 +962,115 @@
           <img src="" alt="Object Image" class="modal-img" id="modalImage" />
           <div id="modalName"></div>
           <div id="modalTimePeriod"></div>
-          <div id="modalDescription"></div>        
-          <br><br><br>
+          <div id="modalDescription"></div>
+          <br /><br /><br />
         </div>
       </div>
     </div>
-    <footer></footer>
+
+    <div id="footer"></div>
+
+    <script type="text/javascript">
+      $("#header").load("header/header.html");
+    </script>
+
+    <script type="text/javascript">
+      $("#footer").load("footer/footer.html");
+    </script>
+
     <script>
       // Function to open the modal and display object details
       function openModal(object) {
-  const name = $(object).find("p:first").text();
-  const timePeriod = $(object).find("p:last").text();
-  const imgSrc = $(object).find("img").attr("src");
-  const description = $(object).data("description");
+        const name = $(object).find("p:first").text();
+        const timePeriod = $(object).find("p:last").text();
+        const imgSrc = $(object).find("img").attr("src");
+        const description = $(object).data("description");
 
-  // Update modal content
-  $(".modal-header h2").text(name);
-  $("#modalName").text(name);
-  $("#modalTimePeriod").text(timePeriod);
-  $("#modalImage").attr("src", imgSrc);
-  $("#modalDescription").text(description);
+        // Update modal content
+        $(".modal-header h2").text(name);
+        $("#modalName").text(name);
+        $("#modalTimePeriod").text(timePeriod);
+        $("#modalImage").attr("src", imgSrc);
+        $("#modalDescription").text(description);
 
-  // Show the modal with animation
-  const modal = $("#modal");
-  modal.css({ display: "flex", opacity: 0, top: "-50px" }).animate(
-    { opacity: 1, top: "0px" },
-    1000 // Duration of the animation in milliseconds
-  );
+        // Show the modal with animation
+        const modal = $("#modal");
+        modal.css({ display: "flex", opacity: 0, top: "-50px" }).animate(
+          { opacity: 1, top: "0px" },
+          1000 // Duration of the animation in milliseconds
+        );
 
-  $("body").addClass("modal-open");
-}
+        $("body").addClass("modal-open");
+      }
 
-// Function to close the modal with animation
-$(".close").on("click", function () {
-  const modal = $("#modal");
-  modal.animate(
-    { opacity: 0, top: "-50px" },
-    1000,
-    function () {
-      modal.css("display", "none");
-    }
-  );
-  $("body").removeClass("modal-open");
-});
+      // Function to close the modal with animation
+      $(".close").on("click", function () {
+        const modal = $("#modal");
+        modal.animate({ opacity: 0, top: "-50px" }, 1000, function () {
+          modal.css("display", "none");
+        });
+        $("body").removeClass("modal-open");
+      });
       // Function to filter objects based on category selection
       function filterObjects(category, element) {
-  const objects = $(".object-item");
-  const categories = $(".category, .reset");
+        const objects = $(".object-item");
+        const categories = $(".category, .reset");
 
-  // Remove the 'selected' class from all categories
-  categories.removeClass("selected");
+        // Remove the 'selected' class from all categories
+        categories.removeClass("selected");
 
-  // If "all" category is selected
-  if (category === "all") {
-    // Fade out all objects, then fade them in simultaneously (show all objects)
-    objects.fadeOut(500, function () {
-      objects.fadeIn(500);  // Fade in all objects at the same time
-    });
-    $(element).addClass("selected");  // Mark the selected category
-  } else {
-    // Fade out all objects first
-    objects.fadeOut(500);
+        // If "all" category is selected
+        if (category === "all") {
+          // Fade out all objects, then fade them in simultaneously (show all objects)
+          objects.fadeOut(500, function () {
+            objects.fadeIn(500); // Fade in all objects at the same time
+          });
+          $(element).addClass("selected"); // Mark the selected category
+        } else {
+          // Fade out all objects first
+          objects.fadeOut(500);
 
-    // After fading out, fade in only the matching objects
-    setTimeout(function () {
-      objects.each(function () {
-        if ($(this).data("category") === category) {
-          $(this).fadeIn(500);  // Fade in the matching objects
+          // After fading out, fade in only the matching objects
+          setTimeout(function () {
+            objects.each(function () {
+              if ($(this).data("category") === category) {
+                $(this).fadeIn(500); // Fade in the matching objects
+              }
+            });
+          }, 500); // Wait for fadeOut to finish before fading in matching elements
+
+          $(element).addClass("selected"); // Mark the selected category
+        }
+
+        // Store the selected category in sessionStorage for page reload persistence
+        sessionStorage.setItem("selectedCategory", category);
+      }
+
+      $(document).ready(function () {
+        // Retrieve the selected category from sessionStorage (default to 'all' if not set)
+        const selectedCategory =
+          sessionStorage.getItem("selectedCategory") || "all";
+
+        // Initially hide all objects and then fade in the selected category or "all"
+        $(".object-item").fadeOut(500, function () {
+          $(".object-item").each(function () {
+            if (
+              selectedCategory === "all" ||
+              $(this).data("category") === selectedCategory
+            ) {
+              $(this).fadeIn(500); // Fade in the selected category items
+            }
+          });
+        });
+
+        // Highlight the corresponding category button if available
+        $(".category").removeClass("selected");
+        if (selectedCategory !== "all") {
+          $(`.category[data-category='${selectedCategory}']`).addClass(
+            "selected"
+          );
         }
       });
-    }, 500);  // Wait for fadeOut to finish before fading in matching elements
-
-    $(element).addClass("selected");  // Mark the selected category
-  }
-
-  // Store the selected category in sessionStorage for page reload persistence
-  sessionStorage.setItem('selectedCategory', category);
-}
-
-$(document).ready(function () {
-  // Retrieve the selected category from sessionStorage (default to 'all' if not set)
-  const selectedCategory = sessionStorage.getItem('selectedCategory') || 'all';
-
-  // Initially hide all objects and then fade in the selected category or "all"
-  $(".object-item").fadeOut(500, function () {
-    $(".object-item").each(function () {
-      if (selectedCategory === "all" || $(this).data("category") === selectedCategory) {
-        $(this).fadeIn(500);  // Fade in the selected category items
-      }
-    });
-  });
-
-  // Highlight the corresponding category button if available
-  $(".category").removeClass("selected");
-  if (selectedCategory !== "all") {
-    $(`.category[data-category='${selectedCategory}']`).addClass("selected");
-  }
-});
-
-
-
     </script>
   </body>
 </html>

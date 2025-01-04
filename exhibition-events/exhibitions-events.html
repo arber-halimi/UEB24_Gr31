@@ -1,464 +1,463 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Museum Exhibitions</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museum Exhibitions</title> 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <script
-      src="https://kit.fontawesome.com/a076d05399.js"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Anton&family=Audiowide&family=Kaushan+Script&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap");
-      @import url("https://fonts.googleapis.com/css2?family=Anton&family=Audiowide&family=Kaushan+Script&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap");
-      @import url("https://fonts.googleapis.com/css2?family=Anton&family=Audiowide&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Kaushan+Script&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap");
+        @import url('https://fonts.googleapis.com/css2?family=Anton&family=Audiowide&family=Kaushan+Script&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Audiowide&family=Kaushan+Script&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Audiowide&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Kaushan+Script&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
 
-      :root {
-        --p-color: #cec9c9;
-        --p-font: "Open Sans", sans-serif;
-        --all-font: "Montserrat", sans-serif;
-        --logo-font: "Cormorant Garamond", serif;
-      }
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+:root {
+    --p-color: #cec9c9;
+    --p-font:"Open Sans", sans-serif;
+    --all-font: "Montserrat", sans-serif;
+    --logo-font: "Cormorant Garamond", serif;
+  }
 
-      /* Header */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-      header {
-        display: block;
-        background-color: #000000;
-      }
+/* Header */
 
-      header .para-header {
-        display: flex;
-        justify-content: space-between;
-        width: 80%;
-        margin: 0 auto;
-        padding-top: 40px;
-        padding-bottom: 15px;
-      }
+header{
+    display: block;
+    background-color: #000000;
+}
 
-      header .para-header .search-bar {
-        display: flex;
-      }
+header .para-header{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 15px;
+}
 
-      header .para-header .search-bar .search {
-        display: flex;
-        margin-right: 10px;
-      }
+header .para-header .search-bar{
+    display: flex;
+}
 
-      header .para-header .search-bar .search i,
-      p {
-        color: #ffffff;
-        margin-right: 3px;
-      }
+header .para-header .search-bar .search{
+    display: flex;
+    margin-right: 10px;
+}
 
-      header .para-header .search-bar .languages select {
-        background-color: transparent;
-        border: none;
-        color: #ffffff;
-      }
+header .para-header .search-bar .search i, p{
+    color: #FFFFFF;
+    margin-right: 3px;
+}
 
-      header .para-header .search-bar .languages select option {
-        color: #ffffff;
-      }
+header .para-header .search-bar .languages select{
+    background-color: transparent;
+    border: none;
+    color: #FFFFFF;
+}
 
-      header .para-header .logo h1 {
-        font-family: var(--logo-font);
-        color: #ffffff;
-        font-weight: 400;
-        font-size: 25px;
-        position: relative;
-        bottom: 10px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        span {
-          font-size: 34px;
-        }
-      }
+header .para-header .search-bar .languages select option{
+    color: #FFFFFF;
+}
 
-      header .para-header .tickets button {
-        background-color: #008573;
-        border: none;
-        border-radius: 20px;
-        padding: 9px 20px;
-        color: #ffffff;
-        font-size: 14px;
-        position: relative;
-        bottom: 5px;
-      }
 
-      header hr {
-        width: 80%;
-        margin: 0 auto;
-        background-color: lightgray;
-      }
 
-      header .header {
-        display: flex;
-        justify-content: center;
-        padding-top: 20px;
-        padding-bottom: 20px;
-      }
+header .para-header .logo h1{
+    font-family: var(--logo-font);
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 25px;
+    position: relative;
+    bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    span{
+        font-size: 34px;
+    }
+}
 
-      header .header ul {
-        display: flex;
-        list-style: none;
-      }
+header .para-header .tickets button{
+    background-color: #008573;
+    border: none;
+    border-radius: 20px;
+    padding: 9px 20px;
+    color: #FFFFFF;
+    font-size: 14px;
+    position: relative;
+    bottom: 5px;
+}
 
-      header .header ul li a {
-        margin-left: 15px;
-        color: #ffffff;
-        text-decoration: none;
-        font-size: 19px;
-        text-transform: uppercase;
-        font-family: var(--logo-font);
-        font-weight: bold;
-      }
+header hr{
+    width: 80%;
+    margin: 0 auto;
+    background-color: lightgray;
+}
 
-      /* Footer */
+header .header{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
 
-      .about {
-        grid-area: 1 / 2 / 2 / 3;
-        display: flex;
-        flex-direction: column;
-        margin-left: 50px;
-      }
+header .header ul{
+    display: flex;
+    list-style: none;
+}
 
-      .about span {
-        color: lightgray;
-        font-size: 17px;
-        text-transform: capitalize;
-        margin-bottom: 15px;
-      }
+header .header ul li a{
+    margin-left: 15px;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 19px;
+    text-transform: uppercase;
+    font-family: var(--logo-font);
+    font-weight: bold;
+}
 
-      .about a {
-        color: gray;
-        font-family: 14px;
-        text-decoration: none;
-        text-transform: capitalize;
-      }
+/* Footer */
 
-      .contact {
-        grid-area: 1 / 3 / 2 / 4;
-      }
+.about { 
+    grid-area: 1 / 2 / 2 / 3;
+    display: flex; 
+    flex-direction: column;
+    margin-left: 50px;
+}
 
-      .contact #contact {
-        color: lightgray;
-        font-size: 17px;
-        text-transform: capitalize;
-      }
+.about span{
+    color: lightgray;
+    font-size: 17px;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+}
 
-      .contact address {
-        margin-top: 15px;
-      }
+.about a{
+    color: gray;
+    font-family: 14px;
+    text-decoration: none;
+    text-transform: capitalize;
+}
 
-      .contact a,
-      .contact span {
-        color: gray;
-        font-family: 14px;
-        text-decoration: none;
-        text-transform: capitalize;
-      }
 
-      .opening-hours {
-        grid-area: 1 / 4 / 2 / 5;
-      }
+.contact { 
+    grid-area: 1 / 3 / 2 / 4;
 
-      .opening-hours #time {
-        color: lightgray;
-        font-size: 17px;
-        text-transform: capitalize;
-      }
+}
 
-      .opening-hours table {
-        color: gray;
-        margin-top: 15px;
-      }
-      .opening-hours table tr td {
-        padding-right: 30px;
-      }
+.contact #contact{
+    color: lightgray;
+    font-size: 17px;
+    text-transform: capitalize;
+}
 
-      .social-media {
-        display: flex;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        width: 85%;
-        justify-content: space-between;
-        margin: 0 auto;
-      }
+.contact address{
+    margin-top: 15px;
+}
 
-      .social-media .social a {
-        color: lightgray;
-      }
+.contact a, .contact span{    
+    color: gray;
+    font-family: 14px;
+    text-decoration: none;
+    text-transform: capitalize;
+}
 
-      .social-media .social a i {
-        margin-right: 15px;
-      }
+.opening-hours {
+    grid-area: 1 / 4 / 2 / 5; 
+}
 
-      .social-media .copyright span {
-        color: lightgray;
-        text-transform: capitalize;
-      }
+.opening-hours #time{
+    color: lightgray;
+    font-size: 17px;
+    text-transform: capitalize;
+}
 
-      .intro-to-categories .itc-photos {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 1fr;
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
-        gap: 30px;
-        margin-bottom: 100px;
-      }
+.opening-hours table{
+    color: gray;
+    margin-top: 15px;
+}
+.opening-hours table tr td {
+    padding-right: 30px;
+}
 
-      .intro-to-categories .itc-photos img {
-        width: 100%;
-        height: 100%;
-      }
+.social-media{
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 85%;
+    justify-content: space-between;
+    margin: 0 auto;
+}
 
-      .intro-to-categories .itc-photos img:hover {
-        width: 102%;
-        height: 102%;
-      }
+.social-media .social a{
+    color: lightgray;
+}
 
-      footer {
-        background-color: #000000;
-      }
+.social-media .social a i{
+    margin-right: 15px;
+}
 
-      footer .pre-footer {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: 1fr;
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
-        width: 85%;
-        margin: 0 auto;
-        padding-top: 50px;
-        padding-bottom: 50px;
-      }
 
-      .give-your-info {
-        grid-area: 1 / 1 / 2 / 2;
-        padding-right: 40px;
-      }
+.social-media .copyright span{
+    color: lightgray;
+    text-transform: capitalize;
+}
 
-      .give-your-info .sing-up h4 {
-        color: lightgray;
-        margin-bottom: 10px;
-      }
+.intro-to-categories .itc-photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    gap: 30px;
+    margin-bottom: 100px;
+}
 
-      .give-your-info .sing-up .sign-up-form input {
-        background-color: transparent;
-        border-style: none none solid none;
-      }
+.intro-to-categories .itc-photos img{
+    width: 100%;
+    height: 100%;
+}
 
-      .give-your-info .sing-up .sign-up-form button {
-        background-color: transparent;
-        border-style: none none solid none;
-        color: lightgray;
-      }
 
-      .give-your-info .buttons {
-        display: flex;
-        flex-direction: column;
-        color: lightgray;
-        margin-top: 15px;
-      }
 
-      .give-your-info .buttons button {
-        padding: 10px;
-        margin-top: 10px;
-        background-color: transparent;
-        color: lightgray;
-        border: solid 1px;
-        border-color: gray;
-        text-transform: uppercase;
-      }
+.intro-to-categories .itc-photos img:hover{
+    width: 102%;
+    height: 102%;
+}
+    
 
-      /* three exhibitions */
+footer{
+    
+    background-color: #000000;
+}
 
-      .three-exhibitions {
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
-        width: 100%;
-        max-width: 100%;
-        margin: 0 auto;
-        margin-bottom: 40px;
-      }
+footer .pre-footer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    width: 85%;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+        
+.give-your-info { 
+    grid-area: 1 / 1 / 2 / 2;
+    padding-right: 40px;
+}
 
-      .exhibition-card {
-        font-family: var(--p-font);
-        flex: 1;
-        min-width: 300px;
-        max-width: 33.33%;
-        text-align: center;
-        background-color: white;
-        border: 1px solid #ddd;
-        position: relative;
-        transition: transform 0.3s ease;
-      }
+.give-your-info .sing-up h4{
+    color: lightgray;
+    margin-bottom: 10px;
+}
 
-      .exhibition-card img {
-        width: 100%;
-        height: auto;
-      }
+.give-your-info .sing-up .sign-up-form input{
+    background-color: transparent;
+    border-style:none none solid none;
+}
 
-      .exhibition-card .info p,
-      .exhibition-card .info button {
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease, visibility 0.3s ease;
-      }
+.give-your-info .sing-up .sign-up-form button{
+    background-color: transparent;
+    border-style:none none solid none;
+    color: lightgray;
+}
 
-      .exhibition-card:hover {
-        transform: scale(1.1);
-        transition: transform 0.3s ease;
-      }
+.give-your-info .buttons{
+    display: flex; 
+    flex-direction: column;
+    color: lightgray;
+    margin-top: 15px;
+}
 
-      .exhibition-card:hover .info p,
-      .exhibition-card:hover .info button {
-        opacity: 1;
-        visibility: visible;
-      }
-      .exhibition-card:hover .info p {
-        color: #008573;
-      }
-      .exhibition-card .info p {
-        margin: 10px;
-      }
-      .exhibition-card .info button {
-        margin: 0 10 10 10 px;
-      }
-      .exhibition-card .info {
-        padding: 10px;
-        position: relative;
-      }
+.give-your-info .buttons button{
+    padding: 10px;
+    margin-top: 10px;
+    background-color: transparent;
+    color: lightgray;
+    border: solid 1px;
+    border-color: gray;
+    text-transform: uppercase;
+}
 
-      .exhibition-card button {
-        margin-top: 10px;
-        background-color: transparent;
-        color: #008573;
-        border: 1px solid #008573;
-        padding: 10px 20px;
-        cursor: pointer;
-        border-radius: 20px;
-      }
+/* three exhibitions */
 
-      .exhibition-card button:hover {
-        background-color: #008573;
-        color: white;
-      }
+.three-exhibitions {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    max-width: 100%; 
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
 
-      /* Featured exhibitions */
+.exhibition-card {
+    font-family: var(--p-font);
+    flex: 1;
+    min-width: 300px;
+    max-width: 33.33%; 
+    text-align: center;
+    background-color: white;
+    border: 1px solid #ddd;
+    position: relative;
+    transition: transform 0.3s ease; 
+}
 
-      .featured-exhibition {
-        width: 100%;
-        margin-bottom: 20px;
-        font-family: var(--p-font);
-        position: relative;
-        transition: transform 0.3s ease;
-      }
+.exhibition-card img {
+    width: 100%;
+    height: auto;
+}
 
-      .featured-exhibition .info p,
-      .featured-exhibition .info button {
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease, visibility 0.3s ease;
-      }
-      .featured-exhibition .info p {
-        margin: 10px;
-        font-size: 20px;
-      }
-      .featured-exhibition .info button {
-        margin: 0 10 10 10 px;
-      }
+.exhibition-card .info p,
+.exhibition-card .info button {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
 
-      .featured-exhibition:hover {
-        transform: scale(1.1);
-      }
-      .featured-exhibition:hover .info p {
-        color: #008573;
-      }
+.exhibition-card:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
 
-      .featured-exhibition:hover .info p,
-      .featured-exhibition:hover .info button {
-        opacity: 1;
-        visibility: visible;
-      }
+.exhibition-card:hover .info p,
+.exhibition-card:hover .info button {
+    opacity: 1;
+    visibility: visible;
+}
+.exhibition-card:hover .info p{
+    color:#008573;
+}
+.exhibition-card .info p{
+    margin: 10px;
+}
+.exhibition-card .info button {
+    margin: 0 10 10 10 px;
+}
+.exhibition-card .info {
+    padding: 10px;
+    position: relative;
+}
 
-      .featured-exhibition .info {
-        padding: 20px;
-        text-align: center;
-        background-color: white;
-        border: 1px solid #ddd;
-      }
+.exhibition-card button {
+    margin-top: 10px;
+    background-color: transparent;
+    color: #008573;
+    border: 1px solid #008573;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 20px;
+}
 
-      .featured-exhibition button {
-        margin-top: 20px;
-        background-color: transparent;
-        color: #008573;
-        border: 1px solid #008573;
-        padding: 10px 20px;
-        cursor: pointer;
-        border-radius: 20px;
-      }
+.exhibition-card button:hover {
+    background-color: #008573;
+    color: white;
+}
 
-      .featured-exhibition button:hover {
-        background-color: #008573;
-        color: white;
-      }
+/* Featured exhibitions */
+
+.featured-exhibition {
+    width: 100%;
+    margin-bottom: 20px;
+    font-family: var(--p-font);
+    position: relative;
+    transition: transform 0.3s ease; 
+}
+
+.featured-exhibition .info p,
+.featured-exhibition .info button {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.featured-exhibition .info p{
+    margin: 10px;
+    font-size: 20px;
+}
+.featured-exhibition .info button {
+    margin: 0 10 10 10 px;
+}
+
+.featured-exhibition:hover {
+    transform: scale(1.1);
+}
+.featured-exhibition:hover .info p{
+    color: #008573;
+}
+
+.featured-exhibition:hover .info p,
+.featured-exhibition:hover .info button {
+    opacity: 1;
+    visibility: visible;
+}
+
+.featured-exhibition .info {
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+    border: 1px solid #ddd;
+}
+
+.featured-exhibition button {
+    margin-top: 20px;
+    background-color: transparent;
+    color: #008573;
+    border: 1px solid #008573;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.featured-exhibition button:hover {
+    background-color: #008573;
+    color: white;
+}
     </style>
-  </head>
-  <body>
-    <!-- Header -->
-    <header>
-      <div class="para-header">
-        <div class="search-bar">
-          <div class="search">
-            <i class="fa fa-search"></i>
-            <p>Search</p>
-          </div>
-          <div class="languages">
-            <select id="cars" name="cars">
-              <option value="volvo">English</option>
-              <option value="saab">Shqip</option>
-            </select>
-          </div>
+
+</head>
+<body>
+      <!-- Header -->
+      <header>
+        <div class="para-header">
+            <div class="search-bar">
+                <div class="search">
+                    <i class="fa fa-search"></i>
+                    <p>Search</p>
+                </div>
+                <div class="languages">
+                    <select id="cars" name="cars">
+                        <option value="volvo">English</option>
+                        <option value="saab">Shqip</option>
+                      </select>
+                </div>
+            </div>
+            <div class="logo">
+                <h1>Museum</h1>
+            </div>
+            <div class="tickets">
+                <button><i class='fas fa-ticket-alt'></i>
+                    Tickets</button>
+            </div>
         </div>
-        <div class="logo">
-          <h1>Museum</h1>
+        <hr>
+        <div class="header">
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Catalog</a></li>
+                <li><a href="#">Tickets</a></li>
+                <li><a href="#">Exhibitions</a></li>
+            </ul>
         </div>
-        <div class="tickets">
-          <button><i class="fas fa-ticket-alt"></i> Tickets</button>
-        </div>
-      </div>
-      <hr />
-      <div class="header">
-        <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../about.html">About</a></li>
-          <li><a href="../catalog.HTML">Catalog</a></li>
-          <li>
-            <a href="./exhibition-events/exhibitions-events.html"
-              >Exhibitions</a
-            >
-          </li>
-        </ul>
-      </div>
     </header>
 
     <main class="main-content">
-<<<<<<< HEAD
         <div class="exhibitions">
             <!-- Featured Exhibition -->
             <div class="featured-exhibition">
@@ -504,157 +503,102 @@
                     </div>
                 </div>
             </div>
-=======
-      <div class="exhibitions">
-        <!-- Featured Exhibition -->
-        <div class="featured-exhibition">
-          <img
-            src="./exhibition-images/Piktura.jpg"
-            alt="Exploring the Key Periods in Art History"
-          />
-          <div class="info">
-            <h1>
-              Evolution of Expression: Exploring the Key Periods in Art History
-            </h1>
-            <p>Ongoing until March 1, 2025</p>
-            <button onclick="location.href='./exhibitions/exhibition1.html'">
-              Learn More
-            </button>
-          </div>
->>>>>>> d426d3b92052a9fbeb45f85c5fd82143c9954236
         </div>
-        <!-- Three Exhibitions -->
-        <div class="three-exhibitions">
-          <div class="exhibition-card">
-            <img
-              src="./exhibition-images/fossil.jpg"
-              alt="Fossils from the Dawn of Time"
-            />
-            <div class="info">
-              <h2>Fossils from the Dawn of Time</h2>
-              <p>March 1, 2025 | April 1, 2025</p>
-              <button onclick="location.href='./exhibitions/exhibition2.html'">
-                Learn More
-              </button>
-            </div>
-          </div>
-          <div class="exhibition-card">
-            <img
-              src="./exhibition-images/oldmachine.jpg"
-              alt="Machines of the Past"
-            />
-            <div class="info">
-              <h2>Machines of the Past: Early Innovations</h2>
-              <p>April 15, 2025 | June 15, 2025</p>
-              <button onclick="location.href='./exhibitions/exhibition3.html'">
-                Learn More
-              </button>
-            </div>
-          </div>
-          <div class="exhibition-card">
-            <img
-              src="./exhibition-images/artifacts.jpg"
-              alt="Ancient Artifacts"
-            />
-            <div class="info">
-              <h2>Ancient Artifacts: Treasures of History</h2>
-              <p>May 10, 2025 | July 10, 2025</p>
-              <button onclick="location.href='./exhibitions/exhibition4.html'">
-                Learn More
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
     </main>
-    <!-- Footer -->
-    <footer>
-      <div class="pre-footer">
-        <div class="give-your-info">
-          <div class="sing-up">
-            <h4>Sign up to our mailing list</h4>
-            <div class="sign-up-form">
-              <form action="#">
-                <input type="text" placeholder="Enter your email" />
-                <button>Submit</button>
-              </form>
+        <!-- Footer -->
+        <footer>
+            <div class="pre-footer">
+                <div class="give-your-info">
+                    <div class="sing-up">
+                        <h4>Sign up to our mailing list</h4>
+                        <div class="sign-up-form">
+                            <form action="#">
+                                <input type="text" placeholder="Enter your email">
+                                <button>Submit</button>
+                            </form>
+    
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <h5>Join the Museum community</h5>
+                        <button>become a member</button>
+                        <button>voulenteer</button>
+                        <button>donate</button>
+                    </div>
+                </div>
+    
+                <div class="about">
+                    <span>about</span>
+                    <a href="#">about</a>
+                    <a href="#">Staff and board</a>
+                    <a href="#">Join the team</a>
+                    <a href="#">voulenteer uppertunies</a>
+                    <a href="#">Contact us</a>
+                </div>
+                <div class="contact">
+                    <span id="contact">Contact</span>
+                    <address>
+                        <span>Rruga Deshmore e Kombit, Prishtine</span>
+                        <a href="mailto:jim@example.com">jim@example.com</a><br />
+                        <a href="tel:+14155550132">+1 (415) 555‑0132</a>
+                      </address>
+                </div>
+                <div class="opening-hours">
+                    <span id="time">opening hours</span>
+                    <table>
+                        <tr>
+                          <th></th>
+                          <th></th>
+                        </tr>
+                        <tr>
+                          <td>Monday</td>
+                          <td>
+                            Closed*</td>
+                        </tr>
+                        <tr>
+                          <td>Tuesday</td>
+                          <td>
+                            10am – 4pm</td>
+                        </tr>
+                        <tr>
+                          <td>Wednesday</td>
+                          <td>
+                            10am – 4pm</td>
+                        </tr>
+                        <tr>
+                          <td>Thursday</td>
+                          <td>
+                            10am – 4pm</td>
+                        </tr>
+                        <tr>
+                          <td>Friday</td>
+                          <td>
+                            10am – 4pm</td>
+                        </tr>
+                        <tr>
+                          <td>Saturday</td>
+                          <td>
+                            10am – 4pm</td>
+                        </tr>
+                        <tr>
+                            <td>Sunday</td>
+                            <td>
+                                10am – 5pm</td>
+                        </tr>
+                      </table>
+                </div>
             </div>
-          </div>
-          <div class="buttons">
-            <h5>Join the Museum community</h5>
-            <button>become a member</button>
-            <button>voulenteer</button>
-            <button>donate</button>
-          </div>
-        </div>
-
-        <div class="about">
-          <span>about</span>
-          <a href="#">about</a>
-          <a href="#">Staff and board</a>
-          <a href="#">Join the team</a>
-          <a href="#">voulenteer uppertunies</a>
-          <a href="#">Contact us</a>
-        </div>
-        <div class="contact">
-          <span id="contact">Contact</span>
-          <address>
-            <span>Rruga Deshmore e Kombit, Prishtine</span>
-            <a href="mailto:jim@example.com">jim@example.com</a><br />
-            <a href="tel:+14155550132">+1 (415) 555‑0132</a>
-          </address>
-        </div>
-        <div class="opening-hours">
-          <span id="time">opening hours</span>
-          <table>
-            <tr>
-              <th></th>
-              <th></th>
-            </tr>
-            <tr>
-              <td>Monday</td>
-              <td>Closed*</td>
-            </tr>
-            <tr>
-              <td>Tuesday</td>
-              <td>10am – 4pm</td>
-            </tr>
-            <tr>
-              <td>Wednesday</td>
-              <td>10am – 4pm</td>
-            </tr>
-            <tr>
-              <td>Thursday</td>
-              <td>10am – 4pm</td>
-            </tr>
-            <tr>
-              <td>Friday</td>
-              <td>10am – 4pm</td>
-            </tr>
-            <tr>
-              <td>Saturday</td>
-              <td>10am – 4pm</td>
-            </tr>
-            <tr>
-              <td>Sunday</td>
-              <td>10am – 5pm</td>
-            </tr>
-          </table>
-        </div>
-      </div>
-      <hr />
-      <div class="social-media">
-        <div class="social">
-          <a href="#"
-            ><i class="fa fa-instagram" style="font-size: 30px"></i
-          ></a>
-          <a href="#"><i class="fa fa-facebook" style="font-size: 30px"></i></a>
-          <a href="#"><i class="fa fa-github" style="font-size: 30px"></i></a>
-        </div>
-        <div class="copyright">
-          <span>&copy; copyright 2025 museum of arts</span>
-        </div>
-      </div>
-    </footer>
-  </body>
+            <hr>
+            <div class="social-media">
+                <div class="social">
+                    <a href="#"><i class='fa fa-instagram' style='font-size:30px'></i></a>
+                    <a href="#"><i class='fa fa-facebook' style='font-size:30px'></i></a>
+                    <a href="#"><i class='fa fa-github' style='font-size:30px'></i></a>
+                </div>
+                <div class="copyright">
+                    <span>&copy; copyright 2025 museum of arts</span>
+                </div>
+            </div>
+        </footer>
+</body>
 </html>

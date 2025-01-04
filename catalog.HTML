@@ -993,6 +993,12 @@
         $("#modalImage").attr("src", imgSrc);
         $("#modalDescription").text(description);
 
+  // Show the modal with animation
+  const modal = $("#modal");
+  modal.css({ display: "flex", opacity: 0, top: "-50px" }).animate(
+    { opacity: 1, top: "0px" },
+    1000 // Duration of the animation in milliseconds
+  );
         // Show the modal with animation
         const modal = $("#modal");
         modal.css({ display: "flex", opacity: 0, top: "-50px" }).animate(
@@ -1002,6 +1008,19 @@
 
         $("body").addClass("modal-open");
       }
+
+// Function to close the modal with animation
+$(".close").on("click", function () {
+  const modal = $("#modal");
+  modal.animate(
+    { opacity: 0, top: "-50px" },
+    500,
+    function () {
+      modal.css("display", "none");
+    }
+  );
+  $("body").removeClass("modal-open");
+});
 
       // Function to close the modal with animation
       $(".close").on("click", function () {

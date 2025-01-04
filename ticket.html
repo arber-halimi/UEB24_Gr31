@@ -14,22 +14,15 @@
       src="https://kit.fontawesome.com/a076d05399.js"
       crossorigin="anonymous"
     ></script>
-    <script>
-      async function includeHTML(file, elementId) {
-        const response = await fetch(file);
-        const content = await response.text();
-        document.getElementById(elementId).innerHTML = content;
-        
-      }
-      window.onload = () => {
-        includeHTML('./header/header.html', 'header');
-        includeHTML('./footer/footer.html', 'footer');
-      };
-    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div id="header"></div>
-    
+
     <main>
       <div class="event-cards-container">
         <div class="event-card" onclick="openModal('Fossil Exhibition', 25)">
@@ -294,6 +287,17 @@
         </div>
       </div>
     </main>
+
+    <div id="footer"></div>
+
+    <script type="text/javascript">
+      $("#header").load("header/header.html");
+    </script>
+
+    <script type="text/javascript">
+      $("#footer").load("footer/footer.html");
+    </script>
+
     <script>
       let originalPrice = 0; // Store the original price globally
 
@@ -454,35 +458,37 @@
         }
       });
       function validateEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (emailRegex.test(email)) {
-        return true;
-    } else {
-        alert("Please enter a valid email address.");
-        return false;
-    }
-}
-function validatePassword(password) {
-    const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-    if (passwordRegex.test(password)) {
-        return true;
-    } else {
-        alert("Password must be at least 8 characters long, contain one uppercase letter, one number, and one special character.");
-        return false;
-    }
-}
-function validateRequiredFields(form) {
-    let isValid = true;
-    const requiredFields = form.querySelectorAll("[required]");
-    requiredFields.forEach(field => {
-        if (field.value.trim() === "") {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (emailRegex.test(email)) {
+          return true;
+        } else {
+          alert("Please enter a valid email address.");
+          return false;
+        }
+      }
+      function validatePassword(password) {
+        const passwordRegex =
+          /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        if (passwordRegex.test(password)) {
+          return true;
+        } else {
+          alert(
+            "Password must be at least 8 characters long, contain one uppercase letter, one number, and one special character."
+          );
+          return false;
+        }
+      }
+      function validateRequiredFields(form) {
+        let isValid = true;
+        const requiredFields = form.querySelectorAll("[required]");
+        requiredFields.forEach((field) => {
+          if (field.value.trim() === "") {
             alert(`${field.name} is required.`);
             isValid = false;
-        }
-    });
-    return isValid;
-}
+          }
+        });
+        return isValid;
+      }
     </script>
-    <div id="footer"></div>
   </body>
 </html>

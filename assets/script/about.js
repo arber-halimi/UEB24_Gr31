@@ -11,4 +11,20 @@ function showInfo(section) {
 
   
     document.getElementById(section).classList.add('active');
+    playAudio(section);
+}
+
+function playAudio(section) {
+    
+    const audios = document.querySelectorAll('audio');
+    audios.forEach(audio => audio.pause());
+
+    
+    const audio = document.getElementById(`${section}-audio`);
+    if (audio) {
+        audio.currentTime = 0; 
+        audio.play();
+    } else {
+        console.log(`No audio found for ${section}`);
+    }
 }

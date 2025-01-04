@@ -158,8 +158,8 @@ header {
     flex-direction: column;       
     justify-content: flex-start;  
     align-items: center;          
-    padding: 250px;                
-    margin-top: -150px;             
+    padding: 180px;                
+    margin-top: -110px;             
     margin-left: 650px;           
     position: relative;
     width: calc(100% - 650px);    
@@ -308,6 +308,17 @@ h4 {
     font-size: 20px;
     margin-bottom: 20px; 
 }
+.content ol {
+    margin: 0 auto;                
+    padding: 0;                     
+    list-style-position: inside;    
+    text-align: left;               
+    width: fit-content;             
+}
+.content ol li {
+    text-align: left;               
+}
+
 
 ul li, ol li {
     padding-bottom: 10px; 

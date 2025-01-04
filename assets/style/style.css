@@ -106,7 +106,7 @@
     font-weight: normal;
 }
 
-.about { 
+/* .about { 
     grid-area: 1 / 2 / 2 / 3;
     display: flex; 
     flex-direction: column;
@@ -209,6 +209,4 @@
 
 .intro-to-categories .itc-photos img:hover{
     animation: anim 3s ease 0s 0.5 normal backwards;
-}
-    
-
+} */

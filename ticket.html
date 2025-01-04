@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Museum Ticket Purchase</title>
     <link rel="stylesheet" href="./assets/style/ticket.css" />
-    <link rel="stylesheet" href="./assets/style/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -14,43 +13,15 @@
       src="https://kit.fontawesome.com/a076d05399.js"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <header>
-      <div class="para-header">
-        <div class="search-bar">
-          <div class="search">
-            <i class="fa fa-search"></i>
-            <p>Search</p>
-          </div>
-          <div class="languages">
-            <select id="cars" name="cars">
-              <option value="volvo">English</option>
-              <option value="saab">Shqip</option>
-            </select>
-          </div>
-        </div>
-        <div class="logo">
-          <h1><span>M</span>useum</h1>
-        </div>
-        <div class="tickets">
-          <button><i class="fas fa-ticket-alt"></i> Tickets</button>
-        </div>
-      </div>
-      <hr />
-      <div class="header">
-        <ul>
-          <li><a href="./index.html">Home</a></li>
-          <li><a href="./catalog/KATEGORIA.HTML">Catalog</a></li>
-          <li><a href="./about.html">About</a></li>
-          <li>
-            <a href="./exhibition-events/exhibitions-events.html"
-              >Exhibitions</a
-            >
-          </li>
-        </ul>
-      </div>
-    </header>
+    <div id="header"></div>
+
     <main>
       <div class="event-cards-container">
         <div class="event-card" onclick="openModal('Fossil Exhibition', 25)">
@@ -315,6 +286,17 @@
         </div>
       </div>
     </main>
+
+    <div id="footer"></div>
+
+    <script type="text/javascript">
+      $("#header").load("header/header.html");
+    </script>
+
+    <script type="text/javascript">
+      $("#footer").load("footer/footer.html");
+    </script>
+
     <script>
       let originalPrice = 0; // Store the original price globally
 
@@ -474,123 +456,6 @@
           }
         }
       });
-      function validateEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (emailRegex.test(email)) {
-        return true;
-    } else {
-        alert("Please enter a valid email address.");
-        return false;
-    }
-}
-function validatePassword(password) {
-    const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-    if (passwordRegex.test(password)) {
-        return true;
-    } else {
-        alert("Password must be at least 8 characters long, contain one uppercase letter, one number, and one special character.");
-        return false;
-    }
-}
-function validateRequiredFields(form) {
-    let isValid = true;
-    const requiredFields = form.querySelectorAll("[required]");
-    requiredFields.forEach(field => {
-        if (field.value.trim() === "") {
-            alert(`${field.name} is required.`);
-            isValid = false;
-        }
-    });
-    return isValid;
-}
     </script>
-    <footer>
-      <div class="pre-footer">
-        <div class="give-your-info">
-          <div class="sing-up">
-            <h4>Sign up to our mailing list</h4>
-            <div class="sign-up-form">
-              <form action="#">
-                <input type="text" placeholder="Enter your email" />
-                <button>Submit</button>
-              </form>
-            </div>
-          </div>
-          <div class="buttons">
-            <h5>Join the Museum community</h5>
-            <button>become a member</button>
-            <button>voulenteer</button>
-            <button>donate</button>
-          </div>
-        </div>
-
-        <div class="about">
-          <span>about</span>
-          <a href="#">about</a>
-          <a href="#">Staff and board</a>
-          <a href="#">Join the team</a>
-          <a href="#">voulenteer uppertunies</a>
-          <a href="#">Contact us</a>
-        </div>
-        <div class="contact">
-          <span id="contact">Contact</span>
-          <address>
-            <span>Rruga Deshmore e Kombit, Prishtine</span>
-            <a href="mailto:jim@example.com">jim@example.com</a><br />
-            <a href="tel:+14155550132">+1 (415) 555‑0132</a>
-          </address>
-        </div>
-        <div class="opening-hours">
-          <span id="time">opening hours</span>
-          <table>
-            <tr>
-              <th></th>
-              <th></th>
-            </tr>
-            <tr>
-              <td>Monday</td>
-              <td>Closed*</td>
-            </tr>
-            <tr>
-              <td>Tuesday</td>
-              <td>10am – 4pm</td>
-            </tr>
-            <tr>
-              <td>Wednesday</td>
-              <td>10am – 4pm</td>
-            </tr>
-            <tr>
-              <td>Thursday</td>
-              <td>10am – 4pm</td>
-            </tr>
-            <tr>
-              <td>Friday</td>
-              <td>10am – 4pm</td>
-            </tr>
-            <tr>
-              <td>Saturday</td>
-              <td>10am – 4pm</td>
-            </tr>
-            <tr>
-              <td>Sunday</td>
-              <td>10am – 5pm</td>
-            </tr>
-          </table>
-        </div>
-      </div>
-      <hr />
-      <div class="social-media">
-        <div class="social">
-          <a href="#"
-            ><i class="fa fa-instagram" style="font-size: 30px"></i
-          ></a>
-          <a href="#"><i class="fa fa-facebook" style="font-size: 30px"></i></a>
-          <a href="#"><i class="fa fa-github" style="font-size: 30px"></i></a>
-        </div>
-        <div class="copyright">
-          <span>&copy; copyright 2025 museum of arts</span>
-        </div>
-      </div>
-    </footer>
   </body>
 </html>

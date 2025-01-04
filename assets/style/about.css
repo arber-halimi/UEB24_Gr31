@@ -17,96 +17,97 @@
 }
 
 
-header{
+header {
     display: block;
     background-color: #000000;
-}
+  }
 
-header .para-header{
+  header .para-header {
     display: flex;
     justify-content: space-between;
     width: 80%;
     margin: 0 auto;
     padding-top: 40px;
     padding-bottom: 15px;
-}
+  }
 
-header .para-header .search-bar{
+  header .para-header .search-bar {
     display: flex;
-}
+  }
 
-header .para-header .search-bar .search{
+  header .para-header .search-bar .search {
     display: flex;
     margin-right: 10px;
-}
+  }
 
-header .para-header .search-bar .search i, p{
-    color: #FFFFFF;
+  header .para-header .search-bar .search i,
+  p {
+    color: #ffffff;
     margin-right: 3px;
-}
+  }
 
-header .para-header .search-bar .languages select{
+  header .para-header .search-bar .languages select {
     background-color: transparent;
     border: none;
-    color: #FFFFFF;
-}
+    color: #ffffff;
+  }
 
-header .para-header .search-bar .languages select option{
-    color: #FFFFFF;
-}
+  header .para-header .search-bar .languages select option {
+    color: #ffffff;
+  }
 
-header .para-header .logo h1{
+  header .para-header .logo h1 {
     font-family: var(--logo-font);
-    color: #FFFFFF;
+    color: #ffffff;
     font-weight: 400;
     font-size: 25px;
     position: relative;
     bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    span{
-        font-size: 34px;
+    span {
+      font-size: 34px;
     }
-}
+  }
 
-header .para-header .tickets button{
+  header .para-header .tickets button {
     background-color: #008573;
     border: none;
     border-radius: 20px;
     padding: 9px 20px;
-    color: #FFFFFF;
+    color: #ffffff;
     font-size: 14px;
     position: relative;
     bottom: 5px;
-}
+  }
 
-header hr{
+  header hr {
     width: 80%;
     margin: 0 auto;
     background-color: lightgray;
-}
+  }
 
-header .header{
+  header .header {
     display: flex;
     justify-content: center;
     padding-top: 20px;
     padding-bottom: 20px;
-}
+  }
 
-header .header ul{
+  header .header ul {
     display: flex;
     list-style: none;
-}
+  }
 
-header .header ul li a{
+  header .header ul li a {
     margin-left: 15px;
-    color: #FFFFFF;
+    color: #ffffff;
     text-decoration: none;
     font-size: 19px;
     text-transform: uppercase;
     font-family: var(--logo-font);
     font-weight: bold;
-}
+  }
 
 .main {
     position: relative;  
@@ -157,8 +158,8 @@ header .header ul li a{
     flex-direction: column;       
     justify-content: flex-start;  
     align-items: center;          
-    padding: 250px;                
-    margin-top: -150px;             
+    padding: 180px;                
+    margin-top: -100px;             
     margin-left: 650px;           
     position: relative;
     width: calc(100% - 650px);    
@@ -302,4 +303,194 @@ iframe {
     width: 100%;
     height: 500px; 
     border: 0; 
+}
+h4 { 
+    font-size: 20px;
+    margin-bottom: 20px; 
+}
+.content ol {
+    margin: 0 auto;                
+    padding: 0;                     
+    list-style-position: inside;    
+    text-align: left;               
+    width: fit-content;             
+}
+.content ol li {
+    text-align: left;               
+}
+
+
+ul li, ol li {
+    padding-bottom: 10px; 
+}
+
+ul, ol {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #555;
+    line-height: 30px; 
+}
+.image-container {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  
+
+footer {
+    background-color: #000000;
+  }
+
+  footer .pre-footer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    width: 85%;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .give-your-info {
+    grid-area: 1 / 1 / 2 / 2;
+    padding-right: 40px;
+  }
+
+  .give-your-info .sing-up h4 {
+    color: lightgray;
+    margin-bottom: 10px;
+  }
+
+  .give-your-info .sing-up .sign-up-form input {
+    background-color: transparent;
+    border-style: none none solid none;
+  }
+
+  .give-your-info .sing-up .sign-up-form button {
+    background-color: transparent;
+    border-style: none none solid none;
+    color: lightgray;
+  }
+
+  .give-your-info .buttons {
+    display: flex;
+    flex-direction: column;
+    color: lightgray;
+    margin-top: 15px;
+  }
+
+  .give-your-info .buttons button {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: transparent;
+    color: lightgray;
+    border: solid 1px;
+    border-color: gray;
+    text-transform: uppercase;
+  }
+  .about { 
+    grid-area: 1 / 2 / 2 / 3;
+    display: flex; 
+    flex-direction: column;
+    margin-left: 50px;
+}
+
+.about span{
+    color: lightgray;
+    font-size: 17px;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+}
+
+.about a{
+    color: gray;
+    font-family: 14px;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+
+.contact { 
+    grid-area: 1 / 3 / 2 / 4;
+
+}
+
+.contact #contact{
+    color: lightgray;
+    font-size: 17px;
+    text-transform: capitalize;
+}
+
+.contact address{
+    margin-top: 15px;
+}
+
+.contact a, .contact span{    
+    color: gray;
+    font-family: 14px;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.opening-hours {
+    grid-area: 1 / 4 / 2 / 5; 
+}
+
+.opening-hours #time{
+    color: lightgray;
+    font-size: 17px;
+    text-transform: capitalize;
+}
+
+.opening-hours table{
+    color: gray;
+    margin-top: 15px;
+}
+.opening-hours table tr td {
+    padding-right: 30px;
+}
+
+.social-media{
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 85%;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.social-media .social a{
+    color: lightgray;
+}
+
+.social-media .social a i{
+    margin-right: 15px;
+}
+
+
+.social-media .copyright span{
+    color: lightgray;
+    text-transform: capitalize;
+}
+
+.intro-to-categories .itc-photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    gap: 30px;
+    margin-bottom: 100px;
+}
+
+.intro-to-categories .itc-photos img{
+    width: 100%;
+    height: 100%;
+}
+
+
+.intro-to-categories .itc-photos img:hover{
+    animation: anim 3s ease 0s 0.5 normal backwards;
 }

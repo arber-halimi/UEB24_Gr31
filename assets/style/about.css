@@ -304,6 +304,27 @@ iframe {
     height: 500px; 
     border: 0; 
 }
+h4 { 
+    font-size: 20px;
+    margin-bottom: 20px; 
+}
+
+ul li, ol li {
+    padding-bottom: 10px; 
+}
+
+ul, ol {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #555;
+    line-height: 30px; 
+}
+.image-container {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  
 
 footer {
     background-color: #000000;

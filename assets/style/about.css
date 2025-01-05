@@ -17,7 +17,7 @@
 }
 
 
-header {
+/* header {
     display: block;
     background-color: #000000;
   }
@@ -107,7 +107,7 @@ header {
     text-transform: uppercase;
     font-family: var(--logo-font);
     font-weight: bold;
-  }
+  } */
 
 .main {
     position: relative;  

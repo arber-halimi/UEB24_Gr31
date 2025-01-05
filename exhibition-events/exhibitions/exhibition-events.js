@@ -1,6 +1,5 @@
 $(document).ready(function () {
     try {
-        // Image Gallery Functionality
         $(".image-gallery img").click(function () {
             try {
                 if ($("#image-modal").length === 0) {
@@ -36,7 +35,6 @@ $(document).ready(function () {
     }
 
     try {
-        // Callback Function Example
         function executeWithCallback(data, callback) {
             console.log(`Processing data: ${data}`);
             callback(data);
@@ -56,16 +54,14 @@ $(document).ready(function () {
             console.log("Button clicked!");
         });
 
-        // Catalog Filtering
         function filterCatalog(category) {
             sessionStorage.setItem("selectedCategory", category);
         }
 
-        // Dropdown for Other Exhibitions
         $('#other-exhibitions').change(function () {
             const exhibition = $(this).val();
             if (exhibition) {
-                window.location.href = `./${exhibition}.html`; // Redirect to selected exhibition page
+                window.location.href = `./${exhibition}.html`;
             }
         });
 

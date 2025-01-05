@@ -232,5 +232,22 @@
     position: relative; /* Make sure the triangle is positioned relative to the square */
     border: 2px solid darkblue; /* Set the thickness of the square's border to 10px */
   }
+  .restart-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #008573;
+    color: black;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block; /* Ensures the button respects centering */
+
+  }
+
+  .restart-btn:hover {
+    background-color: black;
+    color: #008573;
+  }
   
      

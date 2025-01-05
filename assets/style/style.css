@@ -210,3 +210,27 @@
 .intro-to-categories .itc-photos img:hover{
     animation: anim 3s ease 0s 0.5 normal backwards;
 } */
+
+.container {
+    position: relative;
+    width: 700px; /* Increase container width */
+    height: 300px; /* Increase container height */
+    border: 10px solid rgb(81, 81, 81);
+    
+    /* Background image settings */
+    background-image: url("/UEB24_Gr31/vazo.svg"); /* Path to your background image */
+    background-size: contain; /* Ensures image fits within the container without stretching */
+    background-position: center ; /* Centers the image */
+    background-repeat: no-repeat; /* Ensures the image does not repeat */
+    background-color:black;
+  }
+  
+  .square {
+    width: 38px;  /* Set the width of the square */
+    height: 38px; /* Set the height of the square */
+    background-color: lightblue; /* Optional: Set a background color */
+    position: relative; /* Make sure the triangle is positioned relative to the square */
+    border: 2px solid darkblue; /* Set the thickness of the square's border to 10px */
+  }
+  
+     

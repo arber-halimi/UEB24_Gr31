@@ -24,7 +24,7 @@
 
     <main>
       <div class="event-cards-container">
-        <div class="event-card" onclick="openModal('Fossil From The Dawn Of Time', 25,'./exhibition-events/exhibitions/exhibition2.html')">
+        <div class="event-card" onclick="openModal('Fossil From The Dawn Of Time', 60,'./exhibition-events/exhibitions/exhibition2.html')">
           <img
             src="./exhibition-events/exhibition-images/fossil.jpg"
             alt="Fossil From The Dawn Of Time"
@@ -32,7 +32,7 @@
           <h3>Fossil From The Dawn Of Time</h3>
           <p>Click To Buy Tickets!</p>
         </div>
-        <div class="event-card" onclick="openModal('Evolution of Expression: Exploring the Key Periods in Art History', 20,'./exhibition-events/exhibitions/exhibition1.html')">
+        <div class="event-card" onclick="openModal('Evolution of Expression: Exploring the Key Periods in Art History', 50,'./exhibition-events/exhibitions/exhibition1.html')">
           <img
             src="./exhibition-events/exhibition-images/Piktura.jpg"
             alt="Exploring the Key Periods in Art History"
@@ -40,7 +40,7 @@
           <h3>Evolution of Expression</h3>
           <p>Click To Buy Tickets!</p>
         </div>
-        <div class="event-card" onclick="openModal('Machines of the Past', 15,'./exhibition-events/exhibitions/exhibition3.html')">
+        <div class="event-card" onclick="openModal('Machines of the Past', 45,'./exhibition-events/exhibitions/exhibition3.html')">
           <img
             src="./exhibition-events/exhibition-images/oldmachine.jpg"
             alt="Science Fair"
@@ -67,6 +67,8 @@
       <div class="forms-container">
         <form id="ticketForm">
           <h2>Ticket Purchase</h2>
+          <p>This form is for buying everyday museum tickets, it doesnt correspond to the upcoming events!</p>
+          <h2></h2>
 
           <label for="name">Name:</label>
           <input
@@ -312,16 +314,34 @@
 
 <script>
     document.getElementById('more-info-btn').addEventListener('click', () => {
-  const modal = document.getElementById('ticketModal');
+      try {const modal = document.getElementById('ticketModal');
   const redirectUrl = modal.getAttribute('data-redirect-url');
   
   if (redirectUrl) {
     window.location.href = redirectUrl; // Redirect to the exhibition page
   }
+} catch (error) {
+  console.error('Error handling more-info button click:',error);
+}
 });
+  
 
   let originalPrice = 0; 
   function openModal(eventName, price, redirectUrl) {
+    try {
+    const modal = document.getElementById('ticketModal');
+    document.getElementById('eventTitle').textContent = eventName;
+    originalPrice = price; 
+    document.getElementById('eventPrice').textContent = `Price: $${originalPrice}`;
+    document.getElementById('adult').checked = true;
+    updatePriceBasedOnType(); 
+    modal.style.display = 'block';
+    modal.setAttribute('data-redirect-url', redirectUrl);
+    } catch (error) {
+      console.error('Error opening modal:', error);
+    }
+  
+  
   const modal = document.getElementById('ticketModal');
   document.getElementById('eventTitle').textContent = eventName;
 

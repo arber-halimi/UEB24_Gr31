@@ -25,14 +25,12 @@ function showInfo(section) {
     });
 
     setTimeout(() => {
+      
         window.scrollTo({
-            top: 0, 
+            top: 0 + 50, 
             left: 0,
             behavior: 'smooth' 
         });
-
-        
-        window.scrollBy(0, 50); 
     }, 500); 
 
     playAudio(section);

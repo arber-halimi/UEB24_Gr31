@@ -335,7 +335,26 @@ ul, ol {
     margin: 0 auto;
     max-width: 100%;
   }
+  .quote-section {
+    text-align: center;
+    margin: 20px auto;
+    font-family: 'Arial', sans-serif;
+  }
   
+  .quote-section blockquote {
+    font-size: 15px;
+    font-style: italic;
+    color: #333; 
+    margin: 10px auto;
+  }
+  
+  .quote-section hr {
+    border: 0;
+    height: 1px;
+    background: #ccc; 
+    margin: 10px auto;
+    width: 60%; 
+  }
 
 footer {
     background-color: #000000;

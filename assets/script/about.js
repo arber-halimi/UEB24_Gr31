@@ -1,16 +1,38 @@
 function showInfo(section) {
 
     const contentSections = document.querySelectorAll('.info');
-    contentSections.forEach((content) => content.style.display = 'none');
+    const navItems = document.querySelectorAll('.nav-item');
+    const targetSection = document.getElementById(`${section}-content`);
+    const targetNavItem = document.getElementById(section);
+    contentSections.forEach(content => content.style.display = 'none');
+    navItems.forEach(item => item.classList.remove('active'));
+
+   
+    if (targetSection) {
+        targetSection.style.display = 'block';
+    } else {
+        console.log(`Section ${section} not found`);
+    }
+
+    if (targetNavItem) {
+        targetNavItem.classList.add('active');
+    }
 
     
-    const navItems = document.querySelectorAll('.nav-item');
-    navItems.forEach((item) => item.classList.remove('active'));
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth', 
+    });
 
-    document.getElementById(`${section}-content`).style.display = 'block';
+    setTimeout(() => {
+      
+        window.scrollTo({
+            top: 0 + 50, 
+            left: 0,
+            behavior: 'smooth' 
+        });
+    }, 500); 
 
-  
-    document.getElementById(section).classList.add('active');
     playAudio(section);
 }
 

@@ -1,41 +1,38 @@
 function showInfo(section) {
+    try {
+        const currentScrollY = window.scrollY;
+        if (currentScrollY > 0) {
+            window.scrollTo({
+                top: 100, 
+                behavior: 'smooth', 
+            });
+        }
 
-    const contentSections = document.querySelectorAll('.info');
-    const navItems = document.querySelectorAll('.nav-item');
-    const targetSection = document.getElementById(`${section}-content`);
-    const targetNavItem = document.getElementById(section);
-    contentSections.forEach(content => content.style.display = 'none');
-    navItems.forEach(item => item.classList.remove('active'));
-
-   
-    if (targetSection) {
-        targetSection.style.display = 'block';
-    } else {
-        console.log(`Section ${section} not found`);
-    }
-
-    if (targetNavItem) {
-        targetNavItem.classList.add('active');
-    }
-
-    
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth', 
-    });
-
-    setTimeout(() => {
       
-        window.scrollTo({
-            top: 0 + 50, 
-            left: 0,
-            behavior: 'smooth' 
-        });
-    }, 500); 
+        const contentSections = document.querySelectorAll('.info');
+        const navItems = document.querySelectorAll('.nav-item');
+        contentSections.forEach(content => (content.style.display = 'none'));
+        navItems.forEach(item => item.classList.remove('active'));
 
-    playAudio(section);
+
+        const targetSection = document.getElementById(`${section}-content`);
+        if (targetSection) {
+            targetSection.style.display = 'block';
+        } else {
+            console.warn(`Section ${section} not found`);
+        }
+
+
+        const targetNavItem = document.getElementById(section);
+        if (targetNavItem) {
+            targetNavItem.classList.add('active');
+        }
+
+        playAudio(section);
+    } catch (error) {
+        console.error('Error in showInfo:', error);
+    }
 }
-
 function playAudio(section) {
     
     const audios = document.querySelectorAll('audio');

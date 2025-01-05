@@ -9,40 +9,50 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="./../../logo.js"></script>
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="para-header">
-            <div class="search-bar">
-                <div class="search">
-                    <i class="fa fa-search"></i>
-                    <p>Search</p>
-                </div>
-                <div class="languages">
-                    <select id="cars" name="cars">
-                        <option value="volvo">English</option>
-                        <option value="saab">Shqip</option>
-                    </select>
-                </div>
+          <div class="search-bar">
+            <div class="search">
+              <i class="fa fa-search"></i>
+              <p>Search</p>
             </div>
-            <div class="logo">
-                <h1>Museum</h1>
+            <div class="languages">
+              <select id="cars" name="cars">
+                <option value="volvo">English</option>
+                <option value="saab">Shqip</option>
+              </select>
             </div>
-            <div class="tickets">
-                <button><i class='fas fa-ticket-alt'></i> Tickets</button>
-            </div>
+          </div>
+          <div class="logo">
+            <h1><span>M</span>useum</h1>
+          </div>
+          <div class="tickets">
+            <button>
+              <i class="fas fa-ticket-alt"></i
+              ><a href="./../../ticket.html" style="text-decoration: none; color: white"
+                >Tickets</a
+              >
+            </button>
+          </div>
         </div>
-        <hr>
+        <hr />
         <div class="header">
-            <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Catalog</a></li>
-                <li><a href="#">Tickets</a></li>
-                <li><a href="#">Exhibitions</a></li>
-            </ul>
+          <ul>
+            <li><a href="./../../index.html">Home</a></li>
+            <li><a href="./../../about.html">About</a></li>
+            <li><a href="./../../catalog.HTML">Catalog</a></li>
+            <li>
+              <a href="../exhibitions-events.html"
+                >Exhibitions</a
+              >
+            </li>
+          </ul>
         </div>
-    </header>
+      </header>
     <div class="exhibition-container">
         <!-- Left Side (Exhibition Title and Description) -->
         <div class="exhibition-info">
@@ -112,6 +122,18 @@
         <a href="../../catalog.HTML" class="see-more" onclick="filterCatalog('sculptures')">See More</a>
     </div>
 
+     <!-- Other Exhibitions Dropdown -->
+     <div class="other-exhibitions">
+        <h3>Other Exhibitions</h3>
+        <select id="other-exhibitions" name="exhibitions">
+            <option value="exhibition5">Timeless Forms: The Art of Sculpture Through the Ages</option>
+            <option value="exhibition1">Evolution of Expression: Exploring the Key Periods in Art History</option>
+            <option value="exhibition2">Fossils from the Dawn of Time</option>
+            <option value="exhibition3">Machines of the Past: Early Innovations</option>
+            <option value="exhibition4">Ancient Artifacts: Treasures of History</option>
+        </select>
+    </div>
+
         <!-- Book Ticket Button -->
         <a href="../../ticket.html" class="book-ticket-button">Book Ticket</a>
     </div>
@@ -129,88 +151,91 @@
      <!-- Footer -->
      <footer>
         <div class="pre-footer">
-            <div class="give-your-info">
-                <div class="sing-up">
-                    <h4>Sign up to our mailing list</h4>
-                    <div class="sign-up-form">
-                        <form action="#">
-                            <input type="text" placeholder="Enter your email">
-                            <button>Submit</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="buttons">
-                    <h5>Join the Museum community</h5>
-                    <button>Become a member</button>
-                    <button>Volunteer</button>
-                    <button>Donate</button>
-                </div>
+          <div class="give-your-info">
+            <div class="sing-up">
+              <h4>Sign up to our mailing list</h4>
+              <div class="sign-up-form">
+                <form action="#">
+                  <input type="text" placeholder="Enter your email" />
+                  <button>Submit</button>
+                </form>
+              </div>
             </div>
-            <div class="about">
-                <span>About</span>
-                <a href="#">About</a>
-                <a href="#">Staff and board</a>
-                <a href="#">Join the team</a>
-                <a href="#">Volunteer opportunities</a>
-                <a href="#">Contact us</a>
+            <div class="buttons">
+              <h5>Join the Museum community</h5>
+              <button>become a member</button>
+              <button>voulenteer</button>
+              <button>donate</button>
             </div>
-            <div class="contact">
-                <span id="contact">Contact</span>
-                <address>
-                    <span>Rruga Deshmore e Kombit, Prishtine</span>
-                    <a href="mailto:jim@example.com">jim@example.com</a><br />
-                    <a href="tel:+14155550132">+1 (415) 555‑0132</a>
-                </address>
-            </div>
-            <div class="opening-hours">
-                <span id="time">Opening hours</span>
-                <table>
-                    <tr>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <td>Monday</td>
-                        <td>Closed</td>
-                    </tr>
-                    <tr>
-                        <td>Tuesday</td>
-                        <td>10am – 4pm</td>
-                    </tr>
-                    <tr>
-                        <td>Wednesday</td>
-                        <td>10am – 4pm</td>
-                    </tr>
-                    <tr>
-                        <td>Thursday</td>
-                        <td>10am – 4pm</td>
-                    </tr>
-                    <tr>
-                        <td>Friday</td>
-                        <td>10am – 4pm</td>
-                    </tr>
-                    <tr>
-                        <td>Saturday</td>
-                        <td>10am – 4pm</td>
-                    </tr>
-                    <tr>
-                        <td>Sunday</td>
-                        <td>10am – 5pm</td>
-                    </tr>
-                </table>
-            </div>
+          </div>
+  
+          <div class="about">
+            <span>about</span>
+            <a href="#">about</a>
+            <a href="#">Staff and board</a>
+            <a href="#">Join the team</a>
+            <a href="#">voulenteer uppertunies</a>
+            <a href="#">Contact us</a>
+          </div>
+          <div class="contact">
+            <span id="contact">Contact</span>
+            <address>
+              <span>Rruga Deshmore e Kombit, Prishtine</span>
+              <a href="mailto:jim@example.com">jim@example.com</a><br />
+              <a href="tel:+14155550132">+1 (415) 555‑0132</a>
+            </address>
+          </div>
+          <div class="opening-hours">
+            <span id="time">opening hours</span>
+            <table>
+              <tr>
+                <th></th>
+                <th></th>
+              </tr>
+              <tr>
+                <td>Monday</td>
+                <td>Closed*</td>
+              </tr>
+              <tr>
+                <td>Tuesday</td>
+                <td>10am – 4pm</td>
+              </tr>
+              <tr>
+                <td>Wednesday</td>
+                <td>10am – 4pm</td>
+              </tr>
+              <tr>
+                <td>Thursday</td>
+                <td>10am – 4pm</td>
+              </tr>
+              <tr>
+                <td>Friday</td>
+                <td>10am – 4pm</td>
+              </tr>
+              <tr>
+                <td>Saturday</td>
+                <td>10am – 4pm</td>
+              </tr>
+              <tr>
+                <td>Sunday</td>
+                <td>10am – 5pm</td>
+              </tr>
+            </table>
+          </div>
         </div>
-        <hr>
+        <hr />
         <div class="social-media">
-            <div class="social">
-                <a href="#"><i class='fa fa-instagram' style='font-size:30px'></i></a>
-                <a href="#"><i class='fa fa-facebook' style='font-size:30px'></i></a>
-                <a href="#"><i class='fa fa-github' style='font-size:30px'></i></a>
-            </div>
-            <div class="copyright">
-                <span>&copy; Copyright 2025 Museum of Arts</span>
-            </div>
+          <div class="social">
+            <a href="#"
+              ><i class="fa fa-instagram" style="font-size: 30px"></i
+            ></a>
+            <a href="#"><i class="fa fa-facebook" style="font-size: 30px"></i></a>
+            <a href="#"><i class="fa fa-github" style="font-size: 30px"></i></a>
+          </div>
+          <div class="copyright">
+            <span>&copy; copyright 2025 museum of arts</span>
+          </div>
         </div>
-    </footer>
+      </footer>
 </body>
 </html>

@@ -10,8 +10,8 @@
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
     ></script>
+    <script src="./logo.js"></script>
 
-    <!-- </div> -->
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -78,7 +78,7 @@
         padding: 5px 0;
       }
 
-      /* Show All as a div */
+      /* Show All  */
       .reset {
         width: 100%;
         text-align: center;
@@ -91,7 +91,6 @@
         font-size: 1.2em;
       }
 
-      /* Make "Show All" div darker when selected */
       .reset.selected {
         background-color: #b7b7b7;
         color: #080808;
@@ -102,7 +101,7 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 10px;
-        justify-items: center; /* Center the items horizontally */
+        justify-items: center; 
         row-gap: 50px;
         margin-top: 20px;
         padding: 80px 80px;
@@ -115,22 +114,22 @@
         border-radius: 30px;
         padding: 10px;
         background-color: #373737;
-        box-shadow: 4px 4px 8px #008573; /* Hije me zhvendosje dhe turbullim */
+        box-shadow: 4px 4px 8px #008573;
         text-align: center;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         overflow: hidden;
-        position: relative; /* Ensure stacking of child elements */
+        position: relative; 
         transition: transform 0.3s ease, background-color 0.3s ease,
-          box-shadow 0.3s ease; /* Add box-shadow transition */
+          box-shadow 0.3s ease; 
       }
 
       .object-item:hover {
-        transform: scale(1.02); /* Slight scaling for a subtle hover effect */
+        transform: scale(1.02); 
         background-color: #373737;
-        box-shadow: 12px 12px 20px #008573; /* Bigger shadow on hover */
+        box-shadow: 12px 12px 20px #008573; 
       }
 
       .object-item img {
@@ -142,7 +141,7 @@
       }
 
       .object-item:hover img {
-        transform: scale(1.1); /* Slight zoom-in effect on hover */
+        transform: scale(1.1); 
       }
 
       .info {
@@ -156,18 +155,18 @@
         background-color: rgba(0, 0, 0, 0.7);
         padding: 10px;
         border-radius: 10px;
-        opacity: 0; /* Hidden by default */
-        z-index: 10; /* Ensure it appears above other elements */
-        transition: opacity 0.3s ease; /* Smooth fade-in effect */
+        opacity: 0; 
+        z-index: 10; 
+        transition: opacity 0.3s ease; 
       }
 
       .object-item:hover .info {
-        opacity: 1; /* Visible on hover */
+        opacity: 1; 
       }
 
-      /* Modal Styles */
+      
       body.modal-open {
-        overflow: hidden; /* Prevents background scrolling */
+        overflow: hidden; 
       }
       .modal {
         display: none;
@@ -196,8 +195,8 @@
         overflow-x: hidden;
       }
       .modal-body {
-        max-height: 90vh; /* You can adjust this as needed */
-        position: relative; /* Sigurohuni që .modal-body të ketë pozicion në mënyrë që butonat të pozicionohen relativisht ndaj saj */
+        max-height: 90vh; 
+        position: relative; 
         margin-top: 20px;
         margin-bottom: 10px;
       }
@@ -236,7 +235,7 @@
 
     .dropdown {
       position: relative;
-      display: block; /* Ensure the dropdown spans the full width */
+      display: block; 
     }
 
     .dropdown-button {
@@ -246,22 +245,23 @@
       border: none;
       cursor: pointer;
       font-size: 16px;
-      width: 100%; /* Make the button span the full width */
-      box-sizing: border-box; /* Include padding in width calculation */
+      width: 100%; 
+      box-sizing: border-box; 
     }
 
     .dropdown-button:hover {
       color:white;
-      background-color: #008573;
+      background: radial-gradient(circle at top, #008573, #015348, black);
+
     }
 
     .dropdown-menu {
       display: none;
       position: absolute;
-      top: 100%; /* Position menu below the button */
+      top: 100%; 
       left: 0;
       background-color: #008573;
-      width: 100%; /* Match the width of the button */
+      width: 100%; 
       z-index: 1;
       overflow: hidden;
     }
@@ -1007,8 +1007,7 @@
     <div class="dropdown">
       <button class="dropdown-button">Our Collection</button>
       <div class="dropdown-menu">
-        <table>
-          <thead>
+        <table style="border-collapse: collapse; width: 100%; border: 1px solid black;">          <thead>
             <tr>
               <th>Paintings</th>
               <th>Sculptures</th>
@@ -1111,15 +1110,9 @@
   const modal = $("#modal");
   modal.css({ display: "flex", opacity: 0, top: "-50px" }).animate(
     { opacity: 1, top: "0px" },
-    500 // Duration of the animation in milliseconds
+    500 
   );
-        // Show the modal with animation
-         modal = $("#modal");
-        modal.css({ display: "flex", opacity: 0, top: "-50px" }).animate(
-          { opacity: 1, top: "0px" },
-          500 // Duration of the animation in milliseconds
-        );
-
+  
         $("body").addClass("modal-open");
       }
 
@@ -1136,43 +1129,34 @@ $(".close").on("click", function () {
   $("body").removeClass("modal-open");
 });
 
-      // Function to close the modal with animation
-      $(".close").on("click", function () {
-        const modal = $("#modal");
-        modal.animate({ opacity: 0, top: "-50px" }, 1000, function () {
-          modal.css("display", "none");
-        });
-        $("body").removeClass("modal-open");
-      });
+      
       // Function to filter objects based on category selection
       function filterObjects(category, element) {
         const objects = $(".object-item");
         const categories = $(".category, .reset");
 
-        // Remove the 'selected' class from all categories
         categories.removeClass("selected");
 
         // If "all" category is selected
         if (category === "all") {
-          // Fade out all objects, then fade them in simultaneously (show all objects)
           objects.fadeOut(500, function () {
-            objects.fadeIn(500); // Fade in all objects at the same time
+            objects.fadeIn(500); 
           });
-          $(element).addClass("selected"); // Mark the selected category
+          $(element).addClass("selected"); 
         } else {
-          // Fade out all objects first
+          
           objects.fadeOut(500);
 
           // After fading out, fade in only the matching objects
           setTimeout(function () {
             objects.each(function () {
               if ($(this).data("category") === category) {
-                $(this).fadeIn(500); // Fade in the matching objects
+                $(this).fadeIn(500);
               }
             });
           }, 500); // Wait for fadeOut to finish before fading in matching elements
 
-          $(element).addClass("selected"); // Mark the selected category
+          $(element).addClass("selected"); 
         }
 
         // Store the selected category in sessionStorage for page reload persistence
@@ -1191,7 +1175,7 @@ $(".close").on("click", function () {
               selectedCategory === "all" ||
               $(this).data("category") === selectedCategory
             ) {
-              $(this).fadeIn(500); // Fade in the selected category items
+              $(this).fadeIn(500); 
             }
           });
         });
@@ -1208,13 +1192,13 @@ $(".close").on("click", function () {
       $(document).ready(function () {
       // Toggle dropdown menu on button click with animation
       $(".dropdown-button").click(function () {
-        $(".dropdown-menu").stop(true, true).slideToggle(300); // Animate the dropdown
+        $(".dropdown-menu").stop(true, true).slideToggle(300);
       });
 
       // Optional: Close dropdown when clicking outside
       $(document).click(function (event) {
         if (!$(event.target).closest(".dropdown").length) {
-          $(".dropdown-menu").slideUp(300); // Hide the dropdown if clicked outside
+          $(".dropdown-menu").slideUp(300); 
         }
       });
     });

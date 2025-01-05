@@ -210,3 +210,48 @@
 .intro-to-categories .itc-photos img:hover{
     animation: anim 3s ease 0s 0.5 normal backwards;
 } */
+
+.container {
+    position: relative;
+    width: 700px; 
+    height: 300px;
+    border: 10px solid rgb(81, 81, 81);
+    box-shadow: 4px 4px 8px #008573; 
+    border-radius: 30px;
+    background-image: url("/UEB24_Gr31/vazo.svg"); 
+    background-size: contain; 
+    background-position: center ; 
+    background-repeat: no-repeat; 
+    background-color:black;
+    background-attachment: scroll;
+
+    
+  }
+  
+  .square {
+    width: 38px;  
+    height: 38px; 
+    background-color: lightblue; 
+    position: absolute; /* Use absolute positioning for precise placement */
+    border: 2px solid darkblue;
+    left: 6px; /* Set the x-coordinate */
+    top: 6px; /* Set the y-coordinate */
+}
+  .restart-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #008573;
+    color: black;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+  }
+
+  .restart-btn:hover {
+    background-color: black;
+    color: #008573;
+  }
+  
+     

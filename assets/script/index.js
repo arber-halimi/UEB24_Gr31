@@ -16,6 +16,9 @@ const triangle = document.getElementById("square");
 
     let offsetX, offsetY;
 
+    // Initial position of the triangle
+    const initialPosition = { x: 0, y: 0 };
+
     triangle.addEventListener("mousedown", (e) => {
       // Get the mouse position relative to the triangle
       offsetX = e.clientX - triangle.offsetLeft;
@@ -47,4 +50,10 @@ const triangle = document.getElementById("square");
       // Stop dragging
       document.removeEventListener("mousemove", onMouseMove);
       document.removeEventListener("mouseup", onMouseUp);
+    }
+
+    // Reset function to move the triangle back to its initial position
+    function resetPosition() {
+      triangle.style.left = `${initialPosition.x}px`;
+      triangle.style.top = `${initialPosition.y}px`;
     }

@@ -22,8 +22,8 @@ try {
 
   let offsetX, offsetY;
 
-  // Pozita fillestare e trekendeshit
-  const initialPosition = { x: 0, y: 0 };
+  // Pozita fillestare e katrori
+  const initialPosition = { x: 6, y: 6 };
 
   triangle.addEventListener("mousedown", (e) => {
     try {
@@ -75,8 +75,13 @@ try {
     try {
       triangle.style.left = `${initialPosition.x}px`;
       triangle.style.top = `${initialPosition.y}px`;
+      
+      if (!triangle) {
+        throw new Error("Elementi i 'triangle' nuk u gjet.");
+      }
     } catch (error) {
-      console.error("Error in resetPosition function:", error.message);
+      console.error("Gabim në funksionin resetPosition:", error.message);
+      throw new Error(`Gabim i rëndë në pozicionimin e triangelit: ${error.message}`);
     }
   }
 } catch (error) {

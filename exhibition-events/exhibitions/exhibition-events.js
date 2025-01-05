@@ -57,6 +57,14 @@ $(document).ready(function () {
         function filterCatalog(category) {
             sessionStorage.setItem("selectedCategory", category);
         }
+
+        $('#other-exhibitions').change(function () {
+            const exhibition = $(this).val();
+            if (exhibition) {
+                window.location.href = `./${exhibition}.html`;
+            }
+        });
+
     } catch (err) {
         console.error("Error in other functions:", err);
     }

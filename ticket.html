@@ -312,16 +312,34 @@
 
 <script>
     document.getElementById('more-info-btn').addEventListener('click', () => {
-  const modal = document.getElementById('ticketModal');
+      try {const modal = document.getElementById('ticketModal');
   const redirectUrl = modal.getAttribute('data-redirect-url');
   
   if (redirectUrl) {
     window.location.href = redirectUrl; // Redirect to the exhibition page
   }
+} catch (error) {
+  console.error('Error handling more-info button click:',error);
+}
 });
+  
 
   let originalPrice = 0; 
   function openModal(eventName, price, redirectUrl) {
+    try {
+    const modal = document.getElementById('ticketModal');
+    document.getElementById('eventTitle').textContent = eventName;
+    originalPrice = price; 
+    document.getElementById('eventPrice').textContent = `Price: $${originalPrice}`;
+    document.getElementById('adult').checked = true;
+    updatePriceBasedOnType(); 
+    modal.style.display = 'block';
+    modal.setAttribute('data-redirect-url', redirectUrl);
+    } catch (error) {
+      console.error('Error opening modal:', error);
+    }
+  
+  
   const modal = document.getElementById('ticketModal');
   document.getElementById('eventTitle').textContent = eventName;
 

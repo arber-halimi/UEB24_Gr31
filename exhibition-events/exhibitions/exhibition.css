@@ -109,120 +109,11 @@ header .header ul li a{
     font-family: var(--logo-font);
     font-weight: bold;
 }
-.about { 
-    grid-area: 1 / 2 / 2 / 3;
-    display: flex; 
-    flex-direction: column;
-    margin-left: 50px;
-}
-
-.about span{
-    color: lightgray;
-    font-size: 17px;
-    text-transform: capitalize;
-    margin-bottom: 15px;
-}
-
-.about a{
-    color: gray;
-    font-family: 14px;
-    text-decoration: none;
-    text-transform: capitalize;
-}
-
-
-.contact { 
-    grid-area: 1 / 3 / 2 / 4;
-
-}
-
-.contact #contact{
-    color: lightgray;
-    font-size: 17px;
-    text-transform: capitalize;
-}
-
-.contact address{
-    margin-top: 15px;
-}
-
-.contact a, .contact span{    
-    color: gray;
-    font-family: 14px;
-    text-decoration: none;
-    text-transform: capitalize;
-}
-
-.opening-hours {
-    grid-area: 1 / 4 / 2 / 5; 
-}
-
-.opening-hours #time{
-    color: lightgray;
-    font-size: 17px;
-    text-transform: capitalize;
-}
-
-.opening-hours table{
-    color: gray;
-    margin-top: 15px;
-}
-.opening-hours table tr td {
-    padding-right: 30px;
-}
-
-.social-media{
-    display: flex;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    width: 85%;
-    justify-content: space-between;
-    margin: 0 auto;
-}
-
-.social-media .social a{
-    color: lightgray;
-}
-
-.social-media .social a i{
-    margin-right: 15px;
-}
-
-
-.social-media .copyright span{
-    color: lightgray;
-    text-transform: capitalize;
-}
-
-.intro-to-categories .itc-photos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    gap: 30px;
-    margin-bottom: 100px;
-}
-
-.intro-to-categories .itc-photos img{
-    width: 100%;
-    height: 100%;
-}
-
-
-
-.intro-to-categories .itc-photos img:hover{
-    width: 102%;
-    height: 102%;
-}
-    
-
-footer{
-   /* font-family: var(--logo-font); */
+footer {
     background-color: #000000;
-}
+  }
 
-footer .pre-footer {
+  footer .pre-footer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr;
@@ -232,37 +123,37 @@ footer .pre-footer {
     margin: 0 auto;
     padding-top: 50px;
     padding-bottom: 50px;
-}
-        
-.give-your-info { 
+  }
+
+  .give-your-info {
     grid-area: 1 / 1 / 2 / 2;
     padding-right: 40px;
-}
+  }
 
-.give-your-info .sing-up h4{
+  .give-your-info .sing-up h4 {
     color: lightgray;
     margin-bottom: 10px;
-}
+  }
 
-.give-your-info .sing-up .sign-up-form input{
+  .give-your-info .sing-up .sign-up-form input {
     background-color: transparent;
-    border-style:none none solid none;
-}
+    border-style: none none solid none;
+  }
 
-.give-your-info .sing-up .sign-up-form button{
+  .give-your-info .sing-up .sign-up-form button {
     background-color: transparent;
-    border-style:none none solid none;
+    border-style: none none solid none;
     color: lightgray;
-}
+  }
 
-.give-your-info .buttons{
-    display: flex; 
+  .give-your-info .buttons {
+    display: flex;
     flex-direction: column;
     color: lightgray;
     margin-top: 15px;
-}
+  }
 
-.give-your-info .buttons button{
+  .give-your-info .buttons button {
     padding: 10px;
     margin-top: 10px;
     background-color: transparent;
@@ -270,7 +161,109 @@ footer .pre-footer {
     border: solid 1px;
     border-color: gray;
     text-transform: uppercase;
-}
+  }
+
+  .about {
+    grid-area: 1 / 2 / 2 / 3;
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+  }
+
+  .about span {
+    color: lightgray;
+    font-size: 17px;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+  }
+
+  .about a {
+    color: gray;
+    font-family: 14px;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+
+  .contact {
+    grid-area: 1 / 3 / 2 / 4;
+  }
+
+  .contact #contact {
+    color: lightgray;
+    font-size: 17px;
+    text-transform: capitalize;
+  }
+
+  .contact address {
+    margin-top: 15px;
+  }
+
+  .contact a,
+  .contact span {
+    color: gray;
+    font-family: 14px;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+
+  .opening-hours {
+    grid-area: 1 / 4 / 2 / 5;
+  }
+
+  .opening-hours #time {
+    color: lightgray;
+    font-size: 17px;
+    text-transform: capitalize;
+  }
+
+  .opening-hours table {
+    color: gray;
+    margin-top: 15px;
+  }
+  .opening-hours table tr td {
+    padding-right: 30px;
+  }
+
+  .social-media {
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 85%;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  .social-media .social a {
+    color: lightgray;
+  }
+
+  .social-media .social a i {
+    margin-right: 15px;
+  }
+
+  .social-media .copyright span {
+    color: lightgray;
+    text-transform: capitalize;
+  }
+
+  .intro-to-categories .itc-photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    gap: 30px;
+    margin-bottom: 100px;
+  }
+
+  .intro-to-categories .itc-photos img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .intro-to-categories .itc-photos img:hover {
+    animation: anim 3s ease 0s 0.5 normal backwards;
+  }
 
 body {
             
@@ -369,6 +362,8 @@ body {
     gap: 20px;
     margin-top: 40px;
     margin-bottom: 40px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
     .image-gallery img {

@@ -111,6 +111,7 @@ header .header ul li a{
 }
 footer {
     background-color: #000000;
+    display:block;
   }
 
   footer .pre-footer {
@@ -354,6 +355,25 @@ body {
 .book-ticket-button:hover {
     background-color: #006f58;
 }
+
+.book-ticket-button:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+@media (max-width: 768px) {
+    .exhibition-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .exhibition-info, .exhibition-details {
+        flex: 1;
+        margin-right: 0;
+    }
+    .image-gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+ }
+ 
 
 /* Image Gallery */
 .image-gallery {

@@ -1,5 +1,6 @@
 $(document).ready(function () {
     try {
+        // Image Gallery Functionality
         $(".image-gallery img").click(function () {
             try {
                 if ($("#image-modal").length === 0) {
@@ -35,36 +36,19 @@ $(document).ready(function () {
     }
 
     try {
-        function executeWithCallback(data, callback) {
-            console.log(`Processing data: ${data}`);
-            callback(data);
-        }
-
-        function processData(data) {
-            console.log(`Data processed: ${data}`);
-        }
-
-        executeWithCallback("Sample Data", processData);
-
-        const myButton = document.createElement("button");
-        myButton.innerText = "Click Me";
-        document.body.appendChild(myButton);
-
-        myButton.addEventListener("click", function () {
-            console.log("Button clicked!");
-        });
-
+        // Catalog Filtering
         function filterCatalog(category) {
             sessionStorage.setItem("selectedCategory", category);
         }
 
+        // Dropdown for Other Exhibitions
         $('#other-exhibitions').change(function () {
             const exhibition = $(this).val();
             if (exhibition) {
-                window.location.href = `./${exhibition}.html`;
+                window.location.href = `./${exhibition}.html`; // Redirect to selected exhibition page
             }
         });
-
+        
     } catch (err) {
         console.error("Error in other functions:", err);
     }

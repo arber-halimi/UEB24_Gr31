@@ -59,6 +59,7 @@ form {
     display: flex;
     justify-content: space-around; /* Space between cards */
     gap: 20px; /* Add spacing between cards */
+    flex-wrap: wrap;
   }
   
   .event-card {
@@ -71,6 +72,9 @@ form {
     align-items: center;
     justify-content: center; /* Center align content */
     border-radius: 20px;
+  }
+  .second-row {
+    max-width: 50%;
   }
   
   .event-card img {

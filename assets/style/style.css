@@ -211,6 +211,12 @@
     animation: anim 3s ease 0s 0.5 normal backwards;
 } */
 
+.div-container{
+    width: 720px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
 .container {
     position: relative;
     width: 700px; 
@@ -224,7 +230,7 @@
     background-repeat: no-repeat; 
     background-color:black;
     background-attachment: scroll;
-
+    margin-bottom: 20px;
     
   }
   
@@ -237,21 +243,23 @@
     left: 6px; /* Set the x-coordinate */
     top: 6px; /* Set the y-coordinate */
 }
+
   .restart-btn {
-    margin-top: 20px;
     padding: 10px 20px;
     background-color: #008573;
-    color: black;
+    color: white;
     font-size: 16px;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
-    display: block;
+    border-radius: 20px;
+    width: 120px;
   }
 
   .restart-btn:hover {
-    background-color: black;
-    color: #008573;
+    background-color: white;
+    color: gray;
   }
+
+  
   
      

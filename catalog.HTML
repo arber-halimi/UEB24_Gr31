@@ -15,8 +15,9 @@
     <style>
       body {
         font-family: Arial, sans-serif;
-        margin: 20px;
+        margin: 5px;
         background-color: rgb(0, 0, 0);
+        padding: 0;
       }
 
       h1 {
@@ -217,6 +218,7 @@
         position: absolute;
         top: 10px;
         right: 60px;
+        
       }
 
       .close:hover,
@@ -231,6 +233,57 @@
         margin-bottom: 10px;
         overflow-y: auto;
       }
+
+    .dropdown {
+      position: relative;
+      display: block; /* Ensure the dropdown spans the full width */
+    }
+
+    .dropdown-button {
+      background-color: #454545;
+      color: rgb(255, 255, 255);
+      padding: 15px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%; /* Make the button span the full width */
+      box-sizing: border-box; /* Include padding in width calculation */
+    }
+
+    .dropdown-button:hover {
+      color:white;
+      background-color: #008573;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%; /* Position menu below the button */
+      left: 0;
+      background-color: #008573;
+      width: 100%; /* Match the width of the button */
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .dropdown-menu table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .dropdown-menu table th,
+    .dropdown-menu table td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid black;
+    }
+
+    .dropdown-menu table th {
+      background-color: black;
+      color:#008573;
+      font-weight: bold;
+    }
+
     </style>
   </head>
   <body>
@@ -298,7 +351,6 @@
     >
       Show All
     </div>
-
     <h2
       style="
         background: linear-gradient(to bottom, #008573, rgb(0, 0, 0));
@@ -320,7 +372,7 @@
       <div
         class="object-item"
         data-category="paintings"
-        data-description="The Mona Lisa is one of the most famous paintings in the world, 
+        data-description="&quot The Mona Lisa &quot is one of the most famous paintings in the world, 
         housed in the Louvre Museum in Paris. Created by the renowned Italian artist Leonardo da Vinci,
          the painting is known for its enigmatic smile and detailed use of light and shadow, 
          which contribute to its mysterious and lifelike quality. The woman depicted in the painting 
@@ -343,7 +395,7 @@
       <div
         class="object-item"
         data-category="sculptures"
-        data-description="The Veiled Virgin Mary is a remarkable 
+        data-description="&quot The Veiled Virgin Mary &quot is a remarkable 
         marble sculpture by Giovanni Strazza, created in 1856. It depicts the Virgin Mary with a delicate veil covering 
         her face, so intricately carved that it appears as though the veil is made of fabric rather than stone. The level 
         of detail and the realistic quality of the veil, which appears to gently drape over her features, is a testament 
@@ -441,7 +493,7 @@
       <div
         class="object-item"
         data-category="paintings"
-        data-description="The Starry Night is one of the most 
+        data-description=" &quot The Starry Night &quot is one of the most 
         famous paintings created by the Dutch post-impressionist painter Vincent van Gogh. Painted in 1889, this 
         iconic piece captures a mesmerizing night sky filled with swirling stars, a luminous crescent moon, and a 
         tranquil village below. The vibrant brushstrokes and bold colors evoke a sense of movement and emotion, 
@@ -454,7 +506,7 @@
       >
         <img
           src="assets\CATALOG\foto,paintings\Vincent van Gogh. The Starry Night.jpg"
-          alt="The Starry Night"
+          alt="The Starry Night by Vincent Van Gogh"
         />
         <div class="info">
           <p style="color: #008573; font-size: 20px">
@@ -467,7 +519,7 @@
       <div
         class="object-item"
         data-category="sculptures"
-        data-description="The Winged Victory of Samothrace, 
+        data-description=" &quot The Winged Victory of Samothrace &quot , 
         also known as the Nike of Samothrace, is an ancient Greek sculpture that masterfully depicts the goddess 
         Nike, symbolizing victory. Created around 190 BCE, it was designed to commemorate a naval victory. The 
         statue stands on the prow of a ship, as though it is in motion, with its wings outstretched and flowing 
@@ -482,7 +534,7 @@
       >
         <img
           src="assets\CATALOG\foto,sculptures\Winged Victory of Samothrace.jpg"
-          alt="Winged Victory of Samothrace"
+          alt="Winged Victory of Samothrace by Pythokritos of Rhodes"
         />
         <div class="info">
           <p style="color: #008573; font-size: 20px">
@@ -509,7 +561,7 @@
         innovation and a testament to the evolving technology of wartime engineering."
         onclick="openModal(this)"
       >
-        <img src="assets\CATALOG\foto.old machine\mark1.jpg" alt="Mark I" />
+        <img src="assets\CATALOG\foto.old machine\mark1.jpg" alt="Mark I by the British Army" />
         <div class="info">
           <p style="color: #008573; font-size: 20px"><b>Mark I </b></p>
           <p style="font-size: 15px"><b>by the British Army </b></p>
@@ -546,7 +598,7 @@
       <div
         class="object-item"
         data-category="old-artifacts"
-        data-description="The Golden Mask of Tutankhamun is one 
+        data-description=" &quot The Golden Mask of Tutankhamun &quot is one 
         of the most famous artifacts of ancient Egypt, discovered in the tomb of the young Pharaoh Tutankhamun by British 
         archaeologist Howard Carter in 1922. The mask is made of gold and weighs about 10 kg (22 lbs). It features the 
         traditional royal regalia of a pharaoh, including a nemes headdress and a false beard.
@@ -574,7 +626,7 @@
       <div
         class="object-item"
         data-category="paintings"
-        data-description="Girl with a Pearl Earring is one of the most 
+        data-description=" &quot Girl with a Pearl Earring  &quot is one of the most 
         iconic and enigmatic paintings by the Dutch artist Johannes Vermeer, created around 1665. This captivating portrait 
         features a young girl dressed in an exotic, vibrant blue and yellow turban, with a strikingly large pearl earring 
         dangling from her ear. Her direct gaze toward the viewer, combined with the soft, glowing light on her face, gives 
@@ -589,7 +641,7 @@
       >
         <img
           src="assets\CATALOG\foto,paintings\girl-pearl-earring.webp"
-          alt="Girl with a Pearl Earring "
+          alt="Girl with a Pearl Earring by Johannes Vermeer"
         />
         <div class="info">
           <p style="color: #008573; font-size: 20px">
@@ -602,7 +654,7 @@
       <div
         class="object-item"
         data-category="sculptures"
-        data-description="The Pietà is a renowned marble sculpture 
+        data-description=" &quot  The Pietà &quot is a renowned marble sculpture 
         by Michelangelo created between 1498 and 1499. The artwork depicts the Virgin Mary holding the body of Jesus 
         Christ after his crucifixion, a powerful and emotional portrayal of grief and compassion. It is considered one 
         of Michelangelo's most beautiful and evocative works, showcasing his mastery of human anatomy and his ability to 
@@ -615,7 +667,7 @@
         Christian symbolism. The sculpture remains one of the most visited and revered works of art in the world."
         onclick="openModal(this)"
       >
-        <img src="assets\CATALOG\foto,sculptures\vatican.jpg" alt="Pietà" />
+        <img src="assets\CATALOG\foto,sculptures\vatican.jpg" alt="Pietà by Michelangelo Buonarroti" />
         <div class="info">
           <p style="color: #008573; font-size: 20px"><b> Pietà </b></p>
           <p style="font-size: 15px"><b>by Michelangelo Buonarroti</b></p>
@@ -644,7 +696,7 @@
       >
         <img
           src="assets\CATALOG\foto.old machine\Wright Flyer.jpg"
-          alt="Wright Flyer"
+          alt="Wright Flyer by Orville &amp Wilbur Wright"
         />
         <div class="info">
           <p style="color: #008573; font-size: 20px"><b>Wright Flyer </b></p>
@@ -740,7 +792,7 @@
       <div
         class="object-item"
         data-category="paintings"
-        data-description="Las Meninas is one of the most renowned masterpieces by Diego Velázquez, painted in 1656 during his 
+        data-description=" &quot Las Meninas &quot is one of the most renowned masterpieces by Diego Velázquez, painted in 1656 during his 
         tenure as the court painter for Philip IV of Spain. The painting depicts a complex and enigmatic scene within the royal 
         court, with the young Infanta Margarita at its center, surrounded by her attendants, courtiers, and two court dwarfs. 
         Velázquez also included himself in the composition, portraying himself in the act of painting. The work stands out for 
@@ -753,7 +805,7 @@
       >
         <img
           src="assets\CATALOG\foto,paintings\Las Meninas-Getty_0.jpg"
-          alt="Las Meninas"
+          alt="Las Meninas by Diego Velázquez"
         />
         <div class="info">
           <p style="color: #008573; font-size: 20px">
@@ -784,11 +836,11 @@
       >
         <img
           src="assets\CATALOG\foto.old machine\Aug-14 Bentley GK 90,.jpg"
-          alt="August 14 Bentley GK 90"
+          alt="Bentley GK 90"
         />
         <div class="info">
           <p style="color: #008573; font-size: 20px">
-            <b>August 14 Bentley GK 90</b>
+            <b>Bentley GK 90</b>
           </p>
           <p>1931</p>
         </div>
@@ -796,7 +848,7 @@
       <div
         class="object-item"
         data-category="old-artifacts"
-        data-description="The Gutenberg Bible, also known as the 42-line Bible, is one of the most iconic artifacts in the 
+        data-description=" &quot The Gutenberg Bible &quot, also known as the 42-line Bible, is one of the most iconic artifacts in the 
         history of printing and literature. Printed around 1455 by Johannes Gutenberg in Mainz, Germany, it is considered the 
         first major book produced using movable type printing, a revolutionary method that significantly advanced the dissemination 
         of knowledge.Before the invention of movable type, books were painstakingly copied by hand, making them rare and expensive. 
@@ -842,7 +894,7 @@
       >
         <img
           src="assets\CATALOG\foto.creatures\sabre-toothed-cat-skeleton.jpg"
-          alt="Pterosaur"
+          alt="The saber-toothed cat"
         />
         <div class="info">
           <p style="color: #008573; font-size: 20px">
@@ -875,7 +927,7 @@
       >
         <img
           src="assets\CATALOG\foto.old machine\The first motorcycle.webp"
-          alt="The Daimler Reitwagen"
+          alt="The Daimler Reitwagen by Gottlieb Daimler &amp Wilhelm Maybach"
         />
         <div class="info">
           <p style="color: #008573; font-size: 20px">
@@ -891,7 +943,7 @@
       <div
         class="object-item"
         data-category="paintings"
-        data-description="The Last Supper is one of the most renowned masterpieces in art history, created by Leonardo da Vinci between 
+        data-description=" &quot The Last Supper &quot is one of the most renowned masterpieces in art history, created by Leonardo da Vinci between 
         1495 and 1498. This monumental work is located on the wall of the convent of Santa Maria delle Grazie in Milan, Italy, 
         and depicts a pivotal moment from the Gospel: Jesus' final meal with his twelve disciples, where he announces that one of 
         them will betray him. Leonardo employed an innovative artistic and technical approach, using tempera and oil on a dry plaster 
@@ -906,7 +958,7 @@
       >
         <img
           src="assets\CATALOG\foto,paintings\Santa-Maria-Delle-Grazie-Church-Last-Supper-Leonardo-Da-Vinci-milan-italy-summer_1.jpg"
-          alt="The Last Supper"
+          alt="The Last Supper by Leonardo da Vinci"
         />
         <div class="info">
           <p style="color: #008573; font-size: 20px">
@@ -948,6 +1000,68 @@
 
           <p>1910</p>
         </div>
+        
+      </div>
+      
+    </div>
+    <div class="dropdown">
+      <button class="dropdown-button">Our Collection</button>
+      <div class="dropdown-menu">
+        <table>
+          <thead>
+            <tr>
+              <th>Paintings</th>
+              <th>Sculptures</th>
+              <th>Old Machines</th>
+              <th>Creatures</th>
+              <th>Old Artifacts</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mona Lisa by Leonardo da Vinci</td>
+              <td>Veiled Virgin Mary by Giovanni Strazza</td>
+              <td>Benz Patent-Motorwagen by Karl Benz</td>
+              <td>Mammoth</td>
+              <td>Skanderbeg's helmet</td>
+            </tr>
+            <tr>
+              <td>The Starry Night by Vincent Van Gogh</td>
+              <td>Winged Victory of Samothrace by Pythokritos of Rhodes</td>
+              <td>Mark I by the British Army</td>
+              <td>Tyrannosaurus rex</td>
+              <td>Tutankhamun's Mask</td>
+            </tr>
+            <tr>
+              <td>Girl with a Pearl Earring by Johannes Vermeer</td>
+              <td>Pietà by Michelangelo Buonarroti</td>
+              <td>Wright Flyer by Orville &amp Wilbur Wright</td>
+              <td>Pterosaur</td>
+              <td>Antikythera Mechanism</td>
+            </tr>
+            <tr>
+              <td>Las Meninas by Diego Velázquez</td>
+              <td>Rosetta Stone</td>
+              <td>Bentley GK 90</td>
+              <td>The saber-toothed cat</td>
+              <td>The Gutenberg Bible</td>
+            </tr>
+            <tr>
+              <td>The Last Supper by Leonardo da Vinci</td>
+              <td></td>
+              <td>The Daimler Reitwagen by Gottlieb.D &amp Wilhelm.M</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>Maxim Machine Gun Model 1910</td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
 
@@ -1090,6 +1204,20 @@ $(".close").on("click", function () {
           );
         }
       });
+
+      $(document).ready(function () {
+      // Toggle dropdown menu on button click with animation
+      $(".dropdown-button").click(function () {
+        $(".dropdown-menu").stop(true, true).slideToggle(300); // Animate the dropdown
+      });
+
+      // Optional: Close dropdown when clicking outside
+      $(document).click(function (event) {
+        if (!$(event.target).closest(".dropdown").length) {
+          $(".dropdown-menu").slideUp(300); // Hide the dropdown if clicked outside
+        }
+      });
+    });
     </script>
   </body>
 </html>

@@ -222,6 +222,7 @@
             <input type="submit" value="Buy Ticket" />
             <input type="reset" value="Reset" />
           </div>
+          <button onclick="filterByPaymentMethod('PayPal')">Filter PayPal Tickets</button>
         </form>
 
         <section id="giveaway">
@@ -252,6 +253,7 @@
             <button type="submit">Enter Giveaway</button>
             <h2></h2>
             <button type="reset">Reset Form</button>
+            <h2></h2>
           </form>
         </section>
       </div>
@@ -626,6 +628,27 @@
       e.preventDefault(); // Prevent form submission
     }
   });
+  function filterByPaymentMethod(method) {
+    const filteredTickets = ticketsArray.filter(ticket => ticket.paymentMethod === method);
+    console.log(`Tickets purchased via ${method}:`, filteredTickets);
+}
+
+filterByPaymentMethod("Card");
+function displayGiveawayNames() {
+    const names = ticketGiveawayArray.map(entry => entry.name);
+    console.log("Giveaway Participants:", names.join(", "));
+}
+
+displayGiveawayNames();
+function calculateTotalRevenue() {
+    const revenue = ticketseventsArray.reduce((total, ticket) => {
+        const ticketPrice = ticket.ticketType === "Adult" ? originalPrice : originalPrice - 5;
+        return total + ticketPrice;
+    }, 0);
+    console.log(`Total Revenue: $${revenue}`);
+}
+
+calculateTotalRevenue();
   </script>
   </body>
 </html>

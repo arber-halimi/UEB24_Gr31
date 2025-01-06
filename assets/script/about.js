@@ -13,8 +13,12 @@ function showInfo(section) {
       
         const contentSections = document.querySelectorAll('.info');
         const navItems = document.querySelectorAll('.nav-item');
-        contentSections.forEach(content => (content.style.display = 'none'));
-        navItems.forEach(item => item.classList.remove('active'));
+        for (let i = 0; i < contentSections.length; i++) {
+            contentSections[i].style.display = 'none';
+        }
+        for (let i = 0; i < navItems.length; i++) {
+            navItems[i].classList.remove('active');
+        }
 
 
         const targetSection = document.getElementById(`${section}-content`);

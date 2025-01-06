@@ -467,6 +467,37 @@ window.onclick = function(event) {
         }
       }
     });
+    const ticketsArray = [];
+    class Ticket {
+      constructor(name, surname, phone, email, ticketDate, paymentMethod) {
+        this.name=name;
+        this.surname=surname;
+        this.phone=phone;
+        this.email=email;
+        this.ticketDate=ticketDate;
+        this.paymentMethod=paymentMethod;
+      }
+      displayTicket() {
+        console.log(`Ticket for ${this.name} ${this.surname}`);
+      }
+    }
+    function saveTicket(){
+      const name = document.getElementById('name1').value;
+      const surname = document.getElementById('surname1').value;
+      const phone = document.getElementById('phone1').value;
+      const email = document.getElementById('email1').value;
+      const ticketDate = document.getElementById('ticket-date').value;
+      const paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
+      const newTicket = new Ticket(name,surname,phone, email,ticketDate,paymentMethod);
+      ticketsArray.push(newTicket);
+      newTicket.displayTicket();
+      alert('Ticket saved successfully!');
+    }
+    document.getElementById('ticketForm').addEventListener('submit',function (event){
+      event.preventDefault();
+      saveTicket();
+      this.reset();
+    });
   </script>
   </body>
 </html>

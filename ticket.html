@@ -19,53 +19,16 @@
       crossorigin="anonymous"
     ></script>
     <script src="./logo.js"></script>
-
   </head>
   <body>
-    <header>
-      <div class="para-header">
-        <div class="search-bar">
-          <div class="search">
-            <i class="fa fa-search"></i>
-            <p>Search</p>
-          </div>
-          <div class="languages">
-            <select id="cars" name="cars">
-              <option value="volvo">English</option>
-              <option value="saab">Shqip</option>
-            </select>
-          </div>
-        </div>
-        <div class="logo">
-          <h1><span>M</span>useum</h1>
-        </div>
-        <div class="tickets">
-          <button>
-            <i class="fas fa-ticket-alt"></i
-            ><a href="./ticket.html" style="text-decoration: none; color: white"
-              >Tickets</a
-            >
-          </button>
-        </div>
-      </div>
-      <hr />
-      <div class="header">
-        <ul>
-          <li><a href="./index.html">Home</a></li>
-          <li><a href="./about.html">About</a></li>
-          <li><a href="./catalog.HTML">Catalog</a></li>
-          <li>
-            <a href="./exhibition-events/exhibitions-events.html"
-              >Exhibitions</a
-            >
-          </li>
-        </ul>
-      </div>
-    </header>
+    <div id="header"></div>
 
     <main>
       <div class="event-cards-container">
-        <div class="event-card" onclick="openModal('Fossil From The Dawn Of Time', 60,'./exhibition-events/exhibitions/exhibition2.html')">
+        <div
+          class="event-card"
+          onclick="openModal('Fossil From The Dawn Of Time', 60,'./exhibition-events/exhibitions/exhibition2.html')"
+        >
           <img
             src="./exhibition-events/exhibition-images/fossil.jpg"
             alt="Fossil From The Dawn Of Time"
@@ -73,7 +36,10 @@
           <h3>Fossil From The Dawn Of Time</h3>
           <p>Click To Buy Tickets!</p>
         </div>
-        <div class="event-card" onclick="openModal('Evolution of Expression: Exploring the Key Periods in Art History', 50,'./exhibition-events/exhibitions/exhibition1.html')">
+        <div
+          class="event-card"
+          onclick="openModal('Evolution of Expression: Exploring the Key Periods in Art History', 50,'./exhibition-events/exhibitions/exhibition1.html')"
+        >
           <img
             src="./exhibition-events/exhibition-images/Piktura.jpg"
             alt="Exploring the Key Periods in Art History"
@@ -81,7 +47,10 @@
           <h3>Evolution of Expression</h3>
           <p>Click To Buy Tickets!</p>
         </div>
-        <div class="event-card" onclick="openModal('Machines of the Past', 45,'./exhibition-events/exhibitions/exhibition3.html')">
+        <div
+          class="event-card"
+          onclick="openModal('Machines of the Past', 45,'./exhibition-events/exhibitions/exhibition3.html')"
+        >
           <img
             src="./exhibition-events/exhibition-images/oldmachine.jpg"
             alt="Science Fair"
@@ -92,23 +61,38 @@
       </div>
       <div id="events">
         <div class="event-cards-container">
-          <div class="event-card second-row" onclick="openModal('Ancient Artifacts',35,'./exhibition-events/exhibitions/exhibition4.html')">
-          <img src="./exhibition-events/exhibition-images/artifacts.jpg" alt="Ancient Artifacts"/>
-          <h3>Ancient Artifacts</h3>
-          <p>Click To Buy Tickets!</p>
-        </div>
-        <div class="event-card second-row" onclick="openModal('Timeless Forms',40,'./exhibition-events/exhibitions/exhibition5.html')">
-          <img src="./exhibition-events/exhibition-images/sculpture.jpg" alt="Sculpture"/>
-          <h3>Timeless Forms</h3>
-          <p>Click To Buy Tickets!</p>
-        </div>
+          <div
+            class="event-card second-row"
+            onclick="openModal('Ancient Artifacts',35,'./exhibition-events/exhibitions/exhibition4.html')"
+          >
+            <img
+              src="./exhibition-events/exhibition-images/artifacts.jpg"
+              alt="Ancient Artifacts"
+            />
+            <h3>Ancient Artifacts</h3>
+            <p>Click To Buy Tickets!</p>
+          </div>
+          <div
+            class="event-card second-row"
+            onclick="openModal('Timeless Forms',40,'./exhibition-events/exhibitions/exhibition5.html')"
+          >
+            <img
+              src="./exhibition-events/exhibition-images/sculpture.jpg"
+              alt="Sculpture"
+            />
+            <h3>Timeless Forms</h3>
+            <p>Click To Buy Tickets!</p>
+          </div>
         </div>
       </div>
 
       <div class="forms-container">
         <form id="ticketForm">
           <h2>Ticket Purchase</h2>
-          <p>This form is for buying everyday museum tickets, it doesnt correspond to the upcoming events!</p>
+          <p>
+            This form is for buying everyday museum tickets, it doesnt
+            correspond to the upcoming events!
+          </p>
           <h2></h2>
 
           <label for="name">Name:</label>
@@ -258,6 +242,8 @@
             />
 
             <button type="submit">Enter Giveaway</button>
+            <h2></h2>
+            <button type="reset">Reset Form</button>
           </form>
         </section>
       </div>
@@ -339,284 +325,289 @@
             </div>
           </form>
           <button id="more-info-btn">More Info</button>
-
         </div>
       </div>
     </main>
 
-    <footer>
-      <div class="pre-footer">
-        <div class="give-your-info">
-          <div class="sing-up">
-            <h4>Sign up to our mailing list</h4>
-            <div class="sign-up-form">
-              <form action="#">
-                <input type="text" placeholder="Enter your email" />
-                <button>Submit</button>
-              </form>
-            </div>
-          </div>
-          <div class="buttons">
-            <h5>Join the Museum community</h5>
-            <button>become a member</button>
-            <button>voulenteer</button>
-            <button>donate</button>
-          </div>
-        </div>
+    <div id="footer"></div>
 
-        <div class="about">
-          <span>about</span>
-          <a href="#">about</a>
-          <a href="#">Staff and board</a>
-          <a href="#">Join the team</a>
-          <a href="#">voulenteer uppertunies</a>
-          <a href="#">Contact us</a>
-        </div>
-        <div class="contact">
-          <span id="contact">Contact</span>
-          <address>
-            <span>Rruga Deshmore e Kombit, Prishtine</span>
-            <a href="mailto:jim@example.com">jim@example.com</a><br />
-            <a href="tel:+14155550132">+1 (415) 555‑0132</a>
-          </address>
-        </div>
-        <div class="opening-hours">
-          <span id="time">opening hours</span>
-          <table>
-            <tr>
-              <th></th>
-              <th></th>
-            </tr>
-            <tr>
-              <td>Monday</td>
-              <td>Closed*</td>
-            </tr>
-            <tr>
-              <td>Tuesday</td>
-              <td>10am – 4pm</td>
-            </tr>
-            <tr>
-              <td>Wednesday</td>
-              <td>10am – 4pm</td>
-            </tr>
-            <tr>
-              <td>Thursday</td>
-              <td>10am – 4pm</td>
-            </tr>
-            <tr>
-              <td>Friday</td>
-              <td>10am – 4pm</td>
-            </tr>
-            <tr>
-              <td>Saturday</td>
-              <td>10am – 4pm</td>
-            </tr>
-            <tr>
-              <td>Sunday</td>
-              <td>10am – 5pm</td>
-            </tr>
-          </table>
-        </div>
-      </div>
-      <hr />
-      <div class="social-media">
-        <div class="social">
-          <a href="#"
-            ><i class="fa fa-instagram" style="font-size: 30px"></i
-          ></a>
-          <a href="#"><i class="fa fa-facebook" style="font-size: 30px"></i></a>
-          <a href="#"><i class="fa fa-github" style="font-size: 30px"></i></a>
-        </div>
-        <div class="copyright">
-          <span>&copy; copyright 2025 museum of arts</span>
-        </div>
-      </div>
-    </footer>
+    <script type="text/javascript">
+      $("#header").load("header/header.html");
+    </script>
 
-<script>
-    document.getElementById('more-info-btn').addEventListener('click', () => {
-      try {const modal = document.getElementById('ticketModal');
-  const redirectUrl = modal.getAttribute('data-redirect-url');
-  
-  if (redirectUrl) {
-    window.location.href = redirectUrl; // Redirect to the exhibition page
-  }
-} catch (error) {
-  console.error('Error handling more-info button click:',error);
-}
-});
-  
+    <script type="text/javascript">
+      $("#footer").load("footer/footer.html");
+    </script>
 
-  let originalPrice = 0; 
-  function openModal(eventName, price, redirectUrl) {
-    try {
-    const modal = document.getElementById('ticketModal');
-    document.getElementById('eventTitle').textContent = eventName;
-    originalPrice = price; 
-    document.getElementById('eventPrice').textContent = `Price: $${originalPrice}`;
-    document.getElementById('adult').checked = true;
-    updatePriceBasedOnType(); 
-    modal.style.display = 'block';
-    modal.setAttribute('data-redirect-url', redirectUrl);
-    } catch (error) {
-      console.error('Error opening modal:', error);
-    }
-  
-  
-  const modal = document.getElementById('ticketModal');
-  document.getElementById('eventTitle').textContent = eventName;
+    <script>
+        document.getElementById("more-info-btn").addEventListener("click", () => {
+          try {
+            const modal = document.getElementById("ticketModal");
+            const redirectUrl = modal.getAttribute("data-redirect-url");
 
-  
-  originalPrice = price; 
-  document.getElementById('eventPrice').textContent = `Price: $${originalPrice}`;
+            if (redirectUrl) {
+              window.location.href = redirectUrl; // Redirect to the exhibition page
+            }
+          } catch (error) {
+            console.error("Error handling more-info button click:", error);
+          }
+        });
 
-  
-  document.getElementById('adult').checked = true;
-  updatePriceBasedOnType(); 
+        let originalPrice = 0;
+        function openModal(eventName, price, redirectUrl) {
+          try {
+            const modal = document.getElementById("ticketModal");
+            document.getElementById("eventTitle").textContent = eventName;
+            originalPrice = price;
+            document.getElementById(
+              "eventPrice"
+            ).textContent = `Price: $${originalPrice}`;
+            document.getElementById("adult").checked = true;
+            updatePriceBasedOnType();
+            modal.style.display = "block";
+            modal.setAttribute("data-redirect-url", redirectUrl);
+          } catch (error) {
+            console.error("Error opening modal:", error);
+          }
 
-  modal.style.display = 'block';
-  
-  modal.setAttribute('data-redirect-url', redirectUrl);
-}
+          const modal = document.getElementById("ticketModal");
+          document.getElementById("eventTitle").textContent = eventName;
 
-function closeModal() {
-  const modal = document.getElementById('ticketModal');
-  modal.style.display = 'none';
-}
+          originalPrice = price;
+          document.getElementById(
+            "eventPrice"
+          ).textContent = `Price: $${originalPrice}`;
 
-// Event listener to update price based on the selected ticket type (Adult or Children)
-document.querySelectorAll('input[name="ticket-type"]').forEach(input => {
-  input.addEventListener('change', function () {
-    updatePriceBasedOnType();
-  });
-});
+          document.getElementById("adult").checked = true;
+          updatePriceBasedOnType();
 
-function updatePriceBasedOnType() {
-  const ticketType = document.querySelector('input[name="ticket-type"]:checked').value;
-  let finalPrice = originalPrice; // Start with the original price
+          modal.style.display = "block";
 
-  if (ticketType === 'Children') {
-    finalPrice = originalPrice - 5; // $5 discount for children
-  }
+          modal.setAttribute("data-redirect-url", redirectUrl);
+        }
 
-  document.getElementById('eventPrice').textContent = `Price: $${finalPrice}`;
-}
+        function closeModal() {
+          const modal = document.getElementById("ticketModal");
+          modal.style.display = "none";
+        }
 
+        // Event listener to update price based on the selected ticket type (Adult or Children)
+        document
+          .querySelectorAll('input[name="ticket-type"]')
+          .forEach((input) => {
+            input.addEventListener("change", function () {
+              updatePriceBasedOnType();
+            });
+          });
 
-// Close modal when clicking outside content
-window.onclick = function(event) {
-  const modal = document.getElementById('ticketModal');
-  if (event.target === modal) {
-    modal.style.display = 'none';
-  }
-}
+        function updatePriceBasedOnType() {
+          const ticketType = document.querySelector(
+            'input[name="ticket-type"]:checked'
+          ).value;
+          let finalPrice = originalPrice; // Start with the original price
 
-    function navigateToForm(eventName, price){
-      document.getElementById('event').value = eventName;
-      document.getElementById('ticket-price').textContent = `Ticket Price: $${price}`;
-      document.getElementById('ticketForm').scrollIntoView({ behavior: 'smooth' });
-    }
-    function togglePaymentDetails() {
-      const selectedMethod = document.querySelector('[name="payment-method"]:checked').value;
-      document.getElementById('card-details').style.display = selectedMethod === 'Card' ? 'block' : 'none';
-      document.getElementById('paypal-details').style.display = selectedMethod === 'PayPal' ? 'block' : 'none';
-      document.getElementById('cash-details').style.display = selectedMethod === 'Cash' ? 'block' : 'none';
-    }
+          if (ticketType === "Children") {
+            finalPrice = originalPrice - 5; // $5 discount for children
+          }
 
-    const paymentMethods = document.querySelectorAll('[name="payment-method"]');
-    paymentMethods.forEach(method => method.addEventListener('change', togglePaymentDetails));
+          document.getElementById(
+            "eventPrice"
+          ).textContent = `Price: $${finalPrice}`;
+        }
 
-    const ticketDateInput = document.getElementById('ticket-date');
-    const ticketPriceDisplay = document.getElementById('ticket-price');
-    const cardDetails = document.getElementById('card-details');
-    const paypalDetails = document.getElementById('paypal-details');
-    const cashDetails = document.getElementById('cash-details');
-    const ticketForm = document.getElementById('ticketForm');
+        // Close modal when clicking outside content
+        window.onclick = function (event) {
+          const modal = document.getElementById("ticketModal");
+          if (event.target === modal) {
+            modal.style.display = "none";
+          }
+        };
 
-    ticketDateInput.addEventListener('change', () => {
-      const selectedDate = new Date(ticketDateInput.value);
-      const today = new Date();
-      const oneMonthLater = new Date();
-      oneMonthLater.setMonth(today.getMonth() + 1);
-      if (selectedDate < today || selectedDate > oneMonthLater) {
-        alert('Please select a date within the next month and not in the past.');
-        ticketDateInput.value = '';
-      } else {
-        const day = selectedDate.getDay();
-        const price = (day === 0 || day === 6) ? 20 : 15;
-        ticketPriceDisplay.textContent = `Ticket Price: $${price}`;
+        function navigateToForm(eventName, price) {
+          document.getElementById("event").value = eventName;
+          document.getElementById(
+            "ticket-price"
+          ).textContent = `Ticket Price: $${price}`;
+          document
+            .getElementById("ticketForm")
+            .scrollIntoView({ behavior: "smooth" });
+        }
+        function togglePaymentDetails() {
+          const selectedMethod = document.querySelector(
+            '[name="payment-method"]:checked'
+          ).value;
+          document.getElementById("card-details").style.display =
+            selectedMethod === "Card" ? "block" : "none";
+          document.getElementById("paypal-details").style.display =
+            selectedMethod === "PayPal" ? "block" : "none";
+          document.getElementById("cash-details").style.display =
+            selectedMethod === "Cash" ? "block" : "none";
+        }
+
+        const paymentMethods = document.querySelectorAll(
+          '[name="payment-method"]'
+        );
+        paymentMethods.forEach((method) =>
+          method.addEventListener("change", togglePaymentDetails)
+        );
+
+        const ticketDateInput = document.getElementById("ticket-date");
+        const ticketPriceDisplay = document.getElementById("ticket-price");
+        const cardDetails = document.getElementById("card-details");
+        const paypalDetails = document.getElementById("paypal-details");
+        const cashDetails = document.getElementById("cash-details");
+        const ticketForm = document.getElementById("ticketForm");
+
+        ticketDateInput.addEventListener("change", () => {
+          const selectedDate = new Date(ticketDateInput.value);
+          const today = new Date();
+          const oneMonthLater = new Date();
+          oneMonthLater.setMonth(today.getMonth() + 1);
+          if (selectedDate < today || selectedDate > oneMonthLater) {
+            alert(
+              "Please select a date within the next month and not in the past."
+            );
+            ticketDateInput.value = "";
+          } else {
+            const day = selectedDate.getDay();
+            const price = day === 0 || day === 6 ? 20 : 15;
+            ticketPriceDisplay.textContent = `Ticket Price: $${price}`;
+          }
+        });
+
+        // Show/hide payment details based on the selected payment method
+        paymentMethods.forEach((method) => {
+          method.addEventListener("change", () => {
+            cardDetails.style.display =
+              method.value === "Card" ? "block" : "none";
+            paypalDetails.style.display =
+              method.value === "PayPal" ? "block" : "none";
+            cashDetails.style.display =
+              method.value === "Cash" ? "block" : "none";
+          });
+        });
+
+        ticketForm.addEventListener("submit", (event) => {
+          const selectedMethod = [...paymentMethods].find(
+            (method) => method.checked
+          );
+          if (!selectedMethod) {
+            alert("Please select a payment method.");
+            event.preventDefault();
+            return;
+          }
+
+          if (selectedMethod.value === "Card") {
+            const cardNumber = document
+              .getElementById("card-number")
+              .value.trim();
+            const expiryDate = document
+              .getElementById("expiry-date")
+              .value.trim();
+            const cvv = document.getElementById("cvv").value.trim();
+
+            if (!cardNumber || !expiryDate || !cvv) {
+              alert("Please fill in all card details.");
+              event.preventDefault();
+              return;
+            }
+          }
+
+          if (selectedMethod.value === "PayPal") {
+            const paypalEmail = document
+              .getElementById("paypal-email")
+              .value.trim();
+            if (!paypalEmail) {
+              alert("Please fill in your PayPal email.");
+              event.preventDefault();
+              return;
+            }
+          }
+        });
+        const ticketsArray = [];
+        class Ticket {
+          constructor(name, surname, phone, email, ticketDate, paymentMethod) {
+            this.name = name;
+            this.surname = surname;
+            this.phone = phone;
+            this.email = email;
+            this.ticketDate = ticketDate;
+            this.paymentMethod = paymentMethod;
+          }
+          displayTicket() {
+            console.log(`Ticket for ${this.name} ${this.surname}`);
+          }
+        }
+        function saveTicket() {
+          const name = document.getElementById("name1").value;
+          const surname = document.getElementById("surname1").value;
+          const phone = document.getElementById("phone1").value;
+          const email = document.getElementById("email1").value;
+          const ticketDate = document.getElementById("ticket-date").value;
+          const paymentMethod = document.querySelector(
+            'input[name="payment-method"]:checked'
+          ).value;
+          const newTicket = new Ticket(
+            name,
+            surname,
+            phone,
+            email,
+            ticketDate,
+            paymentMethod
+          );
+          ticketsArray.push(newTicket);
+          newTicket.displayTicket();
+          alert("Ticket saved successfully!");
+        }
+        document.getElementById('ticketForm').addEventListener('submit',function (event){
+          event.preventDefault();
+          saveTicket();
+          event.target.reset();
+        })
+      const ticketseventsArray = [];
+      class eventTicket {
+        constructor(ticketType,name,surname,phone,email){
+          this.name=name;
+          this.surname=surname;
+          this.phone=phone;
+          this.email=email;
+          this.ticketType=ticketType;
+        }
       }
-    });
-
-    // Show/hide payment details based on the selected payment method
-    paymentMethods.forEach(method => {
-      method.addEventListener('change', () => {
-        cardDetails.style.display = method.value === 'Card' ? 'block' : 'none';
-        paypalDetails.style.display = method.value === 'PayPal' ? 'block' : 'none';
-        cashDetails.style.display = method.value === 'Cash' ? 'block' : 'none';
-      });
-    });
-
-    ticketForm.addEventListener('submit', (event) => {
-      const selectedMethod = [...paymentMethods].find(method => method.checked);
-      if (!selectedMethod) {
-        alert('Please select a payment method.');
+      function saveEventTicket(){
+        const ticketType = document.querySelector('input[name="ticket-type"]:checked').value;
+        const name = document.getElementById('name').value;
+        const surname = document.getElementById('surname').value;
+        const phone = document.getElementById('phone').value;
+        const email = document.getElementById('email').value;
+        const newEventTicket = new eventTicket(ticketType,name,surname,phone,email);
+        ticketseventsArray.push(newEventTicket);
+        alert('Ticket save successfully!');
+      }
+      document.getElementById('ticketModal').addEventListener('submit',function (event){
         event.preventDefault();
-        return;
-      }
-
-      if (selectedMethod.value === 'Card') {
-        const cardNumber = document.getElementById('card-number').value.trim();
-        const expiryDate = document.getElementById('expiry-date').value.trim();
-        const cvv = document.getElementById('cvv').value.trim();
-
-        if (!cardNumber || !expiryDate || !cvv) {
-          alert('Please fill in all card details.');
-          event.preventDefault();
-          return;
+        saveEventTicket();
+        event.target.reset();
+      })
+      const ticketGiveawayArray = [];
+      class ticketGiveaway {
+        constructor(name, email){
+          this.name = name;
+          this.email=email;
         }
       }
-
-      if (selectedMethod.value === 'PayPal') {
-        const paypalEmail = document.getElementById('paypal-email').value.trim();
-        if (!paypalEmail) {
-          alert('Please fill in your PayPal email.');
-          event.preventDefault();
-          return;
-        }
+      function saveticketGiveaway(){
+        const name = document.getElementById('giveaway-name').value;
+        const email = document.getElementById('giveaway-email').value;
+        const newticketGiveaway = new ticketGiveaway(name,email);
+        ticketGiveawayArray.push(newticketGiveaway);
+        alert('Ticket saved successfully!');
       }
-    });
-    const ticketsArray = [];
-    class Ticket {
-      constructor(name, surname, phone, email, ticketDate, paymentMethod) {
-        this.name=name;
-        this.surname=surname;
-        this.phone=phone;
-        this.email=email;
-        this.ticketDate=ticketDate;
-        this.paymentMethod=paymentMethod;
-      }
-      displayTicket() {
-        console.log(`Ticket for ${this.name} ${this.surname}`);
-      }
-    }
-    function saveTicket(){
-      const name = document.getElementById('name1').value;
-      const surname = document.getElementById('surname1').value;
-      const phone = document.getElementById('phone1').value;
-      const email = document.getElementById('email1').value;
-      const ticketDate = document.getElementById('ticket-date').value;
-      const paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
-      const newTicket = new Ticket(name,surname,phone, email,ticketDate,paymentMethod);
-      ticketsArray.push(newTicket);
-      newTicket.displayTicket();
-      alert('Ticket saved successfully!');
-    }
-    document.getElementById('ticketForm').addEventListener('submit',function (event){
-      event.preventDefault();
-      saveTicket();
-      this.reset();
-    });
+      document.getElementById('giveaway').addEventListener('submit',function (event){
+        event.preventDefault();
+        saveticketGiveaway();
+        event.target.reset();
+      });
   </script>
   </body>
 </html>

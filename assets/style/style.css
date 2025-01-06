@@ -212,10 +212,35 @@
 } */
 
 .div-container{
-    width: 720px;
+    width: 70%;
     margin: 0 auto;
     margin-bottom: 50px;
+    display: flex;
 }
+
+.div-container .div-text{
+    font-family: var(--logo-font);
+    margin-top: 35px;
+}
+
+
+.div-container .div-text h1{
+    color: black;
+    margin-top: 20px;
+    font-size: 36px;
+    font-weight: bolder;
+}
+
+.div-container .div-text p{
+    color: black;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.div-container .div-text button{
+    margin-top: 20px;
+}
+
 
 .container {
     position: relative;
@@ -231,7 +256,7 @@
     background-color:black;
     background-attachment: scroll;
     margin-bottom: 20px;
-    
+    margin-left: 100px;
   }
   
   .square {

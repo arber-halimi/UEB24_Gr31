@@ -16,7 +16,10 @@ $(document).ready(function () {
                 const modalImage = $("#modal-image");
 
                 modalImage.attr("src", $(this).attr("src"));
-                modal.fadeIn();
+
+                setTimeout(function() {
+                    modal.fadeIn();
+                }, 100);
 
                 $(".close").click(function () {
                     modal.fadeOut();

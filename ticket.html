@@ -559,20 +559,16 @@
         newTicket.displayTicket();
         alert("Ticket saved successfully!");
       }
-<<<<<<< HEAD
-      document
-        .getElementById("ticketForm")
-        .addEventListener("submit", function (event) {
+      document.getElementById("ticketForm").addEventListener("submit", function (event) {
           event.preventDefault();
           saveTicket();
           this.reset();
         });
-    </script>
-=======
+    
       displayTicket() {
         console.log(`Ticket for ${this.name} ${this.surname}`);
       }
-    }
+    
     function saveTicket(){
       const name = document.getElementById('name1').value;
       const surname = document.getElementById('surname1').value;
@@ -635,6 +631,5 @@
       event.target.reset();
     });
   </script>
->>>>>>> 3e82b696ec0365485e52d763cd66093628f1133c
   </body>
 </html>

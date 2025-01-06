@@ -446,7 +446,7 @@ header {
   }
 
   header .para-header .logo h1 {
-    font-family: var(--logo-font);
+    font-family: var(--logo-font), serif;
     color: #ffffff;
     font-weight: 400;
     font-size: 25px;
@@ -498,6 +498,7 @@ header {
     font-weight: bold;
   }
   footer {
+    font-family: var(--logo-font), serif;
     background-color: #000000 !important;
   }
 

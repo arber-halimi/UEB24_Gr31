@@ -14,7 +14,7 @@
     <rect x="60" y="150" width="50" height="50" fill="black" stroke="darkgreen" stroke-width="4" />
   
     <text x="100" y="60" font-family="Arial" font-size="20" text-anchor="middle" fill="white">
-        Restore the vase
+        Help restore the vase
     </text>
   
     <!-- Cracks -->

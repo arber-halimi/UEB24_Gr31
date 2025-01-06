@@ -263,6 +263,7 @@
   .multiple-bg {
     width: 100%;
     height: 1000px;
+    margin-top: 100px;
     background-image: 
         url("/UEB24_Gr31/assets/images/insidelouvre.webp"), 
         url("/UEB24_Gr31/assets/images/louvreinside.jpg"), 
@@ -270,10 +271,81 @@
         url("/UEB24_Gr31/assets/images/TheLouvreMuseum-Paris.webp"),
         url("/UEB24_Gr31/exhibition-events/exhibition-images/exhibition2-gallery/dino.jpg");
 
-        background-size: 30% auto, 45% auto, 40% auto, 35% auto, 50% auto;
+        background-size: 35% auto, 50% auto, 40% auto, 45% auto, 55% auto;
 
         background-position: top left, center center, bottom right, top right, bottom left;
-    
         background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
     
+}
+
+.explore-louvre{
+    background-color: black;
+    color: white;
+    display: flex;
+    padding: 100px;
+    font-family: var(--logo-font);
+}
+
+.explore-louvre .louvre{
+    margin-left: 50px;
+    width: 700px;
+}
+
+.explore-louvre .louvre h1{
+    font-size: 39px;
+    margin-top: 10px;
+}
+.explore-louvre .louvre p{
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.explore-louvre .louvre button{
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-top: 30px;
+    background-color: #008573;
+    border: none;
+    a{
+        color: white;
+        text-decoration: none;
+        font-size: 15px;
+    }
+}
+
+.fixed-image{
+  
+        background-image: url('../images/louvreinside.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        height: 70vh;
+        width: 100%;   
+}
+
+.subscribe{
+    width: 70%;
+    margin: 0 auto;
+    padding: 100px 0;
+}
+
+.subscribe h3{
+    font-size: 30px;
+    width: 70%;
+    margin: 0 auto;
+    font-family: var(--logo-font);
+}
+
+.subscribe button{
+    padding: 20px 44px;
+    background-color: #212121;
+    color: white;
+    border: none;
+    margin-top: 30px;
+    margin-left: 170px;
+    a{
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+    }
 }

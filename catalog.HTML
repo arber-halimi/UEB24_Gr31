@@ -1178,30 +1178,29 @@ $(".close").on("click", function () {
       }
 
       $(document).ready(function () {
-        // Retrieve the selected category from sessionStorage (default to 'all' if not set)
-        const selectedCategory =
-          sessionStorage.getItem("selectedCategory") || "all";
+    // Retrieve the selected category from sessionStorage (default to 'all' if not set)
+    const selectedCategory = sessionStorage.getItem("selectedCategory") || "all";
+    
+    console.log("Selected Category: ", selectedCategory); // Debugging line to verify sessionStorage value
 
-        // Initially hide all objects and then fade in the selected category or "all"
-        $(".object-item").fadeOut(500, function () {
-          $(".object-item").each(function () {
+    // Initially hide all objects and then fade in the selected category or "all"
+    $(".object-item").fadeOut(500, function () {
+        $(".object-item").each(function () {
             if (
-              selectedCategory === "all" ||
-              $(this).data("category") === selectedCategory
+                selectedCategory === "all" ||
+                $(this).data("category") === selectedCategory
             ) {
-              $(this).fadeIn(500); 
+                $(this).fadeIn(500); 
             }
-          });
         });
+    });
 
-        // Highlight the corresponding category button if available
-        $(".category").removeClass("selected");
-        if (selectedCategory !== "all") {
-          $(`.category[data-category='${selectedCategory}']`).addClass(
-            "selected"
-          );
-        }
-      });
+    // Highlight the corresponding category button if available
+    $(".category").removeClass("selected");
+    if (selectedCategory !== "all") {
+        $(`.category[data-category='${selectedCategory}']`).addClass("selected");
+    }
+});
 
       $(document).ready(function () {
       // Toggle dropdown menu on button click with animation

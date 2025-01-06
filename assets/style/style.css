@@ -224,7 +224,7 @@
     border: 10px solid rgb(81, 81, 81);
     box-shadow: 4px 4px 8px #008573; 
     border-radius: 30px;
-    background-image: url("/UEB24_Gr31/vazo.svg"); 
+    background-image: url("/UEB24_Gr31/vazo.svg"),url("/vazo.svg");
     background-size: contain; 
     background-position: center ; 
     background-repeat: no-repeat; 

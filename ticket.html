@@ -559,6 +559,11 @@
           newTicket.displayTicket();
           alert("Ticket saved successfully!");
         }
+        document.getElementById('ticketForm').addEventListener('submit',function (event){
+          event.preventDefault();
+          saveTicket();
+          event.target.reset();
+        })
       const ticketseventsArray = [];
       class eventTicket {
         constructor(ticketType,name,surname,phone,email){

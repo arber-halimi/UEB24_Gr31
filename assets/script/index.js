@@ -82,3 +82,20 @@ try {
     console.error("Initialization error:", error.message);
   }
 
+// ndrrimi gjuhes
+
+const data = {
+  "english": "EXPLORE WITH THE MUSEUM",
+  "shqip": "EKSPLORO ME MUSEUM"
+}
+
+function translator(language) {
+  const paragraph = document.getElementById("paragraph");
+  paragraph.textContent = data[language].paragraph;
+}
+
+document.getElementById("language").addEventListener("change", (event) => {
+  translator(event.target.value);
+});
+
+

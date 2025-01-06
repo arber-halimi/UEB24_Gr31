@@ -19,11 +19,21 @@
         background-color: rgb(0, 0, 0);
         padding: 0;
       }
-
-      h1 {
-        text-align: center;
-        color: white;
-        margin-bottom: 30px;
+      @font-face {
+    font-family: 'Roboto';
+    src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+    font-weight: normal;
+    font-style: italic;
+}
+        h1 {
+            font-family: 'Roboto  ', sans-serif;
+            text-align: center;
+            margin-bottom: 30px;
+            color: white;
+        }
+      h5{
+        font-family: 'titulli';
+        color: #008573; 
       }
 
       .categories {
@@ -343,7 +353,7 @@
       </div>
     </div>
 
-    <!-- Show All as a preselected div -->
+    <!--Show All-->
     <div
       class="reset selected"
       onclick="filterObjects('all', this)"
@@ -1004,6 +1014,10 @@
       </div>
       
     </div>
+    <div style="text-align: center;">
+      <a href="/UEB24_Gr31/catalog.HTML#header" style="text-decoration: none; color: #008573; font-size: 18px; font-weight: bold; padding: 10px 20px; border-radius: 5px; transition: all 0.3s ease;"><h5>From the start</h5></a>
+    </div>
+    <br>
     <div class="dropdown">
       <button class="dropdown-button">Our Collection</button>
       <div class="dropdown-menu">

@@ -115,7 +115,7 @@
 .text-overlay {
   position: absolute;
   top: 40%; 
-  left: 24%; 
+  left: 25%; 
   transform: translateY(-50%); 
   display: flex;
   justify-content: flex-start;

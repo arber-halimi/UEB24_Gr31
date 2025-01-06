@@ -242,6 +242,8 @@
             />
 
             <button type="submit">Enter Giveaway</button>
+            <h2></h2>
+            <button type="reset">Reset Form</button>
           </form>
         </section>
       </div>
@@ -557,6 +559,7 @@
         newTicket.displayTicket();
         alert("Ticket saved successfully!");
       }
+<<<<<<< HEAD
       document
         .getElementById("ticketForm")
         .addEventListener("submit", function (event) {
@@ -565,5 +568,73 @@
           this.reset();
         });
     </script>
+=======
+      displayTicket() {
+        console.log(`Ticket for ${this.name} ${this.surname}`);
+      }
+    }
+    function saveTicket(){
+      const name = document.getElementById('name1').value;
+      const surname = document.getElementById('surname1').value;
+      const phone = document.getElementById('phone1').value;
+      const email = document.getElementById('email1').value;
+      const ticketDate = document.getElementById('ticket-date').value;
+      const paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
+      const newTicket = new Ticket(name,surname,phone, email,ticketDate,paymentMethod);
+      ticketsArray.push(newTicket);
+      newTicket.displayTicket();
+      alert('Ticket saved successfully!');
+    }
+    document.getElementById('ticketForm').addEventListener('submit',function (event){
+      event.preventDefault();
+      saveTicket();
+      this.reset();
+    });
+    const ticketseventsArray = [];
+    class eventTicket {
+      constructor(ticketType,name,surname,phone,email){
+        this.name=name;
+        this.surname=surname;
+        this.phone=phone;
+        this.email=email;
+        this.ticketType=ticketType;
+      }
+    }
+    function saveEventTicket(){
+      const ticketType = document.querySelector('input[name="ticket-type"]:checked').value;
+      const name = document.getElementById('name').value;
+      const surname = document.getElementById('surname').value;
+      const phone = document.getElementById('phone').value;
+      const email = document.getElementById('email').value;
+      const newEventTicket = new eventTicket(ticketType,name,surname,phone,email);
+      ticketseventsArray.push(newEventTicket);
+      alert('Ticket save successfully!');
+    }
+    document.getElementById('ticketModal').addEventListener('submit',function (event){
+      event.preventDefault();
+      saveEventTicket();
+      event.target.reset();
+    })
+    const ticketGiveawayArray = [];
+    class ticketGiveaway {
+      constructor(name, email){
+        this.name = name;
+        this.email=email;
+      }
+    }
+    function saveticketGiveaway(){
+      const name = document.getElementById('giveaway-name').value;
+      const email = document.getElementById('giveaway-email').value;
+      const newticketGiveaway = new ticketGiveaway(name,email);
+      ticketGiveawayArray.push(newticketGiveaway);
+      alert('Ticket saved successfully!');
+    }
+    document.getElementById('giveaway').addEventListener('submit',function (event){
+      event.preventDefault();
+      saveticketGiveaway();
+      event.target.reset();
+    });
+  </script>
+>>>>>>> 3e82b696ec0365485e52d763cd66093628f1133c
   </body>
 </html>

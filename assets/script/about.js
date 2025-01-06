@@ -1,5 +1,7 @@
 function showInfo(section) {
     try {
+        localStorage.setItem('selectedSection', section);
+
         const currentScrollY = window.scrollY;
         if (currentScrollY > 0) {
             window.scrollTo({
@@ -47,3 +49,8 @@ function playAudio(section) {
         console.log(`No audio found for ${section}`);
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const lastSelectedSection = localStorage.getItem('selectedSection') || 'history';
+    showInfo(lastSelectedSection);
+});
